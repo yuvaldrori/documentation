@@ -107,7 +107,7 @@ Or you can also run rsync over ssh.
 rsync -avz -e "ssh" ~/clone/ ssh_user@your.server.com:/path/on/server/
 ~~~
 
-You can read more about the Rsync options in the [LFTP man page]({% man_url rsync %}).
+You can read more about the Rsync options in the [Rsync man page]({% man_url rsync %}).
 
 ## Start services for deployment through SSH
 
