@@ -14,7 +14,6 @@
   font-family: $fCode;
   color: #000;
   padding: 1em 0px 1em 1em;
-  margin-top: .5rem;
 }
 
 .CodeRay pre {
@@ -24,7 +23,7 @@
 div.CodeRay { }
 span.CodeRay { white-space: pre; border: 0px; padding: 2px }
 
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
+table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px; margin: 2rem 0; }
 table.CodeRay td {
   padding: 1em 0.5em;
   vertical-align: top;
