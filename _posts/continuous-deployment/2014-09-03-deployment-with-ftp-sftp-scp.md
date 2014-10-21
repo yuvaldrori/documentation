@@ -42,16 +42,18 @@ For more information on using _lftp_ please see the [LFTP man page]({% man_url l
 
 All of the methods below can use key based authentication. As this does not require you to provide your account password to Codeship, we strongly advise to configure this.
 
-You need to add the [Codeship public SSH key]({{ site.baseurl }}{% post_url continuous-integration/2014-09-03-where-can-i-find-the-ssh-public-key-for-my-project %}) to your authorized_keys file on the server. This file is located in a folder called ```.ssh``` beneath your home directory. Below are the commands you need to prepare everything and open an editor window where you can simply paste your key and save the file. Please run those commands via an SSH session on your server.
+You need to add the [Codeship public SSH key]({{ site.baseurl }}{% post_url continuous-integration/2014-09-03-where-can-i-find-the-ssh-public-key-for-my-project %}) for your project to the `~/.ssh/authorized_keys` file on your server. Below are the commands you need to prepare everything and open an editor window where you can simply paste your key and save the file. Please run those commands via an SSH session on your server.
 
-~~~shell
+```shell
 mkdir -p ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod -R go-rwx ~/.ssh/
 
 # add the Codeship public SSH key to ~/.ssh/authorized_keys
 editor ~/.ssh/authorized_keys
-~~~
+```
+
+See [Run commands on a remote server via SSH](#run-commands-on-a-remote-server-via-ssh) on how to run commands on a remote server when building your application on Codeship.
 
 ## Continuous Deployment with SFTP
 
@@ -109,10 +111,12 @@ rsync -avz -e "ssh" ~/clone/ ssh_user@your.server.com:/path/on/server/
 
 You can read more about the Rsync options in the [Rsync man page]({% man_url rsync %}).
 
-## Start services for deployment through SSH
+## Run commands on a remote server via SSH
 
-If you give a command as the last parameter to SSH it will run this command on the server and exit with the return status of that command. This can be used to start services or trigger a deployment on an external system. If, for example, you already copied a script named ```restart_apache.sh``` to your server in a previous step, you would be able to call it with the following snippet.
+If you give a command as the last parameter to SSH it will run this command on the server and exit with the return status of that command. This can be used to start services or trigger a deployment on an external system.
+
+To restart _Apache_ on a remote server, you could call e.g. the following command. (This would require the _deploy_ user to be able to call `sudo` without a password though.)
 
 ~~~shell
-ssh ssh_user@your.server.com "restart_apache.sh"
+ssh deploy@your.server.com 'sudo service apache restart'
 ~~~
