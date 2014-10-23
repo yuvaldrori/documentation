@@ -16,13 +16,13 @@ The following JDKs are installed:
 * Oracle JDK 7
 * Oracle JDK 8
 
-We provide the function 'jdk_switcher', available as a setup command, to choose the JDK for your builds.
-This function can take one of two commands, 'use' or 'home':
+We provide the function `jdk_switcher`, available as a setup command, to choose the JDK for your builds.
+This function can take one of two commands, `use` or `home`:
 
-* 'use' will select the given JDK by changing the java executables, and setting JAVA_HOME and JRE_HOME.
-* 'home' will print out the value of JAVA_HOME for a given JDK (but make no modifications).
+* `use` will select the given JDK by changing the java executables, and setting JAVA_HOME and JRE_HOME.
+* `home` will print out the value of JAVA_HOME for a given JDK (but make no modifications).
 
-The valid values for 'use' or 'home' are openjdk7, oraclejdk7, and oraclejdk8.
+The valid values for `use` or `home` are _openjdk7_, _oraclejdk7_, and _oraclejdk8_.
 By default, OpenJDK 7 is selected. The following would be the resulting Java version, JAVA_HOME, and JRE_HOME for each JDK:
 
 #### OpenJDK 7 (default)
