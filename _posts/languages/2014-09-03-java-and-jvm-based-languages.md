@@ -30,8 +30,10 @@ By default, OpenJDK 7 is selected. The following would be the resulting Java ver
 jdk_switcher home openjdk7
 # /usr/lib/jvm/java-7-openjdk-amd64
 jdk_switcher use openjdk7
-# JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-# JRE_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
+echo $JAVA_HOME
+# /usr/lib/jvm/java-7-openjdk-amd64
+echo $JRE_HOME
+# /usr/lib/jvm/java-7-openjdk-amd64/jre
 java -version
 # java version "1.7.0_65"
 # OpenJDK Runtime Environment (IcedTea 2.5.3) (7u71-2.5.3-0ubuntu0.14.04.1)
@@ -43,8 +45,10 @@ java -version
 jdk_switcher home oraclejdk7
 # /usr/lib/jvm/java-7-oracle
 jdk_switcher use oraclejdk7
-# JAVA_HOME=/usr/lib/jvm/java-7-oracle
-# JRE_HOME=/usr/lib/jvm/java-7-oracle/jre
+echo $JAVA_HOME
+# /usr/lib/jvm/java-7-oracle
+echo $JRE_HOME
+# /usr/lib/jvm/java-7-oracle/jre
 java -version
 # java version "1.7.0_72"
 # Java(TM) SE Runtime Environment (build 1.7.0_72-b14)
@@ -56,8 +60,10 @@ java -version
 jdk_switcher home oraclejdk8
 # /usr/lib/jvm/java-8-oracle
 jdk_switcher use oraclejdk8
-# JAVA_HOME=/usr/lib/jvm/java-8-oracle
-# JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+echo $JAVA_HOME
+# /usr/lib/jvm/java-8-oracle
+echo $JRE_HOME
+# /usr/lib/jvm/java-8-oracle/jre
 java -version
 # java version "1.8.0_25"
 # Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
