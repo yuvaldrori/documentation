@@ -252,10 +252,6 @@ body.is-blue {
     @extend .ol;
   }
 
-  [data-swiftype-name="body"] > div {
-    overflow-x: scroll;
-  }
-
   .tag {
     margin-right: .5rem;
   }

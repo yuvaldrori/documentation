@@ -263,9 +263,12 @@ code {
   transform: translateY(-1px);
 }
 
-code.highlight {
-  width: 100%;
+[class^="highlighter-"] pre {
   overflow-x: scroll;
+
+  code {
+    padding: 0 5px;
+  }
 }
 
 pre {
