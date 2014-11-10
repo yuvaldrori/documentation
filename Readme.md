@@ -1,4 +1,4 @@
-# [Codeship Documentation](https://codeship.io/documentation/) [ ![Codeship Status for codeship/documentation](https://codeship.io/projects/59a737f0-1648-0132-c4e7-72c6c37b1f6e/status)](https://codeship.io/projects/33837)
+# [Codeship Documentation](https://codeship.com/documentation/) [ ![Codeship Status for codeship/documentation](https://codeship.com/projects/59a737f0-1648-0132-c4e7-72c6c37b1f6e/status)](https://codeship.com/projects/33837)
 
 [![Waffle.io Board](https://badge.waffle.io/codeship/documentation.svg?label=ready&title=Ready)](http://waffle.io/codeship/documentation)
 [![Dependency Status](https://gemnasium.com/codeship/documentation.svg)](https://gemnasium.com/codeship/documentation)
