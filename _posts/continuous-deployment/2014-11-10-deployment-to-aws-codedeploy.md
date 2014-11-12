@@ -1,5 +1,5 @@
 ---
-title: Deploy via Amazon CodeDeploy
+title: Deploy to AWS CodeDeploy
 layout: page
 tags:
   - deployment
@@ -14,7 +14,7 @@ This deployment method is not yet able to create the required configuration on A
 
 ## Configuration
 
-Add a new deployment for the branch you want to deploy and choose _AWS CodeDeploy_ as the deployment method. You'll then see a form like in the following screenshot.
+Add a new deployment for the branch you want to deploy and choose **AWS CodeDeploy** as the deployment method. You'll then see a form like in the following screenshot.
 
 ![AWS CodeDeploy Setup]({{ site.baseurl }}/images/continuous-deployment/aws_codedeploy_setup.png)
 
