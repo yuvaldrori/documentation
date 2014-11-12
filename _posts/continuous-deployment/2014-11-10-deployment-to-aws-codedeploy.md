@@ -31,5 +31,6 @@ If you have specific _Deployment Configs_ you can provide one via clicking on _m
 ## Further Reading
 
 + [AWS CodeDeploy](http://aws.amazon.com/codedeploy/)
++ [AWS CodeDeploy Documentation](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html)
 + AWS Blog: [New AWS Tools for Code Management and Deployment](https://aws.amazon.com/blogs/aws/code-management-and-deployment/)
 + Codeship Blog: [The AWS CodeDeploy Integration on Codeship](http://blog.codeship.com/aws-codedeploy-codeship/)
