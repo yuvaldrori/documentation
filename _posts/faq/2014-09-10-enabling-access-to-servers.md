@@ -24,8 +24,8 @@ Our Account id is: *841076584876*
 
 To add it as a source to your EC2 Security group set the Source to Custom-IP and add
 
-~~~shell
+```shell
 841076584876/sg-64c2870c
-~~~
+```
 
 as the source

@@ -16,22 +16,22 @@ This deployment method is not yet able to create Elastic Beanstalk environments,
 
 Please add the following variables to the ***Environment*** page in your project configuration.
 
-~~~shell
+```shell
 AWS_ACCESS_KEY_ID="YOUR_AWS_ACCESS_KEY_ID"
 AWS_SECRET_ACCESS_KEY="YOUR_AWS_SECRET_ACCESS_KEY"
 AWS_DEFAULT_REGION="YOUR_AWS_DEFAULT_REGION"
 APP_NAME="YOUR_BEANSTALK_APPLICATION_NAME"
 ENV_NAME="YOUR_BEANSTALK_ENVIRONMENT_NAME"
 S3_BUCKET="YOUR_S3_BUCKET_FOR_APPLICATION_DEPLOYMENT"
-~~~
+```
 
 ## Deploy Script
 
-Here is a script (```deploy_beanstalk.sh```) that you can put into your repository. Feel free to adapt and modify it to your specific needs.
+Here is a script (`deploy_beanstalk.sh`) that you can put into your repository. Feel free to adapt and modify it to your specific needs.
 
-Keep in mind that the script resets the working copy to a pristine state. If you precompile assets, be sure to add a build step after the call to ```git clean```.
+Keep in mind that the script resets the working copy to a pristine state. If you precompile assets, be sure to add a build step after the call to `git clean`.
 
-~~~shell
+```shell
 #!/bin/sh
 
 export APP_VERSION=`git rev-parse --short HEAD`
@@ -54,7 +54,7 @@ aws s3 cp ${APP_NAME}-${APP_VERSION}.zip s3://${S3_BUCKET}/${APP_NAME}-${APP_VER
 # create a new version and update the environment to use this version
 aws elasticbeanstalk create-application-version --application-name "${APP_NAME}" --version-label "${APP_VERSION}" --source-bundle S3Bucket="${S3_BUCKET}",S3Key="${APP_NAME}-${APP_VERSION}.zip"
 aws elasticbeanstalk update-environment --environment-name "${ENV_NAME}" --version-label "${APP_VERSION}"
-~~~
+```
 
 Once you added the above script to your repository, you can activate it on the ***Deployment*** page, via the *Custom script* option.
 
@@ -62,5 +62,5 @@ Once you added the above script to your repository, you can activate it on the *
 
 ## See also
 
-+ [Latest ```awscli``` documentation](http://docs.aws.amazon.com/cli/latest/reference/)
++ [Latest `awscli` documentation](http://docs.aws.amazon.com/cli/latest/reference/)
 + [Latest Elastic Beanstalk documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)

@@ -14,7 +14,7 @@ in the environment settings or prefix your test commands with it as explained in
 
 For example execute your rake tests with the Code Climate token:
 
-~~~shell
+```shell
 # After adding Code Climate to your application
 CODECLIMATE_REPO_TOKEN=ACDDD1111222223333 bundle exec rake
-~~~
+```

@@ -16,16 +16,16 @@ You are asked to enter the **name of your Heroku application** and your **Heroku
 By clicking on **more options** you can configure additional settings.
 
 ### URL of your Heroku Application
-After each deployment we check if your app is up. Therefore we call (```wget```) either the default ```*.herokuapp.com``` URL or the URL you specified here.
+After each deployment we check if your app is up. Therefore we call (`wget`) either the default `*.herokuapp.com` URL or the URL you specified here.
 
-If this URL requires **basic auth** please enter: ```http://YOUR_USERNAME:YOUR_PASSWORD@YOUR_URL```
+If this URL requires **basic auth** please enter: `http://YOUR_USERNAME:YOUR_PASSWORD@YOUR_URL`
 
 ## Run migration after the app is deployed
 You can specify to run the migration during the Heroku deployment within the ***more options*** section. If you want to run your migration after the deployment, you can add a [Script Deployment]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-with-custom-scripts %}) under the Heroku deployment and run the migration there.
 
-~~~shell
+```shell
 heroku_run bundle exec rake db:migrate my_herokuapp_name
-~~~
+```
 
 ![Migration after Heroku Deployment]({{ site.baseurl }}/images/continuous-deployment/script_deployment.png)
 

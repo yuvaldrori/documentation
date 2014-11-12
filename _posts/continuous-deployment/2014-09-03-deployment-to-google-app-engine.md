@@ -29,12 +29,12 @@ that different directory. We will call the appcfg deployment tool with that path
 to deploy your application from this build output.
 
 In our [Java App Engine Example](https://github.com/CodeshipExamples/java-app-engine)
-we compile the application with ```gradle``` and the result will be written to
-build/exploded-war. We set ```build/exploded-war``` as the path, so the code will
+we compile the application with `gradle` and the result will be written to
+build/exploded-war. We set `build/exploded-war` as the path, so the code will
 be taken from there.
 
 # appcfg.py or appcfg.sh
 
-By default we search for an ```app.yaml``` file in the path you've set. If we
-find it we will use the ```appcfg.py``` script to upload your application. Otherwise we
-expect it to be a Java application and use ```appcfg.sh```.
+By default we search for an `app.yaml` file in the path you've set. If we
+find it we will use the `appcfg.py` script to upload your application. Otherwise we
+expect it to be a Java application and use `appcfg.sh`.
