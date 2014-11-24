@@ -17,6 +17,7 @@ defaults:
 
 # Jekyll
 exclude:
+  - external
   - Readme.md
   - License.md
   - Guardfile
