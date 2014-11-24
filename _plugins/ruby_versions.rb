@@ -1,13 +1,11 @@
-require 'open-uri'
+require_relative './ruby_versions_helper'
 
 module Jekyll
   class RubyVersions < Liquid::Tag
+    include ::RubyVersionsHelper
+
     def render(context)
-      ['jruby', 'manual', 'mri'].map do |type|
-        URI.parse("http://codeship.io.s3.amazonaws.com/checkbot/wharf/rubies/#{type}/versions").read.split("\n").map do |version|
-          "* #{version}"
-        end.join("\n")
-      end.join("\n")
+      get_all_ruby_versions.map { |version| "* #{version}" }.join("\n")
     end
   end
 end
