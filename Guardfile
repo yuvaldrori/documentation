@@ -10,6 +10,7 @@ guard "jekyll-plus",
   } do
   watch /.*/
   ignore /^_site/
+  ignore /^external/
   ignore /^Gemfile(.lock)?/
   ignore /^Guardfile/
   ignore /^Readme.md/
