@@ -39,7 +39,7 @@ gem install capistrano
 
 ### Deployment fails because of detached checkout
 
-Because Codeship doesn't do a full clone of the repository to spead build time, you might need to fetch the remaining commits and checkout the branch first.
+Because Codeship doesn't do a full clone of the repository to speed up build time, you have to fetch the remaining commits and checkout the branch first.
 
 Either add the following commands to your script based deployment or add a script based deployment before the Capistrano deployment and add the steps there.
 
