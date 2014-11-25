@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem "jekyll", "~> 2.4.0"
+gem "jekyll", "~> 2.5.2"
 gem "octopress-autoprefixer", "~> 1.0.0"
 gem "rouge", "~> 1.7.2"
 
