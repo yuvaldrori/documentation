@@ -17,6 +17,7 @@ defaults:
 
 # Jekyll
 exclude:
+  - bin
   - external
   - Readme.md
   - License.md
