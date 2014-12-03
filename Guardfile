@@ -9,6 +9,7 @@ guard "jekyll-plus",
     baseurl: ""
   } do
   watch /.*/
+  ignore /^_s3.json/
   ignore /^_site/
   ignore /^bin/
   ignore /^external/
