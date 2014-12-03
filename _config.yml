@@ -17,6 +17,8 @@ defaults:
 
 # Jekyll
 exclude:
+  - _s3.json
+  - bin
   - external
   - Readme.md
   - License.md
