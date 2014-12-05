@@ -1,4 +1,4 @@
-[Codeship](http://add-ons.heroku.com/codeship) is an easy to use hosted [continuous integration and delivery](http://en.wikipedia.org/wiki/Continuous_delivery) service.
+[Codeship](http://addons.heroku.com/codeship) is an easy to use hosted [continuous integration and delivery](http://en.wikipedia.org/wiki/Continuous_delivery) service.
 
 Whenever you push your application to GitHub we run all your tests on the new version and automatically deploy your application to Heroku on success. Easily test and deploy your applications without setting up your own test server. Getting started takes less than two minutes and is fully integrated with Heroku. **Try it for free!**
 
@@ -7,19 +7,19 @@ Whenever you push your application to GitHub we run all your tests on the new ve
 The free Codeship add-on can be installed to a Heroku application via the CLI by running the following command:
 
 ```shell
-$ heroku add-ons:add codeship:free
+$ heroku addons:add codeship:free
 -----> Adding codeship to sharp-mountain-4005... done, v18 (free)
 ```
 
 <div class="callout">
 A list of all plans available can be found
-<a href="http://add-ons.heroku.com/codeship">here</a>.
+<a href="http://addons.heroku.com/codeship">here</a>.
 </div>
 
 To jump aboard the ship open your Codeship account by running
 
 ```shell
-$ heroku add-ons:open codeship
+$ heroku addons:open codeship
 ```
 
 You will be taken to the setup wizard if you haven’t already configured a project. You can always access your Codeship dashboard using the above command. Alternatively you can sign in through GitHub / BitBucket or with your email and password.
@@ -159,7 +159,7 @@ We all want to have flexibility. Changing plans is not a problem at all. Migrati
 Use the CLI to migrate to a new plan.
 
 ```shell
-$ heroku add-ons:upgrade codeship:medium
+$ heroku addons:upgrade codeship:medium
 -----> Upgrading codeship:medium to sharp-mountain-4005... done,
 v18 ($49/mo) Your plan has been updated to: codeship:medium
 ```
@@ -173,7 +173,7 @@ If some strange outlandish circumstances should force you to remove the add-on (
 Before removing the add-on please have a little [chat with Alex](mailto:alex@codeship.com) from the Codeship crew and tell him what made you remove it so we can improve our service for future users.
 
 ```shell
-$ heroku add-ons:remove codeship
+$ heroku addons:remove codeship
 -----> Removing codeship from sharp-mountain-4005... done, v20
 (free)
 ```
