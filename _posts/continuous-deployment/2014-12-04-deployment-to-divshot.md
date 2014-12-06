@@ -11,7 +11,11 @@ categories:
 
 First you need to setup your application locally. To do so please follow the [Getting Started](http://docs.divshot.com/guides/getting-started) guide. Don't forget to commit the `divshot.json` file to your repository.
 
-Once you can deploy your site successfully from your local machine you need to setup your Divshot user token on the Codeship project. Grab the login token from `~/.divshot/config/user.json` and save it as an environment variable called `DIVSHOT_TOKEN`.
+Once you can deploy your site successfully from your local machine you need to setup your Divshot user token on the Codeship project. Grab the login token by running the following command and save it as an environment variable called `DIVSHOT_TOKEN`.
+
+```shell
+divshot auth:token
+```
 
 Then add a new **script based deployment** to your project and include the following commands
 
