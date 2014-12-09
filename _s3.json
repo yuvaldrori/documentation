@@ -45,6 +45,16 @@
       "Condition": {
         "KeyPrefixEquals": "documentation/managing-your-project/"
       }
-    }
+    },
+    {
+      "Redirect": {
+        "HostName": "codeship.com",
+        "ReplaceKeyPrefixWith": "documentation/integrations/webhooks/",
+        "HttpRedirectCode": "301"
+      },
+      "Condition": {
+        "KeyPrefixEquals": "documentation/api-and-webhooks/webhooks/"
+      }
+    }    
   ]
 }
