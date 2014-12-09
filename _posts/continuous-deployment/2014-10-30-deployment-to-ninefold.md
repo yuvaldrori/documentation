@@ -40,3 +40,5 @@ Once this works, head over to your Codeship project, add a new **script based** 
 gem install ninefold
 ninefold app redeploy --robot --sure
 ```
+
+See ninefolds [documentation on deploying from a CI service](http://help.ninefold.com/apps/deployment_with_continuous_integration_ci/) for more information.
