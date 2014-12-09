@@ -45,7 +45,7 @@
       "Condition": {
         "KeyPrefixEquals": "documentation/managing-your-project/"
       }
-    }
+    },
     {
       "Redirect": {
         "HostName": "codeship.com",
