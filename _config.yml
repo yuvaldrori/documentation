@@ -47,3 +47,41 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     line_numbers: false
+# Prose.io
+prose:
+  rooturl: '_posts'
+  siteurl: 'https://codeship.com/documentation/'
+  media: 'images'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _posts:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'page'
+      - name: 'title'
+        field:
+          element: 'text'
+          label: 'Page Title'
+      - name: 'categories'
+        field:
+          element: 'select'
+          label: 'Category'
+          options: 'https://codeship.com/documentation/categories.jsonp'
+      - name: 'tags'
+        field:
+            element: 'multiselect'
+            label: 'Tags'
+            placeholder: 'Choose Tags'
+            alterable: true
+            options: 'https://codeship.com/documentation/tags.jsonp'
+      - name: 'weight'
+        field:
+          element: 'number'
+          label: 'Page Weight'
+          help: 'Used for sorting subpages in listings'
+          value: 50
