@@ -20,14 +20,14 @@ An ssh key can only be added once to GitHub or Bitbucket, so make sure you remov
 
 **Typical error messages are:**
 
-~~~shell
+```shell
 remote: Repository not found
-~~~
+```
 
-~~~shell
+```shell
 fatal: Could not read from remote repository
-~~~
+```
 
-~~~shell
+```shell
 Permission denied (publickey).
-~~~
+```

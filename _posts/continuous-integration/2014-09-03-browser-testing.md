@@ -11,7 +11,7 @@ categories:
 Firefox 28 is installed and available in the PATH.
 
 ## Chrome
-Chrome and Chromium are both available in the PATH and in ```/usr/bin/google-chrome``` and ```/usr/bin/chromium-browser```
+Chrome and Chromium are both available in the PATH and in `/usr/bin/google-chrome` and `/usr/bin/chromium-browser`
 
 ## Selenium
 Firefox and Chrome both work with Selenium. To support Selenium with Chrome the [Chrome Driver](https://code.google.com/p/selenium/wiki/ChromeDriver) is installed as well. Please provide your own Selenium driver (e.g. [selenium-webdriver](https://github.com/vertis/selenium-webdriver) for Ruby) and keep it up-to-date. This will ensure that it will work with the latest version installed on Codeship.

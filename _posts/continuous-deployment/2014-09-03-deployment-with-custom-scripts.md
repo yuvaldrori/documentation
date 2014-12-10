@@ -11,7 +11,7 @@ Script deployment is useful to define your custom deployment commands or execute
 
 For example:
 
-~~~shell
+```shell
 # execute rake tasks
 bundle exec rake my_rake_task
 
@@ -21,7 +21,7 @@ bundle exec rake my_rake_task
 
 # deploy to Amazon S3 or any other server with ssh access
 # you can define your keys in the environment variables
-~~~
+```
 
 To get more concrete you can, for example, run a migration on Heroku after your deployment:
 ![Migration after Heroku Deployment]({{ site.baseurl }}/images/continuous-deployment/script_deployment.png)

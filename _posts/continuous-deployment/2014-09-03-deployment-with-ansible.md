@@ -13,9 +13,9 @@ Ansible is fully supported on the Codeship.
 ## Install ansible
 To install ansible run
 
-~~~shell
+```shell
 pip install ansible
-~~~
+```
 
 as part of your setup commands. We will cache ansible for your next build so the install task should be faster.
 

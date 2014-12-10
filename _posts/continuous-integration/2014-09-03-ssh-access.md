@@ -23,9 +23,9 @@ When you start a SSH Debug session we will clone the repository and set up all e
 
 Inside the SSH session, you have access to the Codeship command. It provides some convient methods to debug your project.
 
-~~~shell
+```shell
 cs help
-~~~
+```
 
 ## Existing Directories
 
@@ -36,15 +36,15 @@ The most important one is the `clone` directory. The `clone` directory is your p
 
 Get insight into Environment variables.
 
-~~~shell
+```shell
 printenv
-~~~
+```
 
 You can use `grep` to filter the Environment
 
-~~~shell
+```shell
 printenv | grep CI
-~~~
+```
 
 ## NodeJS version
 
@@ -54,15 +54,15 @@ You can manage the NodeJS version via NVM.
 
 To install a new version of NodeJS use
 
-~~~shell
+```shell
 nvm install 0.11
-~~~
+```
 
 or use a different version of NodeJS
 
-~~~shell
+```shell
 nvm use 0.10.25
-~~~
+```
 
 ## Timeout
 
@@ -70,17 +70,17 @@ The debug build will shutdown itself after `60 minutes`
 
 You can shutdown the debug build manually by using
 
-~~~shell
+```shell
 cs exit
-~~~
+```
 
 ## Clear Dependency Cache
 
 If you want to start really fresh, you can clear the Dependency Cache by using
 
-~~~shell
+```shell
 cs clear-cache
-~~~
+```
 
 ## What is a SSH public key?
 
@@ -91,14 +91,14 @@ If you want to dig deeper into Public-Key cryptography you can start by reading 
 
 You can retrieve your public SSH Key by using the following command in your Terminal.
 
-~~~shell
+```shell
 cat ~/.ssh/id_rsa.pub
-~~~
+```
 
 ## Generate my SSH Key
 
 To generate your own SSH Key, open up your Terminal and use this command.
 
-~~~shell
+```shell
 ssh-keygen -b 8192
-~~~
+```

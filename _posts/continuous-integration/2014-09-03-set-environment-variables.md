@@ -11,35 +11,35 @@ If you set environment variables, they will be available for the whole build. Yo
 ## Environment Page on Project Settings
 On the ***Environment*** page of your project settings you can enter one environment variable per line:
 
-~~~
+```
 APP_ENV=production
 MY_SECRET=iamsuperman
-~~~
+```
 
 It is not allowed to use spaces between variable name and value.
 
-~~~shell
+```shell
 # Does not work
 NOT_WORKING = because-of-spaces
-~~~
+```
 
 We will export these environment variables to the environment your build runs in:
 
-~~~
+```
 export APP_ENV=production
 export MY_SECRET=iamsuperman
-~~~
+```
 
 We export your environment variables before all other commands of your build. This is pure convenience for setting up the environment but completely equal to exporting environment variables yourself.
 
 ## Directly in Setup or Test Commands
 You can also export environment variables in your setup or test commands. So, for example, you could enter the following setup commands:
 
-~~~
+```
 rvm use 2.0.0
 export RAILS_ENV=test
 bundle install
-~~~
+```
 
 There is no difference between setting ***RAILS_ENV*** like this and adding it on the ***Environment*** page of your project settings. The advantage of putting it into the environment configuration is that secret values will not show up in your build log.
 
@@ -48,9 +48,9 @@ The following environment variables are exported automatically. You can use them
 
 You can get the value of an environment variable by adding "$" in front of the variable name. For example:
 
-~~~shell
+```shell
 echo $CI_MESSAGE
-~~~
+```
 
 | Name                        | Value                                              |
 | ----------------------------|:---------------------------------------------------|
