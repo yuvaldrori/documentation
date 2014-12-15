@@ -22,6 +22,11 @@ If you don't want to receive any emails you can set that on your [account page](
 ### Receive emails when I am involved
 In your projects notification settings you can set the option that you only receive an email when the build was on the master branch or if you started this build
 
+## Shipscope - Chrome Extension
+Monitor your Codeship projects and builds with [Shipscope](https://chrome.google.com/webstore/detail/shipscope/jdedmgopefelimgjceagffkeeiknclhh). Shipscope lists all of your Codeship projects and presents the status of recent builds in the Chrome toolbar. You can restart a build or go straight to the build details on the Codeship service.
+
+Shipscope is open source and lives on [GitHub](https://github.com/codeship/shipscope).
+
 ## 3rd party chat notifications
 You will get notifications whenever a build starts and when it finishes. All information about the result and a link to it will be in the message.
 
