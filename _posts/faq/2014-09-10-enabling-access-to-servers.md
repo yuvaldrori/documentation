@@ -6,6 +6,7 @@ tags:
   - firewall
   - security group
   - ip addresses
+  - iam
 categories:
   - faq
 ---
