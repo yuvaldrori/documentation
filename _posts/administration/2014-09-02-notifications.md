@@ -31,7 +31,7 @@ The Shipscope notifications presented by Chrome will end up in the Notification 
 1. In the Notifications Center, click the gear icon  on the bottom right corner (on Windows) or the upper right corner (on Mac).
 1. Uncheck the box next to "Shipscope".
 
-Shipscope is open source and lives at [GitHub](https://github.com/codeship/shipscope).
+Shipscope is open source and lives on [GitHub](https://github.com/codeship/shipscope).
 
 ## 3rd party chat notifications
 You will get notifications whenever a build starts and when it finishes. All information about the result and a link to it will be in the message.
