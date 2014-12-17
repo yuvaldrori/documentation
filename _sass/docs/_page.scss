@@ -250,6 +250,18 @@ body.is-blue {
 
   ol {
     @extend .ol;
+
+    list-style-type: decimal;
+    margin-left: 20px;
+
+    li {
+      padding-left: 0.5rem;
+
+      &:before {
+        counter-increment: none;
+        content: none;
+      }
+    }
   }
 
   .tag {
