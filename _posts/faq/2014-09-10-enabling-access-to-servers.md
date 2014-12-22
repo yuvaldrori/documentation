@@ -26,3 +26,5 @@ To add it as a source to your EC2 Security group set the Source to Custom-IP and
 ```shell
 841076584876/sg-64c2870c
 ```
+
+Be aware that security groups don't work across AWS regions, so for the above settings to be applicable to your account, you'd need to host your instances on `us-east-1` as well. Also, security groups won't work with instances hosted in a Virtual Private Cloud (VPC) at all.
