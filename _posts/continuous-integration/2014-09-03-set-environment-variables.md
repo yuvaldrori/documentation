@@ -9,25 +9,12 @@ categories:
 If you set environment variables, they will be available for the whole build. You can set your environment variables in two different ways:
 
 ## Environment Page on Project Settings
-On the ***Environment*** page of your project settings you can enter one environment variable per line:
-
-```
-APP_ENV=production
-MY_SECRET=iamsuperman
-```
-
-It is not allowed to use spaces between variable name and value.
-
-```shell
-# Does not work
-NOT_WORKING = because-of-spaces
-```
+On the ***Environment*** page of your project settings you can enter the variable name and values into the corresponding fields.
 
 We will export these environment variables to the environment your build runs in:
 
 ```
-export APP_ENV=production
-export MY_SECRET=iamsuperman
+export VARIABLE_NAME=value
 ```
 
 We export your environment variables before all other commands of your build. This is pure convenience for setting up the environment but completely equal to exporting environment variables yourself.
@@ -37,7 +24,7 @@ You can also export environment variables in your setup or test commands. So, fo
 
 ```
 rvm use 2.0.0
-export RAILS_ENV=test
+export RAILS_ENV="test"
 bundle install
 ```
 
