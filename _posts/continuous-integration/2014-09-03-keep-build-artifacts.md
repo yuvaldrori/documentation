@@ -22,9 +22,9 @@ Additionally you need to add your AWS keys in your environment variables.
 
 ```shell
 # in your environment variables
-AWS_DEFAULT_REGION=us-east-1
-AWS_ACCESS_KEY_ID=<access_key_id>
-AWS_SECRET_ACCESS_KEY=<secret_access_key>
+AWS_DEFAULT_REGION
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
 ```
 
 Check out the [S3 documentation](http://docs.aws.amazon.com/cli/latest/reference/s3/index.html). for more information.

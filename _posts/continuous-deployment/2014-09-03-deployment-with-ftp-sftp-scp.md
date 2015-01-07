@@ -23,8 +23,8 @@ For ftp we have recommend using `lftp` for uploading your files. The following s
 To keep your password out of your build logs, add it as an environment variable in your project configuration
 
 ```shell
-FTP_PASSWORD="your_ftp_password"
-FTP_USER="ftp_user"
+FTP_PASSWORD
+FTP_USER
 ```
 
 So if you wanted to copy all of your repository to a remote server, you could add the following command to a _script deployment_ on the branch you want to deploy.
@@ -63,7 +63,7 @@ As with the the FTP example above, we will deploy the complete repository conten
 
 Please add a file containing the following directives to your repository. You can name it any way you like. In our case we will call it _production_ and store it in a subdirectory called _deploy_.
 
-```ftp
+```shell
 mkdir /path/on/server
 put -rp ~/clone/* /path/on/server/
 ```
