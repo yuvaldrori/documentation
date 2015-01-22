@@ -20,9 +20,9 @@ Each project has multiple **test pipelines**. Each of those pipelines is in effe
 ![Configuration of test pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-test-pipelines-configuration.png)
 
 ## Deployment Pipeline
-If you have a deployment configured for a specific branch and each test pipeline reports a successful run another deployment pipeline will be created to run the actual deployment.
+If you have a deployment configured for a specific branch and each test pipeline reports a successful run another deployment pipeline will be created to run the actual deployment. You do not need to change anything if you use one of our integrated deployments.
 
-As with the _test pipelines_, Codeship will first run your setup commands and then the deployment steps configured for the branch. The deployment will be displayed as another pipeline. See the screenshot below for the details.
+As we do not run your _setup commands_ for the deployment pipeline, please add a script based deployment before the actual deployment and install any required dependencies there.
 
 ![Configuration of build pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-deploy-pipelines.png)
 
