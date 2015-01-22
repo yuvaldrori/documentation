@@ -26,12 +26,12 @@ As we do not run your _setup commands_ for the deployment pipeline, please add a
 
 ![Configuration of build pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-deploy-pipelines.png)
 
-### Artefacts Support
-As your build and deployment commands are run on multiple virtual machines, **artefacts created during the test steps will not be available during the deployment**. If you need artefacts from the previous steps, make sure to regenerate them during the deployment.
-
-We will introduce a feature which will allow artefacts to persist in the various various pipelines and we will update you as soon as this is available.
-
 ## Early Access Phase
+
+### Artifacts Support
+As your build and deployment commands are run on multiple virtual machines, **artifacts created during the test steps will not be available during the deployment**. If you need artifacts from the previous steps, make sure to regenerate them during the deployment.
+
+We will introduce a feature which will allow artifacts to persist in the various pipelines and we will update you as soon as this is available.
 
 ### Number of parallel test pipelines
 During the early access phase each user has access to 10 test pipelines. Please note, that this number will change according to your subscription once this feature is generally available.
