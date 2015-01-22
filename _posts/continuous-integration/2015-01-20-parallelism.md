@@ -15,7 +15,7 @@ categories:
 {:toc}
 
 ## Test Pipelines
-Each project has multiple **test pipelines**. Each of those pipelines is in effect a build VM running independently of each other. Codeship will first run your setup commands and then any arbitrary _test commands_ you defined for this specific pipeline via the interface. To ease distinguishing different pipelines you can provide a name for each one.
+Each project has multiple **test pipelines**. Each of those pipelines is a build VM running independently of each other. Codeship will first run your setup commands and then any arbitrary _test commands_ you defined for this specific pipeline via the interface. To ease distinguishing different pipelines you can provide a name for each one.
 
 ![Configuration of test pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-test-pipelines-configuration.png)
 
