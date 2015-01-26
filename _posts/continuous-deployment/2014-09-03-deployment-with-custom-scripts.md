@@ -7,7 +7,7 @@ tags:
 categories:
   - continuous-deployment
 ---
-Script deployment is useful to define your custom deployment commands or execute another task after or prior a deployment.
+Script deployment is useful to define your custom deployment commands or execute another task after or prior to a deployment.
 
 For example:
 
