@@ -35,6 +35,22 @@
   .nav__link {
     padding-top: 0;
     letter-spacing: 2px;
+    position: relative;
+
+    &.has-new-badge::before {
+      content: "NEW";
+      position: absolute;
+      color: $_cWhite;
+      background: #7ad07c;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 9px;
+      line-height: 12px;
+      left: 0;
+      top: -3px;
+      padding: 0 2px;
+      transform: translateX(-110%);
+    }
   }
 
   .nav--small {
@@ -156,4 +172,3 @@
     }
   }
 }
-
