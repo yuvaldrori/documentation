@@ -1,5 +1,5 @@
 ---
-title: Parallelism
+title: ParallelCI
 weight: 80
 tags:
 - testing
@@ -9,7 +9,7 @@ categories:
 - continuous-integration
 ---
 
-**Parallelism** allows you to split your test commands across multiple build VMs to speed up your build time.
+**ParallelCI** allows you to split your test commands across multiple build VMs to speed up your build time.
 
 * include a table of contents
 {:toc}
@@ -27,6 +27,9 @@ As we do not run your _setup commands_ for the deployment pipeline, please add a
 ![Configuration of build pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-deploy-pipelines.png)
 
 ## Early Access Phase
+
+### Activating and Deactivating the feature
+You can enable that feature by adding multiple pipelines in your test configuration. If you do not want to leverage parallel builds for a project you just need to stick with 1 pipeline.
 
 ### Artifacts Support
 As your build and deployment commands are run on multiple virtual machines, **artifacts created during the test steps will not be available during the deployment**. If you need artifacts from the previous steps, make sure to regenerate them during the deployment.
