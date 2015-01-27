@@ -29,7 +29,7 @@ As we do not run your _setup commands_ for the deployment pipeline, please add a
 ## Early Access Phase
 
 ### Activating and Deactivating the feature
-You can enable that feature by adding multiple pipelines in your test configuration. If you do not want to leverage parallel builds for a project you just need to stick with 1 pipeline.
+You can enable that feature by adding multiple pipelines in your test configuration. If you do not want to leverage parallel builds for a project you just need to stick to 1 pipeline.
 
 ### Artifacts Support
 As your build and deployment commands are run on multiple virtual machines, **artifacts created during the test steps will not be available during the deployment**. If you need artifacts from the previous steps, make sure to regenerate them during the deployment.
