@@ -12,15 +12,10 @@ $ ->
 
       @_watchInputs $('[data-watch="input"]') if $('[data-watch="input"]').length > 0
       @_watchInputs $('[data-watch="textarea"]'), 'textarea' if $('[data-watch="textarea"]').length > 0
-      @_calculateFooterHeight()
       @_setTitleImage()
       @_linkfyAnchors()
       @_handleMobileMenu()
       @setScrollToEvents()
-
-    _calculateFooterHeight: ->
-      targetHeight = $(window).height() - $('.pageContent').offset().top - $('header').height() - $('footer').height() + 10
-      $('.pageContent').css('min-height',targetHeight + "px")
 
     _setTitleImage: ->
       $div = $('.titleImg')
