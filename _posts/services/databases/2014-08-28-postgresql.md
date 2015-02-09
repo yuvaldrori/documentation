@@ -23,15 +23,28 @@ You need to activate them with `CREATE EXTENSION` as explained in the [Extension
 
 ### 9.2
 
-Version **9.2** of PostgreSQL runs on the default port of `5432`.
+Version **9.2** of PostgreSQL runs on the default port of `5432`. To use it you don't need to change your configuration at all.
 
 ### 9.3
 
 In addition we also have version **9.3** installed and configured identically. You can use this version by specifying port `5433` in your database configuration.
 
+For Rails based projects you also need to work around our autoconfiguration. Please add the following command to your setup steps.
+
+```shell
+sed -i "s|5432|5433|" "config/database.yml"
+```
+
 ### 9.4
 
 Version **9.4** of the database server is running on port `5434` and configured identical to the others. If you want to use this version make sure to specify the correct port in your database configuration.
+
+Again, for Rails based projects, please add the following command your setup setup steps.
+
+```shell
+sed -i "s|5432|5434|" "config/database.yml"
+```
+
 
 ## Create Databases and run psql commands
 You can run any SQL query against the PostgreSQL database. For example to create a new database:
