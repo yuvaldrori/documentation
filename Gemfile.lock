@@ -93,7 +93,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.2.2)
-    rouge (1.7.7)
+    rouge (1.8.0)
     safe_yaml (1.0.4)
     sass (3.4.11)
     shellany (0.0.1)
@@ -113,5 +113,5 @@ DEPENDENCIES
   jekyll (~> 2.5.2)
   octopress-autoprefixer (~> 1.0.0)
   rack
-  rouge (~> 1.7.2)
+  rouge (~> 1.8.0)
   sass (~> 3.4.7)
