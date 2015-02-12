@@ -26,21 +26,8 @@ As we do not run your _setup commands_ for the deployment pipeline, please add a
 
 ![Configuration of build pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-deploy-pipelines.png)
 
-## Early Access Phase
-
-### Activating and Deactivating the feature
-You can enable that feature by adding multiple pipelines in your test configuration. If you do not want to leverage parallel builds for a project you just need to stick to 1 pipeline.
-
-### Artifacts Support
+## Artifacts Support
 As your build and deployment commands are run on multiple virtual machines, **artifacts created during the test steps will not be available during the deployment**. If you need artifacts from the previous steps, make sure to regenerate them during the deployment.
 
-We will introduce a feature which will allow artifacts to persist in the various pipelines and we will update you as soon as this is available.
-
-### Number of parallel test pipelines
-During the early access phase each user has access to 10 test pipelines. Please note, that this number will change according to your subscription once this feature is generally available.
-
-### Downgrade behaviour
-After the early access phase and with the introduction of the final plans the number of test pipelines on your plan might be decreased. Should this be the case we will merge any additional test pipelines into the first one. This is to ensure that all your test commands are run and no tests will be missed.
-
-### UI improvements
-The UI and user experience for this feature are not yet finished. We are constantly working on improving parts and we will ship those improvements as soon as they are finished. If you think certain aspects need special focus, please tell us via an email to [support@codeship.com](mailto:support@codeship.com).
+## Downgrade Behavior
+If you downgrade to a subscription with fewer parallel pipelines any additional pipelines will merged into the first one. If this is not desirable for your project make sure to manually move the steps to the appropriate test pipelines.
