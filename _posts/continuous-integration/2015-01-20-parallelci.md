@@ -20,6 +20,9 @@ Each project has multiple **test pipelines** that are run in parallel. Each of t
 
 ![Configuration of test pipelines]({{ site.baseurl }}/images/continuous-integration/parallelization-test-pipelines-configuration.png)
 
+### Disable ParallelCI
+You can either delete additional test pipelines, or comment out any commands by prepending a `#` symbol to each line. A test pipeline is only active if it contains at least one command.
+
 ## Deployment Pipeline
 If you have a deployment configured for a specific branch and each test pipeline reports a successful run, your deployment pipeline will be run. You do not need to change anything if you use one of our integrated deployments.
 
