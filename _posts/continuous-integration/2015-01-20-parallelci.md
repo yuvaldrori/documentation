@@ -12,6 +12,8 @@ categories:
 
 **ParallelCI** allows you to split your test commands across multiple build VMs to speed up your build time. See the [ParallelCI feature page](http://codeship.com/features/parallelci) to check out how this helped users improve their build times tremendously.
 
+For a quick introduction to this feature check out the [introductory video](https://www.youtube.com/watch?v=E7ujcuGtRjo) available on YouTube.
+
 * include a table of contents
 {:toc}
 
