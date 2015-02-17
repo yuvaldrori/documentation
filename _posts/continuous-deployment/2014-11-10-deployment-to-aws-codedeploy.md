@@ -34,7 +34,7 @@ To upload new application versions to the S3 bucket specified in the deployment 
                 "s3:PutObject"
             ],
             "Resource": [
-                "arn:aws:s3:::codedeploy-bucket/appname"
+                "arn:aws:s3:::YOUR_S3_BUCKET_NAME/*"
             ]
         }
     ]
@@ -56,7 +56,7 @@ Finally you also need to provide us with the rights to actually create new appli
                 "codedeploy:GetApplicationRevision"
             ],
             "Resource": [
-                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:application:appname"
+                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:application:CODE_DEPLOY_APPLICATION_NAME"
             ]
         },
         {
@@ -66,7 +66,7 @@ Finally you also need to provide us with the rights to actually create new appli
                 "codedeploy:GetDeployment"
             ],
             "Resource": [
-                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentgroup:appname/*"
+                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentgroup:CODE_DEPLOY_APPLICATION_NAME/*"
             ]
         },
         {
