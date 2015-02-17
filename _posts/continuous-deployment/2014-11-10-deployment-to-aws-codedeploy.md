@@ -84,6 +84,8 @@ Finally you also need to provide us with the rights to actually create new appli
 }
 ```
 
+You can see an example of a policy in this [gist](https://gist.github.com/flomotlik/b33a5399ba1a3512797d).
+
 ## Configuration
 
 Add a new deployment for the branch you want to deploy and choose **AWS CodeDeploy** as the deployment method. You'll then see a form like in the following screenshot.
