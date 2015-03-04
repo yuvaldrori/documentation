@@ -1,5 +1,6 @@
 ---
 scss_files: '_sass/docs'
+exclude: '_sass/docs/_rouge.scss'
 linters:
   ColorVariable:
     enabled: false
@@ -34,6 +35,4 @@ linters:
   SelectorFormat:
     enabled: false
   Shorthand:
-    enabled: false
-  SingleLinePerSelector:
     enabled: false
