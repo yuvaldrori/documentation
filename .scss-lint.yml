@@ -7,19 +7,13 @@ linters:
     enabled: false
   DuplicateProperty:
     enabled: false
-  ElsePlacement:
-    enabled: false
   EmptyLineBetweenBlocks:
     enabled: false
   HexLength:
     enabled: false
-  HexNotation:
-    enabled: false
   IdSelector:
     enabled: false
   ImportantRule:
-    enabled: false
-  Indentation:
     enabled: false
   LeadingZero:
     enabled: false
@@ -45,8 +39,6 @@ linters:
     enabled: false
   SpaceAfterComma:
     enabled: false
-  SpaceAfterPropertyColon:
-    enabled: false
   SpaceBeforeBrace:
     enabled: false
   StringQuotes:
@@ -54,6 +46,4 @@ linters:
   TrailingSemicolon:
     enabled: false
   UrlQuotes:
-    enabled: false
-  ZeroUnit:
     enabled: false
