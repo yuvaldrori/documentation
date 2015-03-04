@@ -133,7 +133,7 @@ body.is-blue {
     }
 
     &:not(:last-of-type)::after {
-      content: "/";
+      content: '/';
       position: relative;
       right: -.5rem;
     }
@@ -296,7 +296,7 @@ body.is-blue {
 // *******************************************************
 
 .newsletterSubscribe {
-  background-image: url("../img/newsletterbox.jpg");
+  background-image: url('../img/newsletterbox.jpg');
   background-size: cover;
   background-position-x: center;
   padding: 1rem 4rem;

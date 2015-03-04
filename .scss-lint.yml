@@ -41,5 +41,3 @@ linters:
     enabled: false
   SpaceBeforeBrace:
     enabled: false
-  StringQuotes:
-    enabled: false

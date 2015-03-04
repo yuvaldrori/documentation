@@ -34,7 +34,7 @@
     position: relative;
 
     &.has-new-badge::before {
-      content: "NEW";
+      content: 'NEW';
       position: absolute;
       color: $_cWhite;
       background: #7ad07c;
