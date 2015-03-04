@@ -39,5 +39,3 @@ linters:
     enabled: false
   SpaceAfterComma:
     enabled: false
-  SpaceBeforeBrace:
-    enabled: false
