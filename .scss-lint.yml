@@ -13,8 +13,6 @@ linters:
     enabled: false
   EmptyLineBetweenBlocks:
     enabled: false
-  EmptyRule:
-    enabled: false
   HexLength:
     enabled: false
   HexNotation:

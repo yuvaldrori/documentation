@@ -36,6 +36,6 @@
   input[type="search"] {
     padding-left: 2rem;
     -webkit-appearance: none; // Because otherwise Safari ignores css values regarding height
-    border: none;
+    border: 0;
   }
 }
