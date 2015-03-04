@@ -100,7 +100,7 @@ body.is-blue {
 
 .tag {
   color: $_cWhite;
-  background: darken($_cGrey,5%);
+  background: darken($_cGrey, 5%);
   display: inline-block;
   padding: .1rem .5rem;
   border-radius: .2rem;
@@ -123,7 +123,7 @@ body.is-blue {
   overflow-x: initial;
 
   a {
-    color: darken($_cGrey,10%);
+    color: darken($_cGrey, 10%);
     display: inline-block;
     margin: 0 .5rem;
     font-size: .9rem;
@@ -181,7 +181,7 @@ body.is-blue {
   .box__counter {
     float: right;
     display: inline-block;
-    color: rgba(#000,.2);
+    color: rgba(#000, .2);
     font-weight: 200;
     letter-spacing: 0;
   }
@@ -233,7 +233,7 @@ body.is-blue {
       position: absolute;
       left: 1rem;
       font-size: .9em;
-      transform: translate(-60%,0.2em);
+      transform: translate(-60%, 0.2em);
     }
 
     &:hover a {
@@ -344,11 +344,11 @@ body.is-blue {
     letter-spacing: 1px;
 
     &:hover {
-      background: darken($_cGreen,4%);
+      background: darken($_cGreen, 4%);
     }
 
     &:active {
-      background: darken($_cGreen,8%);
+      background: darken($_cGreen, 8%);
     }
 
   }
