@@ -3,8 +3,6 @@ scss_files: '_sass/docs'
 linters:
   ColorVariable:
     enabled: false
-  Comment:
-    enabled: false
   DeclarationOrder:
     enabled: false
   DuplicateProperty:
