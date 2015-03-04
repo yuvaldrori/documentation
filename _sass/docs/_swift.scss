@@ -109,7 +109,8 @@
       }
     }
 
-    .st-next,.st-prev {
+    .st-next,
+    .st-prev {
       @extend .btn;
       @extend .btn--clean;
       padding: .3rem;

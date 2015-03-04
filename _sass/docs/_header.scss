@@ -136,7 +136,8 @@
       color: $cPageHeaderBg;
     }
 
-    &:active,&:focus {
+    &:active,
+    &:focus {
       background: transparent;
     }
   }
