@@ -18,7 +18,7 @@ This deployment method does not create the required configuration on AWS CodeDep
 
 ## IAM Policies
 
-It is generally a good idea to create a separate [IAM user](http://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html) for Codeship when deploying to AWS. This allows you to explicitly control which ressources Codeship can access during your builds. Please take note of the **Access Key ID** and **Secret Access Key** created during the process, as you'll need this when configuring the deployment.
+It is generally a good idea to create a separate [IAM user](http://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html) for Codeship when deploying to AWS. This allows you to explicitly control which resources Codeship can access during your builds. Please take note of the **Access Key ID** and **Secret Access Key** created during the process, as you'll need this when configuring the deployment.
 
 ### S3
 
