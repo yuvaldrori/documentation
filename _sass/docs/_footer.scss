@@ -27,11 +27,6 @@
   }
 }
 
-.specialSiteLinks a {
-  font-size: .9rem;
-  margin-left: .5rem;
-}
-
 .scriptIncludes {
   img {
     position: absolute;
@@ -42,5 +37,5 @@
   font-size: .8rem;
   padding: $base-padding/3 $base-padding/2;
   text-decoration: underline;
-  margin: 0;
+  margin: 0 0 0 .5rem;
 }
