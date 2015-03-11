@@ -157,9 +157,9 @@ body.is-blue {
   min-height: 18em;
 
   .box__title {
+    @extend .like-h5;
     margin: 0;
     color: #000;
-    @extend .like-h5;
     padding: 1rem 0;
     border-bottom: $vBorder;
   }
@@ -225,9 +225,9 @@ body.is-blue {
   h2,
   h3 {
     a {
+      @extend .like-h4;
       display: none;
       color: $cAnchor;
-      @extend .like-h4;
       padding: 0;
       padding-right: 2rem;
       line-height: 1;
