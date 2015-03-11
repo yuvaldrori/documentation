@@ -19,7 +19,7 @@ linters:
   QualifyingElement:
     enabled: false
   SelectorDepth:
-    enabled: false
+    max_depth: 5
   SelectorFormat:
     enabled: false
   Shorthand:
