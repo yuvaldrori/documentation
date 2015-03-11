@@ -22,5 +22,3 @@ linters:
     max_depth: 5
   SelectorFormat:
     enabled: false
-  Shorthand:
-    enabled: false
