@@ -157,9 +157,9 @@ body.is-blue {
   min-height: 18em;
 
   .box__title {
+    @extend .like-h5;
     margin: 0;
     color: #000;
-    @extend .like-h5;
     padding: 1rem 0;
     border-bottom: $vBorder;
   }
@@ -225,16 +225,16 @@ body.is-blue {
   h2,
   h3 {
     a {
+      @extend .like-h4;
       display: none;
       color: $cAnchor;
-      @extend .like-h4;
       padding: 0;
       padding-right: 2rem;
       line-height: 1;
       position: absolute;
       left: 1rem;
       font-size: .9em;
-      transform: translate(-60%, 0.2em);
+      transform: translate(-60%, .2em);
     }
 
     &:hover a {
@@ -244,7 +244,7 @@ body.is-blue {
 
   img,
   table {
-    margin: 0.7rem 0;
+    margin: .7rem 0;
   }
 
   ul {
@@ -258,7 +258,7 @@ body.is-blue {
     margin-left: 20px;
 
     li {
-      padding-left: 0.5rem;
+      padding-left: .5rem;
 
       &:before {
         counter-increment: none;
@@ -321,7 +321,7 @@ body.is-blue {
 
 .label--newsletter {
   padding-right: 7rem;
-  margin: 1rem 0 3rem 0;
+  margin: 1rem 0 3rem;
 
   input {
     border: none !important;

@@ -4,26 +4,14 @@ exclude: '_sass/docs/_rouge.scss'
 linters:
   ColorVariable:
     enabled: false
-  DeclarationOrder:
-    enabled: false
-  DuplicateProperty:
-    enabled: false
-  EmptyLineBetweenBlocks:
-    enabled: false
-  HexLength:
-    enabled: false
   IdSelector:
     enabled: false
   ImportantRule:
     enabled: false
-  LeadingZero:
-    enabled: false
-  MergeableSelector:
-    enabled: false
   NameFormat:
     enabled: false
   NestingDepth:
-    enabled: false
+    max_depth: 5
   PlaceholderInExtend:
     enabled: false
   PropertySortOrder:
@@ -31,8 +19,6 @@ linters:
   QualifyingElement:
     enabled: false
   SelectorDepth:
-    enabled: false
+    max_depth: 5
   SelectorFormat:
-    enabled: false
-  Shorthand:
     enabled: false

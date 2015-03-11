@@ -51,17 +51,17 @@
 
   .nav--small {
     margin-top: 4px;
-  }
+  
+    .nav__link {
+      padding-bottom: 0;
+      padding-left: 2px;
+      font-size: .8rem;
+      color: #6c7c90;
+      letter-spacing: 1px;
 
-  .nav--small .nav__link {
-    padding-bottom: 0;
-    padding-left: 2px;
-    font-size: .8rem;
-    color: #6c7c90;
-    letter-spacing: 1px;
-
-    &:hover {
-      color: $_cBlue;
+      &:hover {
+        color: $_cBlue;
+      }
     }
   }
 }
@@ -128,7 +128,6 @@
     border: 0;
     color: $_cWhite;
     background: none;
-    top: 0;
     transform: translateY(50%);
 
     &:hover {
@@ -162,9 +161,11 @@
       &:first-child {
         padding-top: 1rem;
       }
+
       &:last-child {
         padding-bottom: 1rem;
       }
+
       a { padding: .2rem 0;}
     }
   }
