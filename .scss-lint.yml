@@ -4,8 +4,6 @@ exclude: '_sass/docs/_rouge.scss'
 linters:
   ColorVariable:
     enabled: false
-  EmptyLineBetweenBlocks:
-    enabled: false
   HexLength:
     enabled: false
   IdSelector:
