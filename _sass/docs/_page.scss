@@ -234,7 +234,7 @@ body.is-blue {
       position: absolute;
       left: 1rem;
       font-size: .9em;
-      transform: translate(-60%, 0.2em);
+      transform: translate(-60%, .2em);
     }
 
     &:hover a {
@@ -244,7 +244,7 @@ body.is-blue {
 
   img,
   table {
-    margin: 0.7rem 0;
+    margin: .7rem 0;
   }
 
   ul {
@@ -258,7 +258,7 @@ body.is-blue {
     margin-left: 20px;
 
     li {
-      padding-left: 0.5rem;
+      padding-left: .5rem;
 
       &:before {
         counter-increment: none;
