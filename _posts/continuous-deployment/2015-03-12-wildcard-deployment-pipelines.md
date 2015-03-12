@@ -29,6 +29,8 @@ If, for example you want to deploy all branches starting with `feature/` to your
 
 But not for _feature-a_, as it is missing the _/_ at the end of `feature/`.
 
+**Note**, if you have another wildcard deployment pipeline configured for `fe`, both the deployments (for `fe` as well as  `feature/`) will be triggered and run in sequence.
+
 See the following screenshot for a comparison of a configured wildcard deployment pipeline (for _feature/_) to a static branch deployment pipeline (for _master_).
 
 ![Configured Wildcard Deployment Pipelines]({{ site.baseurl }}/images/continuous-deployment/wildcard_deployment_pipelines_finished.png)
