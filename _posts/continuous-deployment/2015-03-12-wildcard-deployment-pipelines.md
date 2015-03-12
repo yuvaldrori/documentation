@@ -8,9 +8,9 @@ categories:
   - continuous-deployment
 ---
 
-Get more flexible deployment workflows with wildcard deployment pipelines that trigger if a branch starts with a certain prefix.
+Get more flexible deployment workflows with wildcard deployment pipelines that trigger if a branch starts with a certain prefix. Use one deployment configuration for multiple branches and automatically deploy your feature, release, QA, etc. branches to the corresponding environments.
 
-Use one deployment configuration for multiple branches and automatically deploy your feature, release, QA, etc. branches to the corresponding environments.
+See our article on [deployment pipelines]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-pipelines %}) for a general introduction on how to use deployments on Codeship.
 
 ## Static Branch Deployment Pipelines
 
