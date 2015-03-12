@@ -23,7 +23,7 @@ You need to activate them with `CREATE EXTENSION` as explained in the [Extension
 
 ### 9.2
 
-Version **9.2** of PostgreSQL runs on the default port of `5432`. To use it you don't need to change your configuration at all.
+The **default version** of PostgreSQL on Codeship is **9.2**, which runs on the default port of `5432`. To use it you don't need to change your configuration at all.
 
 ### 9.3
 
@@ -39,7 +39,7 @@ sed -i "s|5432|5433|" "config/database.yml"
 
 Version **9.4** of the database server is running on port `5434` and configured identical to the others. If you want to use this version make sure to specify the correct port in your database configuration.
 
-Again, for Rails based projects, please add the following command your setup setup steps.
+Again, for Rails based projects, please add the following command to your setup steps.
 
 ```shell
 sed -i "s|5432|5434|" "config/database.yml"
