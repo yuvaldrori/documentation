@@ -20,7 +20,7 @@ If you choose _Branch is exactly_ the branch name will need to match exactly the
 
 When you add a new branch to be deployed you can choose whether you are specifying an exact branch name or if this is a **wildcard deployment**. For the latter select _Branch starts with_ from the dropdown and then specify the common part of the branches you want to deploy.
 
-![Wildcard Deployment Pipeline]({{ site.baseurl }}/images/continuous-deployment/wildcard_deployment_pipelines.png)
+![Wildcard Deployment Pipeline Configuration]({{ site.baseurl }}/images/continuous-deployment/wildcard_deployment_pipelines_configuration.png)
 
 If, for example you want to deploy all branches starting with `feature/` to your staging environment you could add this as the branch name and the deployment would be triggered for any of the following branch names
 
@@ -28,3 +28,7 @@ If, for example you want to deploy all branches starting with `feature/` to your
 * feature/feature-b
 
 But not for _feature-a_, as it is missing the _/_ at the end of `feature/`.
+
+See the following screenshot for a comparison of a configured wildcard deployment pipeline (for _feature/_) to a static branch deployment pipeline (for _master_).
+
+![Configured Wildcard Deployment Pipelines]({{ site.baseurl }}/images/continuous-deployment/wildcard_deployment_pipelines_finished.png)
