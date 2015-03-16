@@ -8,7 +8,7 @@ categories:
   - continuous-integration
 ---
 ## Firefox
-Firefox 28 is installed and available in the PATH.
+Firefox 30 is installed and available in the PATH.
 
 ## Chrome
 Chrome and Chromium are both available in the PATH and in `/usr/bin/google-chrome` and `/usr/bin/chromium-browser`
