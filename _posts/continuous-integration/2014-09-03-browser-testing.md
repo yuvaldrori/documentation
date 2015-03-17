@@ -31,4 +31,4 @@ Phantomjs 1.9.7 is installed and available in the PATH.
 Casperjs 1.1-beta3 is installed and available in the PATH.
 
 ## SlimerJS
-Casperjs 0.8 is installed and available in the PATH.
+SlimerJS 0.9.5 is installed and available in the PATH.
