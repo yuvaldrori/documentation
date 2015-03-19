@@ -39,11 +39,9 @@ gem install capistrano
 
 ### Deployment fails because of detached checkout
 
-Because Codeship doesn't do a full clone of the repository to speed up build time, you have to fetch the remaining commits and checkout the branch first.
-
-Either add the following commands to your script based deployment or add a script based deployment before the Capistrano deployment and add the steps there.
+Because Codeship only fetches the last 50 commits as well as checks out your repository in detached head mode, Capistrano may fail the deployment. If this is the case for your setup, please add the following two commands to your deployment script. They will fetch the full history of the repository and switch to the branch you are currently testing.
 
 ```bash
-git fetch --unshallow
+git fetch --unshallow || true
 git checkout "${CI_BRANCH}"
 ```
