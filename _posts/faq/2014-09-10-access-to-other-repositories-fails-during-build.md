@@ -10,15 +10,20 @@ tags:
 categories:
   - faq
 ---
-Some builds require access to other private repositories for example to use as a dependency. Every project on the Codeship gets an SSH Key you can use to give us access to other private GitHub or Bitbucket repositories. You can find the SSH Key in your project configuration on the general page.
+Some builds require access to other private repositories for example to use as a dependency. Codeship creates a SSH key pair for each project when you first configure it. You can view the public key on the _General_ page of your project settings and it gets automatically added as a deploy key to your GitHub or BitBucket repository.
 
-By default we only add the SSH key to the repository you've set up. If you need to give access to more repositories you can either add it to your own user account or create a new GitHub user account you add the SSH key to. You can then add this new user to the repositories you want to give us access to them. This way you don't need to give us access to all of your repositories. GitHub calls it a machine user and you can read more about it in their [documentation](https://help.github.com/articles/managing-deploy-keys).
+If you need access to other (private) repositories besides this main repository, you need to follow these steps:
 
-By adding the SSH key to your own account we then have access to all of your repositories.
+1. Remove the Codeship deploy key from the main repository
+2. Create a [machine user](https://developer.github.com/guides/managing-deploy-keys/#machine-users)
+3. Add the public key from your projects _General_ settings page to the machine user (this is the key that was previously added as a deploy key)
+4. Add the machine user to both projects
 
-An ssh key can only be added once to GitHub or Bitbucket, so make sure you remove it from the deployment keys of your GitHub repository first.
+Even though we reference only GitHub above, the procedure is the same when your project is hosted on BitBucket.
 
-**Typical error messages are:**
+As an alternative you can also add the key to your personal GitHub / BitBucket user account instead of a machine user. Keep in mind that this will allow the project to access any repository which you are allowed to access on those services.
+
+## Typical error messages for this error
 
 ```shell
 remote: Repository not found
