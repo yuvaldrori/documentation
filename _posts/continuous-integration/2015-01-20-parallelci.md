@@ -14,8 +14,13 @@ categories:
 
 For a quick introduction to this feature check out the [introductory video](https://www.youtube.com/watch?v=E7ujcuGtRjo) available on YouTube.
 
-* include a table of contents
-{:toc}
+<div class="info-block">
+    <p>Do you want to try <strong>ParallelCI</strong> on your projects? <a href="https://codeship.com/projects#start-trial">Sign up for the trial</a> and use up to 20 parallel test pipelines for two weeks on all your projects.</p>
+
+    <p>A few days before the end of the trial we'll send you a message to give you a heads up including a comparison of build times before and during the trial. Once the two weeks are up any additional pipelines not included in your current plan will be merged into the first one.</p>
+
+    <p>If you have any questions about the trial you can reach us directly at <a href="mailto:support@codeship.com">support@codeship.com</a>.</p>
+</div>
 
 ## Test Pipelines
 Each project has multiple **test pipelines** that are run in parallel. Each of those pipelines is a build VM running independently of each other. Codeship will first run your setup commands and then any arbitrary _test commands_ you defined for this specific pipeline via the interface. To ease distinguishing different pipelines you can provide a name for each one.
