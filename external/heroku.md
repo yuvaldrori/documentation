@@ -79,7 +79,7 @@ Copies the PostgreSQL database from another app into this applications database.
 
 #### URL
 
-The URL that will be called to check that a *HTTP/2xx* Status is returned. By default this will be `http://APPNAME.heroku.com`, but you can change that to anything you want. If you use *HTTP Basic Authentication*  add your credentials to the URL like  `https://USER:PASSWORD@STAGING_URL`.
+The URL that will be called to check that a *HTTP/2xx* Status is returned. By default this will be `https://APP_NAME.herokuapp.com/`, but you can change that to anything you want. If you use *HTTP Basic Authentication*  add your credentials to the URL like  `https://USER:PASSWORD@APP_NAME.herokuapp.com`.
 
 ### How to connect to the databases
 
