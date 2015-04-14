@@ -2,7 +2,11 @@
 
 [![Waffle.io Board](https://badge.waffle.io/codeship/documentation.svg?label=ready&title=Ready)](http://waffle.io/codeship/documentation)
 [![Dependency Status](https://gemnasium.com/codeship/documentation.svg)](https://gemnasium.com/codeship/documentation)
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/codeship/documentation/blob/master/License.md)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/codeship/documentation/blob/master/LICENSE.md)
+
+## Contributing
+
+See our [contributing guidelines](CONTRIBUTING.md) and our [code of conduct](CODE_OF_CONDUCT.md)
 
 ## Getting Started
 
@@ -30,14 +34,6 @@ bundle exec scss-lint
 ```
 
 It's configured in [.scss-lint.yml](.scss-lint.yml) and the default configuration is [available online](https://github.com/causes/scss-lint/blob/master/config/default.yml) as well.
-
-### Contributing
-
-1. [Fork it](https://github.com/codeship/documentation/fork)
-1. Create your feature branch (`git checkout -b my-new-feature`)
-1. Commit your changes (`git commit -am 'Add some feature'```)
-1. Push to the branch (`git push origin my-new-feature`)
-1. Create a new Pull Request
 
 ## Markup
 
