@@ -28,33 +28,29 @@ You will be taken to the setup wizard if you haven't already configured a projec
 
 When you start setting up a project you have to select your source code repository first. At the moment we support GitHub and BitBucket based repositories. Choose your provider and select the project's repository.
 
-![SCM Selection](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/scm.png)
+![SCM Selection](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/connect_scm.png)
 
 Now let's edit your setup and test commands. Setup commands usually include installing your dependencies or setting up your database. Test commands are shell commands needed to run your tests. For example `bundle exec rake` for ruby, `npm test` for Node.js or `mvn test` for JVM based languages. You can run as many test commands as you like.
 
 If a command's return code isn't zero the build will fail.
 
-![Test Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/testsettings.png)
+![Test Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/configure_tests.png)
 
 You can **configure deployments** for branches in the next step. The wizard will let you add a branch to make the setup quick and easy.
 
-![Select Deployment Branch](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/select_deployment_branch.png)
+![Select Deployment Branch](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/configure_deployment_branch.png)
 
 You can always go to back to the configuration later on and manage deployment commands for other branches as well.
 
-For example you might want to have a production branch in your repository that gets deployed to your production app, plus a master branch that is deployed to your staging application.
+For example you might want to have a _production_ branch in your repository that gets deployed to your production app, plus a _master_ branch that is deployed to your staging application.
 
-![Add Deployment Branch](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deployment_branch.png)
-
-You can also configure multiple deployments for a single branch. For example deploy to staging first and then, if the deployment works to production. Another use case would be to run specific commands before and / or after your deployment.
+You can also configure multiple deployments for a single branch. For example deploy to staging first and then, if the deployment works, to production. Another use case would be to run specific commands before and / or after your deployment.
 
 To add a deployment method simply click on the logo. It will be added to the end of the list of deployments. You can easily re-order your deployment methods by simply dragging and dropping their logos. All of your configured deployment methods will be run sequentially.
 
-![Deployment Add](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deployment_config.png)
-
 Over time we will add more and more deployment methods so you can run various tools, test environments or commands easily. You can always fall back to **script deployments** which let you run any shell commands during the deployment.
 
-![Deploy Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deploysettings.png)
+![Deploy Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/configure_deployment_heroku.png)
 
 Deploying to Heroku is incredibly easy. Just click on the Heroku deployment method. The only necessary setting you have to do is type in your application name.
 
