@@ -63,7 +63,7 @@ Deploying to Heroku is incredibly easy. Just click on the Heroku deployment meth
 
 #### Backup
 
-A backup through the **pgbackups** add-on will be done.
+A backup through the standard Heroku [PostgreSQL backups](https://devcenter.heroku.com/articles/heroku-postgres-backups) will be done.
 
 #### Force
 
@@ -75,7 +75,7 @@ Runs Rails migrations for your application.
 
 #### Restore From
 
-Copies the postgres database from another app into this applications database. For example you are pushing to staging and want to run the migrations with production data. You can restore the production db into your staging application to have it accessible for your migrations. It will use the **pgbackups** add-on to do this.
+Copies the PostgreSQL database from another app into this applications database. For example you are pushing to staging and want to run the migrations with production data. You can restore the production db into your staging application to have it accessible for your migrations.
 
 #### URL
 
@@ -83,7 +83,7 @@ The URL that will be called to check that a *HTTP/2xx* Status is returned. By de
 
 ### How to connect to the databases
 
-Codeship currently supports SQLite, PostgreSQL, MySQL, MongoDB, Redis and Memcached. All of them run on their respective default ports. Connecting to MongoDB, Redis and Memcached doesnt need any further configuration than the default one.
+Codeship currently supports SQLite, PostgreSQL, MySQL, MongoDB, Redis and Memcached. All of them run on their respective default ports. Connecting to MongoDB, Redis and Memcached doesn't need any further configuration than the default one.
 
 #### PostgreSQL and MySQL
 
