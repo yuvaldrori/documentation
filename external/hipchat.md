@@ -1,6 +1,4 @@
-Getting notifications from Codeship into your HipChat room is really easy.
-
-Simply head over to your project settings, switch to the **Notification** tab and fill out both the _HipChat Notification token_ and the _HipChat room name_.
+Getting notifications from Codeship into your HipChat room is really easy. Simply head over to your project settings, switch to the **Notification** tab and fill out both the _HipChat Notification token_ and the _HipChat room name_.
 
 ![HipChat Configuration](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/hipchat/configuration.png)
 
