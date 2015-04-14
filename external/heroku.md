@@ -22,7 +22,7 @@ To jump aboard the ship open your Codeship account by running
 $ heroku addons:open codeship
 ```
 
-You will be taken to the setup wizard if you haven’t already configured a project. You can always access your Codeship dashboard using the above command. Alternatively you can sign in through GitHub / BitBucket or with your email and password.
+You will be taken to the setup wizard if you haven't already configured a project. You can always access your Codeship dashboard using the above command. Alternatively you can sign in through GitHub / BitBucket or with your email and password.
 
 ## Configuration
 
@@ -30,13 +30,13 @@ When you start setting up a project you have to select your source code reposito
 
 ![SCM Selection](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/scm.png)
 
-Now let's edit your setup and test commands. Setup commands usually include installing your dependencies or setting up your database. Test commands are shell commands needed to run your tests. For example `bundle exec rake` for ruby, `npm test` for node.js or `mvn test` for JVM based languages. You can run as many test commands as you like.
+Now let's edit your setup and test commands. Setup commands usually include installing your dependencies or setting up your database. Test commands are shell commands needed to run your tests. For example `bundle exec rake` for ruby, `npm test` for Node.js or `mvn test` for JVM based languages. You can run as many test commands as you like.
 
-If a command’s return code isn’t zero the build will fail.
+If a command's return code isn't zero the build will fail.
 
 ![Test Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/testsettings.png)
 
-You can ***configure deployments*** for branches in the next step. The wizard will let you add a branch to make the setup quick and easy.
+You can **configure deployments** for branches in the next step. The wizard will let you add a branch to make the setup quick and easy.
 
 ![Select Deployment Branch](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/select_deployment_branch.png)
 
@@ -50,10 +50,9 @@ You can also configure multiple deployments for a single branch. For example dep
 
 To add a deployment method simply click on the logo. It will be added to the end of the list of deployments. You can easily re-order your deployment methods by simply dragging and dropping their logos. All of your configured deployment methods will be run sequentially.
 
-![Deployment
-Add](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deployment_config.png)
+![Deployment Add](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deployment_config.png)
 
-Over time we will add more and more deployment methods so you can run various tools, test environments or commands easily. You can always fall back to ***script deployments*** which let you run any shell commands during the deployment.
+Over time we will add more and more deployment methods so you can run various tools, test environments or commands easily. You can always fall back to **script deployments** which let you run any shell commands during the deployment.
 
 ![Deploy Settings](https://s3.amazonaws.com/docs.codeship.io/documentation/images/external/heroku/deploysettings.png)
 
@@ -67,7 +66,7 @@ A backup through the standard Heroku [PostgreSQL backups](https://devcenter.hero
 
 #### Force
 
-Push via `git push --force` to Heroku to overwrite whatever was in the repository before. This is handy for deploying to your staging application as you may have pushed something to give it a try but haven't reverted. ***You should never enable this for your production application***.
+Push via `git push --force` to Heroku to overwrite whatever was in the repository before. This is handy for deploying to your staging application as you may have pushed something to give it a try but haven't reverted. **You should never enable this for your production application**.
 
 #### Migrate
 
@@ -168,9 +167,9 @@ You can upgrade your plan on one of your Heroku apps. All of your other Heroku a
 
 ## Removing the add-on
 
-If some strange outlandish circumstances should force you to remove the add-on (remember, you don't want to remove the add-on!) Codeship can be removed via the CLI. ***This will destroy all associated data and cannot be undone!***
+If some strange outlandish circumstances should force you to remove the add-on (remember, you don't want to remove the add-on!) Codeship can be removed via the CLI. **This will destroy all associated data and cannot be undone!**
 
-Before removing the add-on please have a little [chat with Alex](mailto:alex@codeship.com) from the Codeship crew and tell him what made you remove it so we can improve our service for future users.
+Before removing the add-on please have a little [chat with Marko](mailto:marko@codeship.com) from the Codeship crew and tell him what made you remove it so we can improve our service for future users.
 
 ```shell
 $ heroku addons:remove codeship
@@ -187,16 +186,13 @@ ssh-rsa AAAAB3FcbR.../uX8kI4rsL codeship/owner/name
 
 ## Support
 
-Heroku provides support requests for all add-ons through
-[https://support.heroku.com](https://support.heroku.com).
-If you have any questions or need anything you can create a ticket there
-and they will let us know.
+Heroku provides support requests for all add-ons through [https://support.heroku.com](https://support.heroku.com).
+If you have any questions or need anything you can create a ticket there and they will let us know.
 
-If you use our app the best & fastest way to contact is via our in-app support system. Additionally you can also contact us via email at  [support@codeship.com](mailto:support@codeship.com) or on
-[twitter.com/codeship](https://twitter.com/codeship).
+If you use our app the best & fastest way to contact is via our in-app support system. Additionally you can also contact us via email at [support@codeship.com](mailto:support@codeship.com) or on [twitter.com/codeship](https://twitter.com/codeship).
 
 ## The Codeship Blog
 
-You should frequently take a look at our blog on [blog.codeship.com](https://blog.codeship.com//?utm_source=heroku&utm_medium=link&utm_campaign=herokuadd-onprogram). Our crew works hard to bring you awesome content. A lot of interesting articles about using Codeship with Heroku, automated testing, continuous integration and delivery can be found there.
+You should frequently take a look at our blog on [blog.codeship.com](https://blog.codeship.com/?utm_source=heroku&utm_medium=link&utm_campaign=herokuadd-onprogram). Our crew works hard to bring you awesome content. A lot of interesting articles about using Codeship with Heroku, automated testing, continuous integration and delivery can be found there.
 
 Should you have any other questions, [just let us know](mailto:support@codeship.com)! And ***always keep shipping!***
