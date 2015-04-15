@@ -22,6 +22,5 @@
   mixpanel.people.set_once(properties);
 
   mixpanel.people.set_once({ "First Seen": new Date().toUTCString() });
-  mixpanel.track("documentation page viewed", {'title': document.title});
   mixpanel.track("NEW - Page Viewed", { "NEW - Current Page Title" : document.title, "NEW - Current Page URL" : document.URL })
 </script>
