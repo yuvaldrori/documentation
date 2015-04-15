@@ -1,5 +1,26 @@
 <!-- configure some basic information for mixpanel -->
-<script>
+<script>  
+  var query = window.location.search.substring(1);
+  var vars = query.split('&');
+  var params = {};
+  for(var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    params[pair[0]] = pair[1];
+  }
+
+  var properties = {
+    'NEW - First Ever Landed Page Title' : document.title,
+    'NEW - First Ever Landed Page URL'   : document.URL,
+    'NEW - First Ever UTM Campaign'      : params['utm_campaign'],
+    'NEW - First Ever UTM Content'       : params['utm_content'],
+    'NEW - First Ever UTM Source'        : params['utm_source'],
+    'NEW - First Ever UTM Medium'        : params['utm_medium'],
+    'NEW - First Ever UTM Term'          : params['utm_term']
+  };
+
+  mixpanel.register_once(properties);
+  mixpanel.people.set_once(properties);
+
   mixpanel.people.set_once({ "First Seen": new Date().toUTCString() });
   mixpanel.track("documentation page viewed", {'title': document.title});
   mixpanel.track("NEW - Page Viewed", { "NEW - Current Page Title" : document.title, "NEW - Current Page URL" : document.URL })
