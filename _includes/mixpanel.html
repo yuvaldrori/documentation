@@ -22,5 +22,10 @@
   mixpanel.register_once(properties);
   mixpanel.people.set_once(properties);
 
-  mixpanel.track("NEW - Page Viewed", { "NEW - Current Page Title" : document.title, "NEW - Current Page URL" : document.URL })
+  mixpanel.track("NEW - Page Viewed", {
+    "NEW - Current Page Title"            : document.title,
+    "NEW - Current Page URL"              : document.URL,
+    "NEW - Current Domain"                : "docs.codeship.com",
+    "NEW - Counts As Landingpage Traffic" : "No"
+  });
 </script>
