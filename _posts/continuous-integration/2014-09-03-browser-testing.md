@@ -16,6 +16,10 @@ Chrome and Chromium are both available in the PATH and in `/usr/bin/google-chrom
 ## Selenium
 Firefox and Chrome both work with Selenium. To support Selenium with Chrome the [Chrome Driver](https://code.google.com/p/selenium/wiki/ChromeDriver) is installed as well. Please provide your own Selenium driver (e.g. [selenium-webdriver](https://github.com/vertis/selenium-webdriver) for Ruby) and keep it up-to-date. This will ensure that it will work with the latest version installed on Codeship.
 
+### Standalone
+
+If there are no packages available for your framework or you want to use the **Standalone** version, please take a look at the script available at [codeship/scripts](https://github.com/codeship/scripts/blob/master/packages/selenium_server.sh) on how to install a custom version.
+
 If you are using **NodeJS**, you can use the project at [github.com/adamhooper/selenium-server-standalone-jar](https://github.com/adamhooper/selenium-server-standalone-jar) to keep your Selenium version updated to the latest available version.
 
 ## SauceLabs
