@@ -9,10 +9,10 @@ tags:
 categories:
   - continuous-deployment
 ---
-In order to push you'd need to follow the following steps:
+In order to push you'd need to follow these steps:
 
 - Remove the deploy key from the repository 
-- Add it to a special user and add this user to the repository 
+- Add it to a special user and add this user to the repository. [Example.](https://developer.github.com/guides/managing-deploy-keys/#machine-users)
 - Fetch the complete repository including any missing remote branches with the following script: 
 
 ```shell
