@@ -11,7 +11,7 @@ categories:
 In order to push to a remote repository you need to follow these steps:
 
 - Remove the deploy key from the repository 
-- Add it to a [special user]((https://developer.github.com/guides/managing-deploy-keys/#machine-users)) and add this user to the repository.
+- Add it to a [special user](https://developer.github.com/guides/managing-deploy-keys/#machine-users) and add this user to the repository.
 - Fetch the complete repository including any missing remote branches with the following script: 
 
 ```shell
