@@ -7,17 +7,15 @@ tags:
 categories:
   - continuous-deployment
 ---
-You can deploy any kind of Application with capistrano.
-It's most commonly used in the Ruby on Rails community.
-For some detailed information about Capistrano please checkout [capistranorb.com](http://capistranorb.com) Please include Capistrano in your project. We don't preinstall capistrano on our build servers.
+You can deploy any kind of Application with Capistrano. For detailed information about Capistrano check [capistranorb.com](http://capistranorb.com). Don't forget to [include Capistrano](#capistrano-is-not-installed-by-default) in your projects as it's not preinstalled on our build servers.
 
 ## Capistrano on Codeship
 
-When your capistrano task is ready and working you just need to add the Capistrano Deployment on Codeship. You just need to specify the task we should run for you. Most of the times this is `production deploy` (or another stage depending on the branch you are currently deploying.).
-
-Checkout our [Deployment Pipelines]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-pipelines %}) if you want to add multiple Capistrano Deployments.
+When your Capistrano task is ready and working, you just need to add the _Capistrano Deployment_ on Codeship. You simply specify the task we should run for you, which most often is something similar to `production deploy` (or another stage depending on the current branch).
 
 ![Capistrano]({{ site.baseurl }}/images/continuous-deployment/capistrano_deployment_setup.png)
+
+Checkout our [Deployment Pipelines]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-pipelines %}) if you want to add multiple Capistrano Deployments.
 
 ## Capistrano with a script based deployment
 
@@ -25,7 +23,7 @@ You don't need to use our Capistrano Integration. If you have a more complex Dep
 
 ```bash
 gem install capistrano
-bundle exec cap STAGE deploy
+bundle exec cap $STAGE deploy
 ```
 
 ## Common Errors
