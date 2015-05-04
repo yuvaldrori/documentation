@@ -13,21 +13,26 @@ For some detailed information about Capistrano please checkout [capistranorb.com
 
 ## Capistrano on Codeship
 
-When your capistrano task is ready and working you just need to add the Capistrano Deployment on Codeship. You just need to specify the task we should run for you. Most of the times this is `deploy`.
+When your capistrano task is ready and working you just need to add the Capistrano Deployment on Codeship. You just need to specify the task we should run for you. Most of the times this is `production deploy` (or another stage depending on the branch you are currently deploying.).
 
 Checkout our [Deployment Pipelines]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-pipelines %}) if you want to add multiple Capistrano Deployments.
 
 ![Capistrano]({{ site.baseurl }}/images/continuous-deployment/capistrano_deployment_setup.png)
 
-## Capistrano with ScriptDeployment
+## Capistrano with a script based deployment
 
-You don't need to use our Capistrano Integration. If you have a more complex Deployment Setup you can call capistrano directly.
+You don't need to use our Capistrano Integration. If you have a more complex Deployment Setup you can call Capistrano directly.
 
 ```bash
-bundle exec cap deploy
+gem install capistrano
+bundle exec cap STAGE deploy
 ```
 
 ## Common Errors
+
+### Authentication fails
+
+Usually Capistrano relies on a SSH connection to copy files and execute remote commands. If connecting to your server fails with an error message (e.g. asking for a password), please take a look at our [documentation on authenticating via SSH public keys](https://codeship.com/documentation/continuous-deployment/deployment-with-ftp-sftp-scp/#authenticating-via-ssh-public-keys) for more information.
 
 ### Capistrano is not installed by default
 
