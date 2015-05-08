@@ -13,5 +13,5 @@ group :development do
 end
 
 group :test do
-  gem 'scss-lint'
+  gem 'scss_lint'
 end
