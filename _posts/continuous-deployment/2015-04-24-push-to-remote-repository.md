@@ -8,22 +8,10 @@ tags:
 categories:
   - continuous-deployment
 ---
-In order to push to a remote repository you need to follow these steps:
 
-- Remove the deploy key from the repository 
-- Add it to a [special user](https://developer.github.com/guides/managing-deploy-keys/#machine-users) and add this user to the repository.
-- Fetch the complete repository including any missing remote branches with the following script: 
+If you want to deploy your application by doing a `git push` to a remote repository please follow these steps:
 
-```shell
-#!/bin/sh
-git fetch --unshallow || true
-git fetch origin "+refs/heads/*:refs/remotes/origin/*"
-# checkout a remote branch with
-# git checkout -b test origin/test
-```
-
-(This is required as Codeship only downloads the last 50 commits for the specific branch that triggered the build)
-
-- Make sure the remote is a SSH based URL and not HTTPS .
-- Commit your changes (probably including `--skip-ci` in the commit summary so you don't trigger another build)
-- Push to your remote repository.
+1. Remove the Codeship deploy key from the GitHub or BitBucket repository. You'll find this option in the repository settings on the respective service.
+2. Add the public key from your projects _General_ settings page to a so called [machine user](https://developer.github.com/guides/managing-deploy-keys/#machine-users) and provide this user with access to your repository. (Note that though we link to a GitHub documentation page, the process will work on BitBucket as well.)
+3. Add a _script based deployment_ to your project and include the commands from [deployments/git-push.sh](https://github.com/codeship/scripts/blob/master/deployments/git-push.sh).
+4. You might want to modify the commit message to include `--skip-ci` if you push to a remote repository which is configured on Codeship as well, as the push would trigger a new build otherwise.
