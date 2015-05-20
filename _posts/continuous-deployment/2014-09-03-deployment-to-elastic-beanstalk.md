@@ -115,8 +115,8 @@ Please replace `[region]` and `[accountid]` with the respective values for your 
    ],
    "Effect": "Allow",
    "Resource": [
-    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]"
-    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]/*",
+    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]",
+    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]/*"
    ]
   }
  ]
