@@ -37,10 +37,12 @@ To upload new application versions to the S3 bucket specified in the deployment 
         {
             "Effect": "Allow",
             "Action": [
-                "s3:PutObject"
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::YOUR_S3_BUCKET_NAME/*"
+                "arn:aws:s3:::[s3-bucket]/*"
             ]
         }
     ]
@@ -48,6 +50,8 @@ To upload new application versions to the S3 bucket specified in the deployment 
 ```
 
 ### ElasticBeanstalk
+
+Please replace `[region]` and `[accountid]` with the respective values for your AWS account / ElasticBeanstalk application.
 
 ```json
 {
@@ -70,7 +74,7 @@ To upload new application versions to the S3 bucket specified in the deployment 
         "sns:Subscribe"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:sns:us-east-1:334918212912:*"
+      "Resource": "arn:aws:sns:[region]:[accountid]:*"
     },
     {
       "Action": [
@@ -89,7 +93,7 @@ To upload new application versions to the S3 bucket specified in the deployment 
         "cloudformation:UpdateStack"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:cloudformation:us-east-1:334918212912:*"
+      "Resource": "arn:aws:cloudformation:[region]:[accountid]:*"
     },
     {
       "Action": [
@@ -98,8 +102,24 @@ To upload new application versions to the S3 bucket specified in the deployment 
       ],
       "Effect": "Allow",
       "Resource": "*"
-    }
-  ]
+   },
+   {
+    "Action": [
+     "s3:PutObject",
+     "s3:PutObjectAcl",
+     "s3:GetObject",
+     "s3:GetObjectAcl",
+     "s3:ListBucket",
+     "s3:DeleteObject",
+     "s3:GetBucketPolicy"
+   ],
+   "Effect": "Allow",
+   "Resource": [
+    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]",
+    "arn:aws:s3:::elasticbeanstalk-[region]-[accountid]/*"
+   ]
+  }
+ ]
 }
 ```
 
