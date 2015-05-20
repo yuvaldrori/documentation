@@ -123,6 +123,20 @@ Please replace `[region]` and `[accountid]` with the respective values for your 
 }
 ```
 
+If you are using more than once instance for your application you need to add at least the following permissions as well.
+
+```json
+{
+  "Action": [
+    "elasticloadbalancing:DescribeInstanceHealth",
+    "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+    "elasticloadbalancing:RegisterInstancesWithLoadBalancer"
+  ],
+  "Effect": "Allow",
+  "Resource": "*"
+}
+```
+
 ## See also
 
 + [Latest `awscli` documentation](http://docs.aws.amazon.com/cli/latest/reference/)
