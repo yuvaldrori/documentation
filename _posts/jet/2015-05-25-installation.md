@@ -59,7 +59,7 @@ For updating to a newer version of the tool, simply pull from the remote reposit
 
 `DOCKER_HOST` must be set. `DOCKER_TLS_VERIFY` and `DOCKER_CERT_PATH` are also respected in the same way as with the official Docker client.
 
-If you installed and configured your Docker environment via Docker Machine (and you are on OS X or Linux), running the following command will set those variables.
+If you installed and configured your Docker environment via Docker Machine (and you are on OS X or Linux) and named the environment _dev_, running the following command will set those variables.
 
 ```bash
 eval $(docker-machine env dev)
