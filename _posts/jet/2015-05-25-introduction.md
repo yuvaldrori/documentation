@@ -25,5 +25,5 @@ _Jet_ implements two main functions:
 
 For this reason we introduce two new concepts.
 
-- _Services_ specify a Docker image, plus accompanying configuration, same as you would do with _Docker Compose_.
-- _Steps_ specify what to run on those services.
+- [Services]({{ site.baseurl }}{% post_url jet/2015-05-25-services %}) specify a Docker image, plus accompanying configuration, same as you would do with _Docker Compose_.
+- [Steps]({{ site.baseurl }}{% post_url jet/2015-05-25-steps %}) specify what to run on those services.
