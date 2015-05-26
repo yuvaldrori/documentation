@@ -6,9 +6,15 @@ tags:
   - jet
   - introduction
   - installation
+  - running locally
 categories:
   - jet
 ---
+
+<div class="info-block">
+These commands are only applicable when you want to run the `jet` binary locally. If you only want to run your builds via the Codeship website you can skip these steps.
+</div>
+
 
 ## Prerequisites
 
