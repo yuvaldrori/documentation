@@ -3,11 +3,15 @@ weight: 98
 introduction: >
   <div class="info-block">
 
+  **Do not use Jet for production builds or deployments yet.**
+
+
   Please note, that _Jet_ is still in Beta testing and not all functionality
   is available. Furthermore functionality might change before the official
   release.
 
 
-  **Do not use Jet for production builds or deployments at the moment.**
+  To get started, head over to
+  [Welcome to Jet](./introduction/).
 
   </div>
