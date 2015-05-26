@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Welcome to Jet
 layout: page
 weight: 99
 tags:
@@ -8,6 +8,13 @@ tags:
 categories:
   - jet
 ---
+
+<div class="info-block">
+**Notes during the Beta**
+
+- The database for the Codeship website integration will be wiped regularly. Don't rely on the Jet Beta for CI / CD for your production environments.
+- Encrypted environment variables are not available for builds triggered via the Codeship website.
+</div>
 
 Welcome to `jet`, the new way to run your tests on Codeship. _Jet_ is designed with the goal to allow your various environments (e.g. _production_ and _staging_ deployment as well as local development) to have perfect parity with the environment on Codeship you run your tests in. This is achieved by using Docker containers for defining and managing environments.
 
