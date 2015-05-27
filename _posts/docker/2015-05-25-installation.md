@@ -3,12 +3,13 @@ title: Installation
 layout: page
 weight: 98
 tags:
+  - docker
   - jet
   - introduction
   - installation
   - running locally
 categories:
-  - jet
+  - docker
 ---
 
 <div class="info-block">
