@@ -14,10 +14,10 @@ categories:
 
 Welcome to a simple introductory tutorial for our Codeship _Docker Infrastructure (Beta)_. This document will help you getting started with the Beta and configuring a project for both building locally via _Jet_ as well as on Codeship.
 
-The source for the tutorial is available as a GitHub Gist and you can clone it via
+The source for the tutorial is available on Github as [codeship/jet-tutorial](https://github.com/codeship/jet-tutorial) and you can clone it via
 
 ```bash
-git clone https://gist.github.com/2a7751a9b5062e92dcec.git ./jet-tutorial/
+git clone git@github.com:codeship/jet-tutorial.git
 ```
 
 ## 1. Installation
