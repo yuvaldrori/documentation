@@ -1,7 +1,7 @@
 ---
-title: Installation
+title: Jet Installation
 layout: page
-weight: 98
+weight: 75
 tags:
   - docker
   - jet
@@ -16,6 +16,8 @@ categories:
 These commands are only applicable if you want to run the `jet` binary locally. If you only want to run your builds via the Codeship website you can skip these steps.
 </div>
 
+* include a table of contents
+{:toc}
 
 ## Prerequisites
 

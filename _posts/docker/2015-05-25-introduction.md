@@ -1,7 +1,7 @@
 ---
 title: Welcome to Docker on Codeship
 layout: page
-weight: 99
+weight: 95
 tags:
   - docker
   - introduction
@@ -28,3 +28,5 @@ For this reason we introduce two new concepts.
 
 - [Services]({{ site.baseurl }}{% post_url docker/2015-05-25-services %}) specify a Docker image, plus accompanying configuration, same as you would do with _Docker Compose_.
 - [Steps]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}) specify what to run on those services.
+
+So, to get up and running, please [install Jet locally]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-installation %}) and follow our [tutorial]({{ site.baseurl }}{% post_url docker/2015-06-10-getting-started %}) to get your first project working with _Jet_.
