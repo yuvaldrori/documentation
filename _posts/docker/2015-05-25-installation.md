@@ -27,14 +27,22 @@ Please note, that, similar to Jet, Docker Machine itself is still in Beta state 
 
 If you are running Linux or OS X, please execute the following two commands on a terminal (tested with bash)
 
+### OS X
 ```bash
-git clone https://github.com/codeship/codeship-tool.git
-sudo ln -s "$(pwd)/codeship-tool/downloads/$(uname -s | tr '[:upper:]' '[:lower:]')_amd64/jet" "/usr/local/bin/"
+curl -L https://github.com/codeship/tool/releases/download/v1/default.jet-darwin_amd64 > /usr/local/bin/jet
+chmod +x /usr/local/bin/jet
+```
+
+### Linux
+```bash
+curl -L https://github.com/codeship/tool/releases/download/v1/default.jet-linux_amd64 > /usr/local/bin/jet
+chmod +x /usr/local/bin/jet
 ```
 
 Once this is done you can check that _Jet_ is working by running `jet help`. This will print output similar to the following.
 
 ```
+$ jet help
 Usage:
   jet [command]
 
@@ -54,11 +62,9 @@ Flags:
 Use "jet help [command]" for more information about a command.
 ```
 
-For updating to a newer version of the tool, simply pull from the remote repository.
-
 ## Docker Configuration
 
-`DOCKER_HOST` must be set. `DOCKER_TLS_VERIFY` and `DOCKER_CERT_PATH` are also respected in the same way as with the official Docker client.
+`DOCKER_HOST` must be set. `DOCKER_TLS_VERIFY` and `DOCKER_CERT_PATH` are respected in the same way as with the official Docker client.
 
 If you installed and configured your Docker environment via Docker Machine (and you are on OS X or Linux) and named the environment _dev_, running the following command will set those variables.
 
