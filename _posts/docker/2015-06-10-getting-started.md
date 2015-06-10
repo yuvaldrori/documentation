@@ -66,6 +66,46 @@ RUN bundle install --jobs 20 --retry 5
 COPY . /app
 ```
 
+Let's build our _Dockerfile_ to make sure we didn't miss anything.
+
+```bash
+docker build .                                                                                                                                                                                                           master
+Sending build context to Docker daemon 8.192 kB
+Sending build context to Docker daemon
+Step 0 : FROM ruby:2.2.2
+ ---> 587d0d048bce
+Step 1 : RUN apt-get update -qq
+ ---> Using cache
+ ---> 4c84c211ba4f
+Step 2 : RUN mkdir /app
+ ---> Using cache
+ ---> 6807abe5a5a3
+Step 3 : WORKDIR /app
+ ---> Using cache
+ ---> 4d97b62db967
+Step 4 : COPY Gemfile Gemfile.lock /app/
+ ---> 5e7734a705f5
+Removing intermediate container e22e69c97556
+Step 5 : RUN bundle install --jobs 20 --retry 5
+ ---> Running in d924c85e423a
+Don't run Bundler as root. Bundler can ask for sudo if it is needed, and
+installing your bundle as root will break this application for all non-root
+users on this machine.
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Using bundler 1.9.9
+Installing redis 3.2.1
+Installing pg 0.18.2
+Bundle complete! 2 Gemfile dependencies, 3 gems now installed.
+Bundled gems are installed into /usr/local/bundle.
+ ---> baf0b6c7b83f
+Removing intermediate container d924c85e423a
+Step 6 : COPY . /app
+ ---> f332d461322c
+Removing intermediate container 515540bf1beb
+Successfully built f332d461322c
+```
+
 ### .dockerignore
 
 Similar to a _.gitignore_ file you can add a _[.dockerignore](https://docs.docker.com/reference/builder/#the-dockerignore-file)_ file to the directory. This file allows you to ignore parts of the project when copying files to the container.
@@ -188,4 +228,4 @@ $ jet steps
 
 ## 6. Push it!
 
-Gratulations, you can now push the repository to your GitHub or BitBucket remote and Codeship will use the information in those files to run your builds!
+You can now push the repository to your GitHub or BitBucket remote and Codeship will use the information in those files to run your builds!
