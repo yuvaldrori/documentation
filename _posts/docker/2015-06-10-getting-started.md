@@ -235,3 +235,5 @@ jet steps
 ## 6. Push it!
 
 You can now push the repository to your GitHub or BitBucket remote and Codeship will use the information in those files to run your builds!
+
+Or (if you haven't done so already) you can [configure the project on Codeship]({{ site.baseurl }}{% post_url docker/2015-06-11-codeship-configuration %}).
