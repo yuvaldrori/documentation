@@ -69,7 +69,10 @@ COPY . /app
 Let's build our _Dockerfile_ to make sure we didn't miss anything.
 
 ```bash
-docker build .                                                                                                                                                                                                           master
+docker build .
+```
+
+```text
 Sending build context to Docker daemon 8.192 kB
 Sending build context to Docker daemon
 Step 0 : FROM ruby:2.2.2
@@ -121,7 +124,7 @@ Dockerfile
 
 Now that we have a Docker container for our tests we need to define our _codeship-services.yml_ file, which configures which containers are required for running the tests and how they are linked together.
 
-We'll show the complete file first and will then walk you through the individual sections. See [Services]({{ site.bseurl }}{% post_url docker/2015-05-25-services %}) for the full documentation on that file.
+We'll show the complete file first and will then walk you through the individual sections. See [Services]({{ site.baseurl }}{% post_url docker/2015-05-25-services %}) for the full documentation on that file.
 
 ```yml
 app:
@@ -152,7 +155,7 @@ Furthermore, as our application depends on Redis and PostgreSQL we link the offi
 
 ## 4. Step Definition
 
-Lastly we need to define the steps that will be run during our builds. This is done in the _codeship-steps.yml_ file.
+Lastly we need to define the steps that will be run during our builds. This is done in the _codeship-steps.yml_ file. See [Steps]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}) for more information on how to define and run various commands.
 
 ```yml
 - service: app
@@ -191,7 +194,10 @@ Once we have all steps configured we can use _Jet_ to test the configuration loc
 You also see the output of the two linked containers (_redis_  and _postgres_) plus the 4 lines we print during the ruby script.
 
 ```bash
-$ jet steps
+jet steps
+```
+
+```text
 {StepStarted=step_name:"bundle_exec_ruby_check.rb"}
 {BuildImageStarted=image_name:"app"}
 {BuildImageStdout=image_name:"app"}: Step 0 : FROM ruby:2.2.2
