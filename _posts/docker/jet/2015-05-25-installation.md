@@ -27,18 +27,13 @@ Please note, that, similar to Jet, Docker Machine itself is still in Beta state 
 
 ## Jet
 
-If you are running Linux or OS X, please execute the following two commands on a terminal (tested with bash)
+Head over to [codeship/codeship-tool](https://github.com/codeship/codeship-tool/releases) and download the latest ZIP archive for your platform. Once you have done this, you need to extract the archive and copy the binary to your path.
 
-### OS X
-```bash
-curl -L https://github.com/codeship/tool/releases/download/v1/default.jet-darwin_amd64 > /usr/local/bin/jet
-chmod +x /usr/local/bin/jet
-```
+If you are running Linux or OS X, please execute the following two commands on a terminal (tested with bash on OS X and Ubuntu Trusty).
 
-### Linux
 ```bash
-curl -L https://github.com/codeship/tool/releases/download/v1/default.jet-linux_amd64 > /usr/local/bin/jet
-chmod +x /usr/local/bin/jet
+sudo unzip -d /usr/local/bin/ "jet-$(uname -s | tr '[:upper:]' '[:lower:]')_amd64.zip"
+sudo chmod +x /usr/local/bin/jet
 ```
 
 Once this is done you can check that _Jet_ is working by running `jet help`. This will print output similar to the following.
