@@ -11,8 +11,8 @@ categories:
 
 If the repositories for a GitHub organization don't show up on Codeship, please head over to the settings for the [Codeship application on GitHub](https://github.com/settings/connections/applications/457423eb34859f8eb490) and in the section labeled **Organization access** either
 
-- _Request access_ if you are not an administrator for the organization. (Your request will then have to be approved by an admin.)
-- _Grant access_ if you are an administrator.
+* _Request access_ if you are not an administrator for the organization. (Your request will then have to be approved by an admin.)
+* _Grant access_ if you are an administrator.
 
 Once this is done and access has been granted, the organizations repositories will show up in the repository selector on Codeship again.
 
