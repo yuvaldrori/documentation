@@ -265,6 +265,19 @@ body.is-blue {
         content: none;
       }
     }
+
+    ul {
+      li::before {
+        @include showIcon($fa-var-caret-right);
+        line-height: 1.5rem;
+        display: inline-block;
+        font-size: .6em;
+        color: #101b27;
+        position: absolute;
+        transform: translate(-.5rem, .2rem);
+        opacity: 1;
+      }
+    }
   }
 
   .tag {
