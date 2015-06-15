@@ -26,5 +26,5 @@ That error is saying that on Heroku are later changes than those you want to pus
 
 ## Solution
 
-+ You can try to pull the latest changes of that branch locally and push them again
-+ or set 'push force' in your heroku deployment configuration on Codeship. It might be good to disable that after the build got deployed.
+* You can pull the latest changes from the Heroku repository locally and then push to GitHub / BitBucket again
+* or configure the Heroku deployment to _force push_ instead. If you decide to follow this route, we recommend disabling this setting afterwards again.

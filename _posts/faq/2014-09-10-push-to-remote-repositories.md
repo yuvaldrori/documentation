@@ -25,7 +25,7 @@ fatal: Failed to traverse parents of commit d9ff2fe276d15d485f9c71c309160d47cd4c
 
 please include these commands in your script deployment
 
-```
+```shell
 #!/bin/sh
 git fetch --unshallow || true
 git fetch origin "+refs/heads/*:refs/remotes/origin/*"
