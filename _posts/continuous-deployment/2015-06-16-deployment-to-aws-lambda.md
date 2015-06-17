@@ -16,7 +16,7 @@ categories:
 
 ## Prerequisites
 
-This deployment method does not create the required configuration on AWS Lambda. Please configure this by hand before you deploy for the first time. You can read more about getting setting up your first function on the [AWS Lambda Documentation](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+This deployment method does not create the required configuration on AWS Lambda. Please configure this by hand before you deploy for the first time. You can read more about setting up your first function on the [AWS Lambda Documentation](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
 ## IAM Policies
 
