@@ -16,7 +16,7 @@ categories:
 
 ## Prerequisites
 
-This deployment method does not create the required configuration on AWS Lambda. Please configure this by hand before you deploy for the first time.
+This deployment method does not create the required configuration on AWS Lambda. Please configure this by hand before you deploy for the first time. You can read more about getting setting up your first function on the [AWS Lambda Documentation](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
 ## IAM Policies
 
@@ -24,7 +24,7 @@ It is generally a good idea to create a separate [IAM user](http://docs.aws.amaz
 
 ### Lambda
 
-To deploy into Lambda we need to make sure you’ve given us the correct permissions to deploy into it.
+To deploy into Lambda we need to make sure you’ve given us the correct permissions to deploy into it. Add the following policy to the AWS account which you use for deploying the Lambda function.
 
 ```json
 {
