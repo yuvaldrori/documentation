@@ -27,14 +27,27 @@ Please note, that, similar to Jet, Docker Machine itself is still in Beta state 
 
 ## Jet
 
-Head over to [codeship/codeship-tool](https://github.com/codeship/codeship-tool/releases) and download the latest ZIP archive for your platform. Once you have done this, you need to extract the archive and copy the binary to your path.
+Please follow the steps below for the operating system you are using.
 
-If you are running Linux or OS X, please execute the following two commands on a terminal (tested with bash on OS X and Ubuntu Trusty).
+{% for os in site.data.jet.downloads %}
+**{{ os.label }}**
+
+{% if os.name == 'windows' %}
+
+Please download the version (`{{ site.data.jet.version }}`) from [our download site](https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ os.expiry }}&id={{ site.data.jet.id }}&signature={{ os.signature }}). Once you have done this, you need to extract the archive and copy the binary to your path.
+
+{% else %}
 
 ```bash
-sudo unzip -d /usr/local/bin/ "jet-$(uname -s | tr '[:upper:]' '[:lower:]')_amd64.zip"
+curl -SLo "jet-{{ site.data.jet.version }}.zip" "https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ os.expiry }}&id={{ site.data.jet.id }}&signature={{ os.signature }}"
+sudo unzip -ud /usr/local/bin/ "jet-{{ site.data.jet.version }}.zip"
 sudo chmod +x /usr/local/bin/jet
 ```
+
+{% endif %}
+{% endfor %}
+
+## Making sure Jet works
 
 Once this is done you can check that _Jet_ is working by running `jet help`. This will print output similar to the following.
 

@@ -1,0 +1,15 @@
+version: "0.2.0"
+id: "FIb1K9SAtd6DfOiuLD6b%2BanQdly31HlY8KxBqYvMbSI%3D"
+downloads:
+  - name: darwin
+    label: OS X
+    expiry: 1435938294212
+    signature: "cpfsCagXSEsiNAMOPF8PkMmUP4ghY2CREJ4XQ18%2FVxHO0WXv8DtsuHDuX6O7mVtUPZO4dWv%2Bys1oFINhl8v2UA%3D%3D"
+  - name: linux
+    label: Linux
+    expiry: 1435938314716
+    signature: "Ikb4I7iQcwzwMcQ1aEx4%2Btov6fhO9lqgrpaUyv%2FDbXrC2mF6P3tGnlQruqFLRQ8NLazjTI5gEFkab7BXLlwp1A%3D%3D"
+  - name: windows
+    label: Windows
+    expiry: 1435938089152
+    signature: "GwwxILfw01LX8muxPIx0SQRs3Q%2Bu%2F76dHRO6PJISWJFF2dYaRLNqSx5IiYN5I4NC%2FA06cGa1J8DLSNkK4vc0kw%3D%3D"
