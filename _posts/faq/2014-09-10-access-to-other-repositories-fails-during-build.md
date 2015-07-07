@@ -17,11 +17,11 @@ If you need access to other (private) repositories besides this main repository,
 1. Remove the Codeship deploy key from the main repository
 2. Create a [machine user](https://developer.github.com/guides/managing-deploy-keys/#machine-users)
 3. Add the public key from your projects _General_ settings page to the machine user (this is the key that was previously added as a deploy key)
-4. Add the machine user to both projects
+4. Add the machine user to both repositories on GitHub.
 
 Even though we reference only GitHub above, the procedure is the same when your project is hosted on BitBucket.
 
-As an alternative you can also add the key to your personal GitHub / BitBucket user account instead of a machine user. Keep in mind that this will allow the project to access any repository which you are allowed to access on those services.
+As an alternative you can also add the SSH key from the Codeship project to your personal GitHub / BitBucket user account instead of a machine user. Keep in mind that this will allow the project to access any repository which you are allowed to access on those services.
 
 ## Typical error messages for this error
 
