@@ -34,12 +34,12 @@ Please follow the steps below for the operating system you are using.
 
 {% if os.name == 'windows' %}
 
-Please download the version (`{{ site.data.jet.version }}`) from [our download site](https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ site.data.jet.expiry }}&signature={{ os.signature }}). Once you have done this, you need to extract the archive and copy the binary to your path.
+Please download the version (`{{ site.data.jet.version }}`) from [our download site](https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ site.data.jet.expiry }}&id={{ site.data.jet.id }}&signature={{ os.signature }}). Once you have done this, you need to extract the archive and copy the binary to your path.
 
 {% else %}
 
 ```bash
-curl -SLo "jet-{{ site.data.jet.version }}.zip" "https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ site.data.jet.expiry }}&signature={{ os.signature }}"
+curl -SLo "jet-{{ site.data.jet.version }}.zip" "https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ site.data.jet.expiry }}&id={{ site.data.jet.id }}&signature={{ os.signature }}"
 sudo unzip -ud /usr/local/bin/ "jet-{{ site.data.jet.version }}.zip"
 sudo chmod +x /usr/local/bin/jet
 ```
