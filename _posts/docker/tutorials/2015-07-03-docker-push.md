@@ -11,6 +11,9 @@ categories:
   - docker
 ---
 
+* include a table of contents
+{:toc}
+
 ## Pushing to a locally running registry
 
 Please see the [example in the codeship-tool examples repository](https://github.com/codeship/codeship-tool-examples/tree/master/16.docker_push) for how to run a registry during the build process and push a new image to this registry.
