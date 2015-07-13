@@ -15,6 +15,44 @@ categories:
 
 Please see the [example in the codeship-tool examples repository](https://github.com/codeship/codeship-tool-examples/tree/master/16.docker_push) for how to run a registry during the build process and push a new image to this registry.
 
+## Pushing to the Docker Hub
+
+* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.key` (adding it to the `.gitignore` file is a good idea).
+
+* Login to the Docker Hub locally and save the encrypted credentials file to your repository.
+
+```bash
+docker login
+# follow the onscreen instructions
+# ...
+jet encrypt --key-path=codeship.key ${HOME}/.docker/config.json dockercfg.encrypted
+git add dockercfg.encrypted
+git commit -m "Adding encrpyted credentials for docker push"
+```
+
+* Configure your `codeship-services.yml` file. It will probably look similar to the following:
+
+```yaml
+app:
+  build:
+    image: username/repository_name
+    dockerfile_path: Dockerfile
+```
+
+* Configure your `codeship-steps.yml` file. Make sure your `image_name` is identical to the one one on your `codeship-services.yml` and includes the registry as well.
+
+    If you don't want to push the image for each build, add a `tag` entry to the below step and it will only be run on that specific branch or git tag.
+
+```yaml
+- service: app
+  type: push
+  image_name: username/repository_name
+  registry: https://index.docker.io/v1/
+  encrypted_dockercfg_path: dockercfg.encrypted
+```
+
+* Commit and push the changes to your remote repository, head over to [Codeship](https://codeship.com/), watch your build and then check out your new image!
+
 ## Pushing to Quay.io
 
 **Prerequisites:** You will need to have a robot account for your Quay repository. Please see the documentation on [Robot Accounts](http://docs.quay.io/glossary/robot-accounts.html) for Quay.io on how to set it up for your repository.
