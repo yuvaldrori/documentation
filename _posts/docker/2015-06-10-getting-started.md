@@ -147,7 +147,7 @@ postgres:
 
 This file configures 3 containers, the first one called _app_ runs our application via the Dockerfile configured in Step #2 of this tutorial.
 
-We also define three environment variables for use in the _app_ container, configuring how to access the
+We also define environment variables for use in the _app_ container, configuring how to access the PostgreSQL database as well as the Redis server.
 
 Furthermore, as our application depends on Redis and PostgreSQL we link the official images for those two services as well. In most cases there are Docker containers for services like databases or queues readily available. You can search the available images on the [Docker Hub](https://registry.hub.docker.com/).
 
