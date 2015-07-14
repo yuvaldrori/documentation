@@ -15,8 +15,8 @@ Welcome to our Docker Infrastructure Beta, the new way to run your tests on Code
 **Notes during the Beta**
 
 - The **database** for the Codeship website integration **will be wiped regularly**. Don't rely on the beta for CI / CD for your production environments.
-- **Encrypted environment variables are not available** for builds triggered via the Codeship website.
 - We **strongly** recommend **forking the repositories** you want to try during the beta, as you can't configure the same repository twice on Codeship.
+- See [codeship/codeship-tool-examples](https://github.com/codeship/codeship-tool-examples) for a list of common tasks and how to configure them with the CLI tool.
 </div>
 
 _Docker Infrastructure (Beta)_ implements two main functions:
