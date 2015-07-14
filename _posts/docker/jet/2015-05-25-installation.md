@@ -52,24 +52,12 @@ sudo chmod +x /usr/local/bin/jet
 Once this is done you can check that _Jet_ is working by running `jet help`. This will print output similar to the following.
 
 ```
+$ jet version
+{{ site.data.jet.version }}
 $ jet help
 Usage:
   jet [command]
-
-Available Commands:
-  generate
-  encrypt
-  decrypt
-  steps
-  run
-  run-multiple
-  load
-  help         Help about any command
-
-Flags:
-  -h, --help=false: help for jet
-
-Use "jet help [command]" for more information about a command.
+...
 ```
 
 ## Docker Configuration
