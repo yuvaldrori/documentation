@@ -27,7 +27,7 @@ Please note, that, similar to Jet, Docker Machine itself is still in Beta state 
 
 ## Jet
 
-Please follow the steps below for the operating system you are using.
+Please follow the steps below for the operating system you are using. See the [Jet Release Notes]({{ site.baseurl }}{% post_url docker/jet/2015-07-16-release-notes %}) for the ChangeLog.
 
 {% for os in site.data.jet.downloads %}
 **{{ os.label }}**
