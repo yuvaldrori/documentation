@@ -1,13 +1,13 @@
-version: "0.3.4"
+version: "0.3.5"
 expiry: 1444176000000
 id: "FIb1K9SAtd6DfOiuLD6b%2BdhB9Lo6h1vOzO1oTt7K1Uo%3D"
 downloads:
   - name: darwin
     label: OS X
-    signature: "Digsx277Lb5eeq%2BWX2EKmu1FfrItRvxbtIJtEeTYJhB2c6nQM62O%2FFQ2v6l9B7UJPQ4bgwDA3I4dSi2bQupAHg%3D%3D"
+    signature: "f1bpP3bWsLt0nLXL11wj8dRjpYinb55vCgrk1ebLn772UXArnjIiMOj2IqWvujSTnYocB6aezPN2%2ByQxu41Vbg%3D%3D"
   - name: linux
     label: Linux
-    signature: "LwzbH5JtUh7ZH2Nr1r81COBkztZXDdqBm45rHFuzs%2B%2FASd0mbkHPY9tYEj%2BY7caNBLF0RWa6nwbCTB7eh8cZpg%3D%3D"
+    signature: "Lavol%2B2lJ8dcf0kurI%2FINb9RkTqhLiwLJHih58Zdl2WWtCMjqNZPQhAWpFGAd3manX%2ByvF%2BoJTpPJwFoktmeNw%3D%3D"
   - name: windows
     label: Windows
-    signature: "5CAqfgzKKde2jqTtcqpwW1wWbdCk3OLReRaxzu01d2llAYYatnWAZi1uW4pfzTFHSFpgOgDvUFx%2F7fyQC5F%2FEw%3D%3D"
+    signature: "58X1rP4GegM1x6%2B75BLF0X8m7ZkjOKHvTgyvTN202%2BCVm%2FG4EQaplbLgDJiKzXleuv9AqFZO6GNfqNnvg6lzGQ%3D%3D"
