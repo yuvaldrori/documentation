@@ -30,5 +30,5 @@ This file was taken from https://github.com/middleman/middleman-heroku/blob/mast
 [issues]: https://github.com/codeship/documentation/issues
 [gist]: https://gist.github.com/
 [fork]: http://help.github.com/fork-a-repo/
-[branch]: http://learn.github.com/p/branching.html
+[branch]: https://github.com/blog/1377-create-and-delete-branches
 [pr]: http://help.github.com/send-pull-requests/
