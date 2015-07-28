@@ -14,12 +14,25 @@ categories:
 
 ### 0.3.5
 
-* Fixing bug where labels were incorrectly parsed
+* Fixed a bug with labels not being parsed correctly.
 
 ### 0.3.4
 
-* Changing how images are built, using the project directory as the build context, not the Dockerfile directory.
+* Changed how images are built. We'll use the project directory as the build context, instead of the `Dockerfile` directory.
 
-## Older versions
+### 0.3.3
 
-Release notes for older versions will be available shortly
+* Added a `jet version` subcommand.
+* Fixed the Docker build context.
+
+### 0.3.2
+
+* Fixed a bug regarding Docker volumes.
+
+### 0.3.1
+
+* Fixed a minor bug regarding parsing of YAML files.
+
+### 0.3.0
+
+* Added support for pushing Docker images. See [our Docker push tutorial]({{ site.baseurl }}{% post_url docker/tutorials/2015-07-03-docker-push %}) to get started.
