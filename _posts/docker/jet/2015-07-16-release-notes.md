@@ -12,6 +12,10 @@ categories:
 
 ## Version 0.3
 
+### 0.3.8
+
+* Added support for using private repositories as base images.
+
 ### 0.3.7
 
 * Added the `image_tag` field for `push` steps. This can be either a hardcoded script or a golang [`Template` object](http://golang.org/pkg/text/template/) referencing a number of variables. Please see the [push steps]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}#push-steps) documentation for the available variables.
