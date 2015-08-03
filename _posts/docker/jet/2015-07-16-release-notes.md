@@ -10,6 +10,17 @@ categories:
   - docker
 ---
 
+## Version 0.4
+
+### 0.4.0
+
+* Jet now builds missing images when pushing and you no longer need to run dummy commands to force services to build in order to push them
+* Jet reads services/compose file more in line with `docker-compose`.
+
+    Previously in relation to service Dockerfile paths and the build declaration `jet` and `docker-compose` would differ. `docker-compose` would allow you to specify a context directory for the entire build, not just the location of the Dockerfile, while jet would enforce using the top level directory as the context directory for the entire build.
+
+    Now you can specify a context directory for building an image by using the `build: custom_directory` tag in your services file, which should match `docker-compose` in behavior.
+
 ## Version 0.3
 
 ### 0.3.8
