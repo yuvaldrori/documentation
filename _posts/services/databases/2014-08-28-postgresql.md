@@ -57,7 +57,7 @@ psql -c 'create database new_db;'
 You can enable extensions either via the your application framework (if supported) or by running commands directly against the database. E.g, you'd would add the following command to your setup steps to enable the `hstore` extension.
 
 ```shell
-psql -c "create extension if not exists hstore" -p 5432
+psql -c 'create extension if not exists hstore;' -d test -p 5432
 ```
 
 *Note, that you'd need to adapt the port number if you switched to a different version of PostgreSQL previously!*
