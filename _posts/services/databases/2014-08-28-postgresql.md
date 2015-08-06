@@ -54,13 +54,13 @@ psql -c 'create database new_db;'
 ```
 
 ## Enable Extensions
-You can enable extensions either in your database migrations or by running the commands against the database. For example, to enable hstore for the test database:
+You can enable extensions either via the your application framework (if supported) or by running commands directly against the database. E.g, you'd would add the following command to your setup steps to enable the `hstore` extension.
 
 ```shell
-psql -c 'create extension hstore;' -d test
+psql -c "create extension if not exists hstore" -p 5432
 ```
 
-in your setup commands.
+*Note, that you'd need to adapt the port number if you switched to a different version of PostgreSQL previously!*
 
 ## PostGIS
 PostGIS 2.0.x is installed on the virtual machine.
