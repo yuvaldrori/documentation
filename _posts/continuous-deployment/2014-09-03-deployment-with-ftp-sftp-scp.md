@@ -18,7 +18,7 @@ When we checkout your repository we clone it to a folder called `clone` directly
 
 ## Continuous Deployment with FTP
 
-For ftp we have recommend using `lftp` for uploading your files. The following section will help you get started.
+For ftp we recommend using `lftp` for uploading your files. The following section will help you get started.
 
 To keep your password out of your build logs, add it as an environment variable in your project configuration
 
