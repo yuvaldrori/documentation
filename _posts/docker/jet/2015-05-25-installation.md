@@ -52,9 +52,8 @@ sudo chmod +x /usr/local/bin/jet
 The above version is statically linked and will work the same way on all platforms. But it doesn't support certain features, e.g. resolving `.local` DNS names. If your builds require this, please use the dynamically linked version instead.
 
 {% for os in site.data.jet.downloads %}
-*  [{{ os.label }}](https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}.zip?expiry={{ site.data.jet.expiry }}&id={{ site.data.jet.id }}&signature={{ os.sig_dynamic }})
+*  [{{ os.label }}](https://dl.bintray.com/codeship/codeship-tool/jet-{{ os.name }}_amd64_{{ site.data.jet.version }}-dynamic.zip?expiry={{ site.data.jet.expiry }}&id={{ site.data.jet.id }}&signature={{ os.sig_dynamic }})
 {% endfor %}
-
 
 ## Making sure Jet works
 
