@@ -10,6 +10,26 @@ categories:
   - docker
 ---
 
+## Version 0.5
+
+### 0.5.0
+
+* Supporting `.local` DNS
+
+    Jet now comes in two flavours, statically linked and dynamically linked. With the dynamic version you can take advantage of local network resources like `.local` DNS entries. The statically linked version will have a much better time running in reduced environments like scratch containers.
+
+* Enforcing shared services
+
+    Each step will now have one instance of a service, shared via the compose specification listed in your services files. Previously this created one container instance for each service using that dependency.
+
+* Fixing container naming bug
+
+    Invalid characters are now stripped out of auto-generated container names
+
+* Capturing more errors
+
+    Jet will also pick up link container creation errors
+
 ## Version 0.4
 
 ### 0.4.0
