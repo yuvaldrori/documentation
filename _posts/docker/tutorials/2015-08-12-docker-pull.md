@@ -58,14 +58,17 @@ FROM codeship/private_base
 * Configure your `codeship-services.yml` file. It will probably look similar to the following:
 
 ```yaml
+# Building a container based on a private base image
 app:
   build:
     dockerfile_path: Dockerfile
+
+# pulling a container from a private repository (without building it locally)
+db:
+  image: codeship/postgresql
 ```
 
-* Configure your `codeship-steps.yml` file. Make sure your `image_name` is identical to the one one on your `codeship-services.yml` and includes the registry as well.
-
-    If you don't want to push the image for each build, add a `tag` entry to the below step and it will only be run on that specific branch or git tag.
+* Configure your `codeship-steps.yml` file. Make sure to specify the encrypted Docker configuration for any step that requires access to a private image.
 
 ```yaml
 - service: app
