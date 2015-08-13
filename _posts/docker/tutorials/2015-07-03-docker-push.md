@@ -100,4 +100,4 @@ app:
 
 * Commit and push the changes to your remote repository, head over to [Codeship](https://codeship.com/), watch your build and then check out your new image!
 
-As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.
+As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
