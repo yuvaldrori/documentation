@@ -13,41 +13,37 @@ categories:
 
 ## Using private images in your builds
 
-`jet` does support using private Docker images as base images for your containers. Similar to [pushing images]({{ site.baseurl }}{% post_url docker/tutorials/2015-07-03-docker-push %}) you need to save your encrypted `.dockercfg` file in the repository and reference it for any step using private base images (or to groups of steps).
+`jet` does support using private Docker images as base images for your containers. Similar to [pushing images]({{ site.baseurl }}{% post_url docker/tutorials/2015-07-03-docker-push %}) you need to save your encrypted `.dockercfg` file in the repository and reference it for any step using private base images (or for groups of steps).
 
 ## Configuring a build with a private base image
 
 * Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.key` (adding it to the `.gitignore` file is a good idea).
 
-* Getting the `.dockercfg`
-
-    * For Docker Hub, Login locally and mv the credentials file to your repository.
+* For Docker Hub, login locally and mv the credentials file to your repository.
 
 ```bash
 docker login
 # follow the onscreen instructions
 # ...
-mv ${HOME}/.docker/config.json dockercfg
+jet encrypt --key-path=codeship.key ${HOME}/.docker/config.json dockercfg.encrypted
+# or (depending if you are on an older version of Docker)
+jet encrypt --key-path=codeship.key ${HOME}/.dockercfg dockercfg.encrypted
 ```
 
-*
-    * For Quay.io
+* For Quay.io
 
-        * First configure a [robot account](http://docs.quay.io/glossary/robot-accounts.html)
-        * Once you have configured the robot account, download the `.dockercfg` file for this account, by heading over to the _Robots Account_ tab in your settings, clicking the gear icon, selecting _View Credentials_ and hitting the download button.
-
-            Save the file as `dockercfg` in your repository
-
-* Add the unencrypted file to your `.gitignore` file
+    * First configure a [robot account](http://docs.quay.io/glossary/robot-accounts.html)
+    * Once you have configured the robot account, download the `.dockercfg` file for this account, by heading over to the _Robots Account_ tab in your settings, clicking the gear icon, selecting _View Credentials_ and hitting the download button.
+    * Save the file as `dockercfg` in your repository, encrypt it and add the unencrypted version to `.gitignore`
 
 ```bash
 echo "dockercfg" >> .gitignore
+jet encrypt --key-path=codeship.key dockercfg dockercfg.encrypted
 ```
 
-* Encrypt the credentials and add it to the repository
+* Commit `dockercfg.encrypted` as well as the `.gitignore` file
 
 ```bash
-jet encrypt --key-path=codeship.key dockercfg dockercfg.encrypted
 git add dockercfg.encrypted .gitignore
 git commit -m "Adding encrpyted credentials for docker push"
 ```
