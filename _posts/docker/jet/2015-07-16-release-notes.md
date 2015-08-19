@@ -12,6 +12,36 @@ categories:
 
 ## Version 0.5
 
+### 0.5.1
+
+* Exposing Build Environment Variables
+
+    The same variables used for Docker [image tagging]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}#push-steps) will now be available as environment variables in any containers running steps. We have also extended what variables are available. Here is a complete list:
+
+    * ProjectID: `CI_PROJECT_ID`
+    * BuildID: `CI_BUILD_ID`
+    * RepoName: `CI_REPO_NAME`
+    * Commit: `CI_COMMIT`
+    * CommitMessage: `CI_COMMIT_MESSAGE`
+    * CommitterName: `CI_COMMITTER_NAME`
+    * CommitterEmail: `CI_COMMITTER_EMAIL`
+    * CommitterUsername: `CI_COMMITTER_USERNAME`
+    * Branch: `CI_BRANCH`
+    * StringTime: `CI_STRING_TIME`
+    * Timestamp: `CI_TIMESTAMP`
+    * Ci: `CI` (set to `true`)
+    * CiName: `CI_NAME` (set to `codeship`)
+
+    For tagging within push steps the following variables will also be available, and the resulting template will be stripped of any invalid characters.
+
+    * StepName
+    * ServiceName
+    * ImageName
+
+* Push Retries
+
+    We have enabled a simple retry mechanism when pushing docker images. Often simultaneous image pushes cause problems, so when an image push step receives one of several listed errors from the registry, the push will be attempted again. You may see some duplicate logging where push steps ran several times due to registry errors.
+
 ### 0.5.0
 
 * Supporting `.local` DNS
