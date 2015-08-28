@@ -10,6 +10,28 @@ categories:
   - docker
 ---
 
+Missing versions only improved the integration with our hosted platform and have not user facing changes / bug fixes.
+
+### Version 0.7
+
+### 0.7.7
+
+* Fixing image uniqueness bug
+
+    This fixes a bug where image uniqueness checks were causing builds to error.
+
+### 0.7.4
+
+*  Jet run errors correctly
+
+    Jet run will now exit if an error occurs while starting services.
+
+### 0.7.2
+
+* Already built error
+
+    Jet will now return an error if multiple services try to build the same image name.
+
 ## Version 0.5
 
 ### 0.5.1
