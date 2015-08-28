@@ -1,16 +1,2 @@
-version: "0.5.1"
-expiry: 1446595200000
-id: "FIb1K9SAtd6DfOiuLD6b%2BdhB9Lo6h1vOzO1oTt7K1Uo%3D"
-downloads:
-  - name: darwin
-    label: OS X
-    sig_default: "ksT7EA4NzFkgnloCbqSybykZHcB6z8MySaRidmrn6%2F6jGQEYsujz5QdY%2FPU%2BRzt0nPIe6PSy6XEfMZgaoHbqNA%3D%3D"
-    sig_dynamic: "vnGDDNldorugUAjvQoKRKBcJtsi5JNLBpRlCJzdr0RZK54LN6XnehGeD9U6lsFFIxf4bVgp53aguOXasYYj6eg%3D%3D"
-  - name: linux
-    label: Linux
-    sig_default: "tTxeM0QzgLVLUDlX9vMpgq0l1UTWVaf1Rj%2FzTpR1JuqGoH7N0cvR8sHtlbeCy2ygo9DJzPA7l1uaY%2BAxHAv8UA%3D%3D"
-    sig_dynamic: "GRMq%2BaEfrMrj%2FmLv6jWL489RcKhNGijQh17xjbnYNknaujYX3e%2Ffbu4qTKaop9cEsYzZ7yhq9%2BNeo8%2Bsu%2F2O3A%3D%3D"
-  - name: windows
-    label: Windows
-    sig_default: "LLZLpmXRlc8rBDM8s2pZVR8sdtMCNRufu5FcyWKU1zPLODOawAGE6A3zAlYYqGsICeKVoyUelcd6gilqqpIxhA%3D%3D"
-    sig_dynamic: "40cRH8KKjQ0kGBgdcqzdm4m8HpITjceaVY3MDqpIZvMp81RHwoTUJUWxONpho6pDXpYzlK66fqIPuLO1EEo11w%3D%3D"
+base_url: https://s3.amazonaws.com/codeship-jet-releases
+version: "0.7.10"
