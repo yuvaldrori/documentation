@@ -18,7 +18,7 @@ Missing versions only improved the integration with our hosted platform and have
 
 * Updating Commit build environment variable to CommitID
 
-    This change renames `Commit` to `CommitID` to bring `jet` in line with other CI systems. The commit ID/SHA can now be accessed via `{% raw %}{{ .CommitID }}{% endraw %}` for push tags and via the `CI_COMMIT_ID` environment variable within containers.
+    This change renames `Commit` to `CommitID` to bring Jet in line with other CI systems. The commit ID/SHA can now be accessed via `{% raw %}{{ .CommitID }}{% endraw %}` for push tags and via the `CI_COMMIT_ID` environment variable within containers.
 
 ### 0.7.7
 
