@@ -1,5 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
+ruby "2.2.3"
 
 gem 'jekyll', '~> 2.5.2'
 gem 'octopress-autoprefixer', '~> 1.0.0'
