@@ -14,6 +14,12 @@ Missing versions only improved the integration with our hosted platform and have
 
 ### Version 0.7
 
+### 0.7.10
+
+* Updating Commit build environment variable to CommitID
+
+    This change renames Commit to CommitID to bring jet in line with other CI systems. The Commit ID/SHA can now be accessed via {{ .CommitID }} for push tags and via the CI_COMMIT_ID environment variable within containers
+
 ### 0.7.7
 
 * Fixing image uniqueness bug
