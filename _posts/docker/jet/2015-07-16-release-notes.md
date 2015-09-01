@@ -14,6 +14,18 @@ Missing versions only improved the integration with our hosted platform and have
 
 ### Version 0.7
 
+### 0.7.12
+
+* Fixing a bug with detecting duplicate image building
+
+    This change fixes a bug where jet would give false positives when detecting cases where images are being rebuilt.
+
+### 0.7.11
+
+* Fixing a bug with image building
+
+    This change fixes a bug where a single image was being build multiple times for a specific set of steps. All steps now use the same image which is built once.
+
 ### 0.7.10
 
 * Updating Commit build environment variable to CommitID
