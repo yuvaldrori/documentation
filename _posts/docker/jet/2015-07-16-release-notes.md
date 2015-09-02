@@ -10,9 +10,17 @@ categories:
   - docker
 ---
 
-Missing versions only improved the integration with our hosted platform and have not user facing changes / bug fixes.
+<div class="info-block">
+Missing versions only improved the integration with our hosted platform and have no user facing changes / bug fixes.
+</div>
 
-### Version 0.7
+## Version 0.7
+
+### 0.7.16
+
+*  Fixing service load bug
+
+    This change resolves an issue where links and volumes were not loading correctly.
 
 ### 0.7.12
 
