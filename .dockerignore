@@ -10,11 +10,14 @@
 .ruby-gemset
 .ruby-version
 _site
+codeship.aes
 codeship-services.yml
 codeship-steps.yml
+*.env*
 CODE_OF_CONDUCT.md
 CONTRIBUTING.MD
 Dockerfile
+Dockerfile.aws
 external
 LICENSE.md
 README.md

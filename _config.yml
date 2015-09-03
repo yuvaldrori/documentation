@@ -18,6 +18,7 @@ defaults:
 # Jekyll
 exclude:
   - _s3.json
+  - codeship.aes
   - bin
   - external
   - README.md

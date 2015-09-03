@@ -1,0 +1,2 @@
+FROM codeship/aws-deployment:latest
+MAINTAINER marko@codeship.com

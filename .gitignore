@@ -1,6 +1,8 @@
 # Project
 .sass-cache
 _site
+deployment.env
+codeship.aes
 
 # OS & editors
 .DS_Store
