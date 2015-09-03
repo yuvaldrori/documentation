@@ -1,6 +1,6 @@
 # Site settings
 url: https://www.codeship.com/documentation
-baseurl: /documentation
+baseurl:
 permalink: /:categories/:title/
 tags_dir: tags
 ubuntu_version: trusty
@@ -20,13 +20,16 @@ exclude:
   - _s3.json
   - bin
   - external
-  - Readme.md
-  - License.md
+  - README.md
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
   - Guardfile
   - Gemfile
   - Gemfile.lock
-gems:
-  - octopress-autoprefixer
+encoding: utf-8
+#gems:
+#  - octopress-autoprefixer
 collections:
   faq:
     permalink: /faq/:path/
