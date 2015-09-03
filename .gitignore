@@ -1,9 +1,7 @@
+# Project
+.sass-cache
 _site
 
-# SASS
-.sass-cache
-
-# OS X specific
+# OS & editors
 .DS_Store
-
 *.codekit
