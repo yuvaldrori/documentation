@@ -1,0 +1,12 @@
+- service: docs
+  command: true
+- type: parallel
+  service: docs
+  steps:
+    - name: build
+      command: bash bin/build.sh
+    - name: lint
+      command: bundle exec scss-lint
+- name: check
+  service: docs
+  command: ls -la /site/

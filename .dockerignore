@@ -10,6 +10,8 @@
 .ruby-gemset
 .ruby-version
 _site
+codeship-services.yml
+codeship-steps.yml
 CODE_OF_CONDUCT.md
 CONTRIBUTING.MD
 Dockerfile
