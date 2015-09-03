@@ -14,6 +14,14 @@ categories:
 Missing versions only improved the integration with our hosted platform and have no user facing changes / bug fixes.
 </div>
 
+## Version 0.8
+
+### 0.8.0
+
+* Changes to the default encryption key location
+
+    Instead of using the key from `${HOME}/.codeship/keys/aes/key.key` the default location is now `codeship.aes` in your project root directory. 
+
 ## Version 0.7
 
 ### 0.7.16
