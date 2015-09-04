@@ -16,11 +16,17 @@ Missing versions only improved the integration with our hosted platform and have
 
 ## Version 0.8
 
+### 0.8.1
+
+* Fixing a bug with base images from private registries.
+
+    This change adds support to use a image from a private registry as for the `FROM` directive in a Dockerfile.
+
 ### 0.8.0
 
 * Changes to the default encryption key location
 
-    Instead of using the key from `${HOME}/.codeship/keys/aes/key.key` the default location is now `codeship.aes` in your project root directory. 
+    Instead of using the key from `${HOME}/.codeship/keys/aes/key.key` the default location is now `codeship.aes` in your project root directory.
 
 ## Version 0.7
 
