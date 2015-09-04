@@ -34,7 +34,6 @@ myapp:
   image: busybox
   volumes_from:
     - data
-
 ```
 
 ## Persisting volumes between steps
