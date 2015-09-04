@@ -15,9 +15,6 @@ Welcome to our Docker Infrastructure Beta, the new way to run your tests on Code
 **Notes during the Beta**
 
 - We only support git based repositories on GitHub and BitBucket. **We do not support Mercurial based repositories on BitBucket right now.**
-- The **database** for the Codeship website integration **will be wiped regularly**. Don't rely on the beta for CI / CD for your production environments.
-- We **strongly** recommend **forking the repositories** you want to try during the beta, as you can't configure the same repository twice on Codeship.
-- See [codeship/codeship-tool-examples](https://github.com/codeship/codeship-tool-examples) for a list of common tasks and how to configure them with the CLI tool.
 </div>
 
 _Docker Infrastructure (Beta)_ implements two main functions:

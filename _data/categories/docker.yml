@@ -3,9 +3,6 @@ weight: 98
 introduction: >
   <div class="info-block">
 
-  **Do not use this for production builds or deployments yet.**
-
-
   Please note, that our _Docker Infrastructure_ is still in Beta testing and not
   all functionality is available. Furthermore functionality might change before
   the official release.
