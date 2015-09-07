@@ -53,7 +53,7 @@ Now we have a fully customized instance of Elasticsearch running. This same proc
 
 # Selection of supported containers
 
-Here is a list of containers customers typically use to set up their environment. For further software you want to use during your build you can explore the [Docker Hub](https://hub.docker.com/) or send us an email to [our Support](mailto:support@codeship.com).
+Here is a list of containers customers typically use to set up their environment. For further software you want to use during your build you can explore the [Docker Hub](https://hub.docker.com/) or send us an email to [our support team](mailto:support@codeship.com).
 
 ## PostgreSQL
 Use the [official Postgres container](https://hub.docker.com/_/postgres/).
