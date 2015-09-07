@@ -12,8 +12,8 @@ categories:
 
 Running on our Docker based infrastructure you have many different options to set up browser testing. Following we will describe how you can install different browsers. Please check the language documentation for specifics on how to test with your browser in a specific language.
 
-## XVFB
-Before going into the details of setting up various browsers make sure to include [Xvfb](https://en.wikipedia.org/wiki/Xvfb) in your build. Running XVFB before your browser sets up a virtual display the GUI of the various browsers can use.
+## Xvfb
+Before going into the details of setting up various browsers make sure to include [Xvfb](https://en.wikipedia.org/wiki/Xvfb) in your build. Running Xvfb before your browser sets up a virtual display the GUI of the various browsers can use.
 
 Add the following to your Dockerfile to make sure Xvfb is properly started. If you use a non Debian based Linux distribution please install the Xvfb package through the available package manager.
 
@@ -31,15 +31,18 @@ Now you can start any browser that needs a screen available.
 
 ## Firefox
 
-There are two ways to install Firefox in your Dockerfile. Either through the available package management or by downloading it directly from Mozilla. At first we're going to install it through the available package manager. Add the following to your Dockerfile:
+There are two ways to install Firefox in your Dockerfile. Either through the available package manager or by downloading it directly from Mozilla. At first we're going to install it through the available package manager. Add the following to your Dockerfile:
 
 ```bash
+# Starting from Ubuntu Trusty
+FROM ubuntu:trusty
+
 RUN apt-get install -y firefox
 ```
 
 Now the Firefox version installed from your package management will be available. As this sometimes doesn't fit the exact version of Firefox you want to use you can set it by downloading and installing a specific version. We will still install Firefox through the package management system as this makes sure all necessary libraries are installed. We will set the PATH to use our specific version of Firefox though.
 
-```
+```bash
 # Starting from Ubuntu Trusty
 FROM ubuntu:trusty
 
@@ -64,7 +67,7 @@ Now Firefox is installed in your path and available to use for any of your brows
 
 ## Chrome
 
-To get the latest Chrome simply install it from their [PPA](http://www.ubuntuupdates.org/ppa/google_chrome) in your Dockerfile. Additionally you need to install [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) if you want to use Selenium with Chrome.
+To get the latest Chrome simply install it from their [debian repository](http://www.ubuntuupdates.org/ppa/google_chrome) in your Dockerfile. Additionally you need to install [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) if you want to use Selenium with Chrome.
 
 ```
 # Starting from Ubuntu Trusty
@@ -98,7 +101,7 @@ Now Chrome is installed in your path and available to use for any of your browse
 
 ## PhantomJS
 
-PhantomJS is a headless browser, thus we don't need any xvfb setup to run tests. We simply download it from the official site, unpack it and put it into the PATH.
+PhantomJS is a headless browser, thus we don't need any Xvfb setup to run tests. We simply download it from the official site, unpack it and put it into the PATH.
 
 ```
 # Starting from Ubuntu Trusty
