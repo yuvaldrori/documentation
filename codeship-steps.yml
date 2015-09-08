@@ -7,14 +7,14 @@
       command: bash bin/build.sh
     - name: lint
       command: bundle exec scss-lint
-- name: s3_sync
+- name: s3_website
   tag: master
   service: aws
-  command: sh bin/s3.sh sync
-- name: s3_config
+  command: sh bin/s3.sh configure_website _website.json
+- name: s3_lifecycle
   tag: master
   service: aws
-  command: sh bin/s3.sh configure_bucket _s3.json
+  command: sh bin/s3.sh configure_lifecycle _lifecycle.json
 - name: swiftype
   tag: master
   service: curl

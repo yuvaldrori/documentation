@@ -16,8 +16,7 @@ codeship-steps.yml
 *.env*
 CODE_OF_CONDUCT.md
 CONTRIBUTING.MD
-Dockerfile
-Dockerfile.aws
+Dockerfile*
 external
 LICENSE.md
 README.md

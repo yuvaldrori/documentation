@@ -17,8 +17,10 @@ defaults:
 
 # Jekyll
 exclude:
-  - _s3.json
+  - _*.json
   - codeship.aes
+  - codeship-services.yml
+  - codeship-steps.yml
   - bin
   - external
   - README.md
@@ -26,8 +28,7 @@ exclude:
   - CONTRIBUTING.md
   - CODE_OF_CONDUCT.md
   - Guardfile
-  - Gemfile
-  - Gemfile.lock
+  - Gemfile*
 encoding: utf-8
 #gems:
 #  - octopress-autoprefixer

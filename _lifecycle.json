@@ -1,0 +1,17 @@
+{
+  "Rules": [{
+    "ID": "staging",
+    "Prefix": "staging/",
+    "Status": "Enabled",
+    "Expiration": {
+      "Days": 14
+    }
+  }, {
+    "ID": "private",
+    "Prefix": "private/",
+    "Status": "Enabled",
+    "Expiration": {
+      "Days": 30
+    }
+  }]
+}
