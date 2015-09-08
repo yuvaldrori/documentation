@@ -14,7 +14,25 @@ categories:
 Missing versions only improved the integration with our hosted platform and have no user facing changes / bug fixes.
 </div>
 
+## Version 0.9
+
+### 0.9.0
+
+* Fixing caching pull bug
+
+    This change extends the pull errors we discard during a cache pull. All pull errors relating to the image not being found are discarded. This change makes that selection process more compatible with different registries.
+
+* Updating Jet to pull the image cache before building
+
+    Jet will now determine an image cache to pull and use as a build cache during docker image builds. If an image exists with a tag "codeship-cache-$CI_BRANCH", it will be pulled and provide faster builds. Jet will also automatically push to this cache when an image is pushed.
+
 ## Version 0.8
+
+### 0.8.2
+
+* Fixing AES key panic
+
+    Jet will now error when no AES key is found, but an encrypted dockercfg file is used.
 
 ### 0.8.1
 
