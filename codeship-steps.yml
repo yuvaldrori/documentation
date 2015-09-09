@@ -7,15 +7,18 @@
       command: bash bin/build.sh
     - name: lint
       command: bundle exec scss-lint
-- name: s3_website
-  tag: master
-  service: aws
-  command: sh bin/s3.sh configure_website _website.json
-- name: s3_lifecycle
-  tag: master
-  service: aws
-  command: sh bin/s3.sh configure_lifecycle _lifecycle.json
-- name: swiftype
-  tag: master
-  service: curl
-  command: sh bin/swiftype.sh
+- type: serial
+  tag: "(master|staging/.*|private/.*)"
+  steps:
+    - name: s3_sync
+      service: aws
+      command: sh bin/s3.sh sync
+    - name: s3_website
+      service: aws
+      command: sh bin/s3.sh configure_website _website.json
+    - name: s3_lifecycle
+      service: aws
+      command: sh bin/s3.sh configure_lifecycle _lifecycle.json
+    - name: swiftype
+      service: curl
+      command: sh bin/swiftype.sh
