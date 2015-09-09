@@ -1,5 +1,6 @@
-- service: docs
-  command: true
+- name: jet
+  service: aws
+  command: sh bin/jet.sh
 - type: parallel
   service: docs
   steps:
