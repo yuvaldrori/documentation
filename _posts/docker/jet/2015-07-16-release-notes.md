@@ -16,6 +16,14 @@ Missing versions only improved the integration with our hosted platform and have
 
 ## Version 0.9
 
+### 0.9.5
+
+* Support regex in jet tags
+
+    Step files can now use regex to determine what steps to run e.g. `tag: "test-\\w+"` will match branches called `test-feature1` or `test-123`.
+
+    Exact string matches take precedent, and invalid regex will not error, only fail to match.
+
 ### 0.9.0
 
 * Fixing caching pull bug
