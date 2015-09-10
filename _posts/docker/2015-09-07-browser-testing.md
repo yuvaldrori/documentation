@@ -18,7 +18,7 @@ Before going into the details of setting up various browsers make sure to includ
 Add the following to your Dockerfile to make sure Xvfb is properly started. If you use a non Debian based Linux distribution please install the Xvfb package through the available package manager.
 
 ```
-sudo apt-get install -y xvfb
+RUN apt-get install -y xvfb
 ```
 
 ```bash
@@ -77,7 +77,7 @@ FROM ubuntu:trusty
 RUN apt-get install -y wget xvfb unzip
 
 # Set up the Chrome PPA
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 
 # Update the package list and install chrome
