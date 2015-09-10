@@ -8,6 +8,16 @@
   "RoutingRules": [{
     "Redirect": {
       "HostName": "codeship.com",
+      "ReplaceKeyWith": "documentation/",
+      "HttpRedirectCode": "303"
+    },
+    "Condition": {
+      "HttpErrorCodeReturnedEquals": "403",
+      "KeyPrefixEquals": ""
+    }
+  }, {
+    "Redirect": {
+      "HostName": "codeship.com",
       "ReplaceKeyPrefixWith": "documentation/faq/",
       "HttpRedirectCode": "301"
     },
