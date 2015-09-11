@@ -1,16 +1,19 @@
-- name: jet
-  service: aws
-  command: sh bin/jet.sh
 - type: parallel
-  service: docs
   steps:
-    - name: build
-      command: bash bin/build.sh
+    - type: serial
+      steps:
+        - name: jet_sync
+          service: aws
+          command: sh bin/jet.sh
+        - name: build
+          service: docs
+          command: bash bin/build.sh
+        - name: post-process
+          service: node
+          command: gulp post-process
     - name: lint
+      service: docs
       command: bundle exec scss-lint
-- name: post-process
-  service: node
-  command: gulp post-process
 - type: serial
   tag: "(master|staging/.*|private/.*)"
   steps:
