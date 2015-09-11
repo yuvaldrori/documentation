@@ -2,9 +2,10 @@ FROM ruby:2.2
 MAINTAINER marko@codeship.com
 
 # OS dependencies
-RUN apt-get update && apt-get install -y \
-	git \
-	locales
+RUN DEBIAN_FRONTEND=noninteractive \
+	apt-get update && apt-get install -y \
+		git \
+		locales
 
 # locale settings
 RUN locale-gen en_US.UTF-8

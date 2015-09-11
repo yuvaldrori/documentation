@@ -31,7 +31,8 @@ done
 rm -rf "${target}/sync"
 
 # print the latest version
-log "release notest"
+log "Release notes"
 cat "${target}/release-notes"
-log "latest version"
-cat "${target}/version"
+
+sleep 2
+log "Latest version is $(cat "${target}/version")"
