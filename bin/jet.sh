@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 log() { echo -e "\e[36m$@\e[39m"; }
 
@@ -16,7 +16,8 @@ while read line; do
 	version=$(basename ${line} | sed -e 's/\.changelog//')
 	if [ -z "${latest_version}" ]; then
 		# set the latest version on the first iteration of the while loop
-		echo "${latest_version:=$version}" > "${target}/version"
+		latest_version:=${version}
+		echo "${latest_version}" > "${target}/version"
 	fi
 	cat >> "${target}/release-notes" <<-EOF
 
@@ -30,4 +31,7 @@ done
 rm -rf "${target}/sync"
 
 # print the latest version
-echo "latest jet version is ${latest_version}"
+log "release notest"
+cat "${target}/release-notes"
+log "latest version"
+cat "${target}/version"
