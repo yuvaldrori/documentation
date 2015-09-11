@@ -16,7 +16,7 @@ while read line; do
 	version=$(basename ${line} | sed -e 's/\.changelog//')
 	if [ -z "${latest_version}" ]; then
 		# set the latest version on the first iteration of the while loop
-		latest_version:=${version}
+		latest_version=${version}
 		echo "${latest_version}" > "${target}/version"
 	fi
 	cat >> "${target}/release-notes" <<-EOF

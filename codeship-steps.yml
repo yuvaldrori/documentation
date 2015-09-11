@@ -7,7 +7,7 @@
     - type: serial
       name: prepare_site
       steps:
-        - name: jet_sync
+        - name: jet_release_notes
           service: aws
           command: sh bin/jet.sh
         - name: build
