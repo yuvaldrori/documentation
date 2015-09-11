@@ -1,10 +1,7 @@
 #!/bin/sh
 set -e
+log() { echo -e "\e[36m$@\e[39m"; }
 action=${1:?'You need to pass an action!'} && shift
-
-log() {
-	echo -e "\e[36m$@\e[39m"
-}
 
 case "$action" in
 	'sync')

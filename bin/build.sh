@@ -1,34 +1,29 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-
-log() {
-	echo -e "\e[36m$@\e[39m"
-}
-
-check_and_move() {
-	local file=${1:?'You need to pass a file!'} && shift
-	local destination=${1:?'You need to pass a destination!'} && shift
-	local tmp="/site/.jet"
-	if [ -f "${tmp}/${file}" ]; then
-		mv "${tmp}/${file}" ${destination}
-	fi
-}
+log() { echo -e "\e[36m$@\e[39m"; }
 
 # Special treatment for the "master" branch to deploy to /documentation instead
 # of /master
 target="${CI_BRANCH}"
-if [ "${CI_BRANCH}" == "master" ]; then
+if [ "${CI_BRANCH}" = "master" ]; then
 	target="documentation"
 fi
 
 # Where do we want to generate the site at?
-mkdir -p "${destination:=/site/$target}"
+destination="/site/$target"
+if [ "${destination}" != "/site/" ]; then
+	rm -rf "${destination}" && mkdir -p "${destination}"
+fi
 
-# Move files from the Jet deploy process into their correct locations
-# they are saved to the volume by a previous step and only generated for
-# branches with the required input data
-check_and_move "_jet.yml" "_data/"
-check_and_move "2015-07-16-release-notes.md" "_posts/docker/jet"
+# Jet release notes and current version
+jet_source="/site/.jet"
+if [ -f "_data/jet.yml" ]; then
+	sed -i'' -e "s|^version:.*|version: $(cat ${jet_source}/version)|" "_data/jet.yml"
+fi
+if [ -f "_posts/docker/jet/2015-07-16-release-notes.md" ]; then
+	cat "${jet_source}/release-notes" >> "_posts/docker/jet/2015-07-16-release-notes.md"
+fi
+rm -rf "${jet_source}"
 
 # Compile the site
 log "Building with base URL /${target}"

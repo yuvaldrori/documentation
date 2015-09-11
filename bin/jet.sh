@@ -1,29 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 set -e
+log() { echo -e "\e[36m$@\e[39m"; }
 
-log() {
-	echo -e "\e[36m$@\e[39m"
-}
+# configuration
+unset $latest_version
+target="/site/.jet"
 
-# configuration and error handline
-changelog="_posts/docker/jet/2015-07-16-release-notes.md"
-metadata="_data/jet.yml"
-if [ ! -f ${changelog} -o ! -f ${metadata} ]; then
-	log "The release notes or metadata file doesn't exist on that branch, exiting!"
-	exit 0
-fi
-
-log "Generating the Jet release notes"
-
-# sync the release bucket to a local volume
-rm -rf "${target:=/site/.jet/}" && mkdir -p "${target}"
-aws s3 sync "s3://${JET_RELEASE_BUCKET}/" "${target}" --exclude=* --include=*.changelog
+log "Preparing Jet release notes and current version"
+rm -rf "${target}" && mkdir -p "${target}/sync"
+aws s3 sync "s3://${JET_RELEASE_BUCKET}/" "${target}/sync" --exclude=* --include=*.changelog --quiet
 
 # write the release notes
-find "${target}" -type f -not -size 0 | natsort -r | \
+find "${target}/sync/" -type f -not -size 0 | natsort -r | \
 while read line; do
 	version=$(basename ${line} | sed -e 's/\.changelog//')
-	cat >> ${changelog} <<-EOF
+	if [ -z "${latest_version}" ]; then
+		# set the latest version on the first iteration of the while loop
+		echo "${latest_version:=$version}" > "${target}/version"
+	fi
+	cat >> "${target}/release-notes" <<-EOF
 
 		## ${version}
 
@@ -31,11 +26,8 @@ while read line; do
 	EOF
 done
 
-# update the metadata
-path=$(find ${target} -type f -not -size 0 | natsort -r | head -n 1)
-version=$(basename ${path} | sed -e 's/\.changelog//')
-sed -i'' -e "s|^version:.*|version: ${version}|" ${metadata}
-
 # cleanup
-rm -rf "${target}" && mkdir "${target}"
-mv "${changelog}" "${metadata}" "${target}"
+rm -rf "${target}/sync"
+
+# print the latest version
+echo "latest jet version is ${latest_version}"
