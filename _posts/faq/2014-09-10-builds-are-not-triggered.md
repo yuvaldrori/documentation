@@ -24,13 +24,17 @@ Make sure the _Codeship_ service is added under the _Webhooks & Services_ sectio
 
 ## BitBucket
 
-Make sure a webhook for Codeship is added under the _Hooks_ section of your repository. Please also check the the UUID in the hook URL matches the UUID from your project. The hook URL itself should match the following pattern.
+<div class="info-block" style="margin-top: 1em;">
+BitBucket recently released a new implementation for their webhooks, which we are currently evaluating and will switch to in the future!
+</div>
+
+Make sure a webhook for Codeship is added under the _Services_ section of your repository. Please also check the the UUID in the hook URL matches the UUID from your project. The hook URL itself should match the following pattern.
 
 ```
 https://lighthouse.codeship.io/bitbucket/YOUR_PROJECT_UUID
 ```
 
-![GitHub Service Configuration]({{ site.baseurl }}/images/faq/webhook_bitbucket.png)
+![BitBucket Service Configuration]({{ site.baseurl }}/images/faq/webhook_bitbucket.png)
 
 ### Issues with BitBucket
 

@@ -1,6 +1,6 @@
 # Site settings
 url: https://www.codeship.com/documentation
-baseurl: /documentation
+baseurl:
 permalink: /:categories/:title/
 tags_dir: tags
 ubuntu_version: trusty
@@ -17,16 +17,24 @@ defaults:
 
 # Jekyll
 exclude:
-  - _s3.json
+  - _*.json
+  - codeship.aes
+  - codeship-services.yml
+  - codeship-steps.yml
   - bin
   - external
-  - Readme.md
-  - License.md
+  - README.md
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
   - Guardfile
-  - Gemfile
-  - Gemfile.lock
-gems:
-  - octopress-autoprefixer
+  - Gemfile*
+  - node_modules
+  - package.json
+  - gulpfile.js
+encoding: utf-8
+#gems:
+#  - octopress-autoprefixer
 collections:
   faq:
     permalink: /faq/:path/
