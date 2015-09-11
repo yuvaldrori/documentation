@@ -13,12 +13,14 @@
         - name: build
           service: docs
           command: bash bin/build.sh
+          encrypted_dockercfg_path: dockercfg.encrypted
         - name: post-process
           service: node
           command: gulp post-process
     - name: lint
       service: docs
       command: bundle exec scss-lint
+      encrypted_dockercfg_path: dockercfg.encrypted
 - type: serial
   tag: "(master|staging/.*|private/.*)"
   steps:

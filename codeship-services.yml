@@ -1,6 +1,8 @@
 docs:
   build:
+    image: quay.io/mlocher/documentation
     dockerfile_path: Dockerfile
+  cached: true
   volumes_from:
     - data
 node:

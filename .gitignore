@@ -3,6 +3,7 @@
 _site
 codeship.aes
 deployment.env
+dockercfg
 node_modules
 
 # OS & editors
