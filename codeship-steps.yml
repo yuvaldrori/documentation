@@ -8,6 +8,9 @@
       command: bash bin/build.sh
     - name: lint
       command: bundle exec scss-lint
+- name: post-process
+  service: node
+  command: gulp post-process
 - type: serial
   tag: "(master|staging/.*|private/.*)"
   steps:

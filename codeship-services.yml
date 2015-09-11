@@ -3,6 +3,11 @@ docs:
     dockerfile_path: Dockerfile
   volumes_from:
     - data
+node:
+  build:
+    dockerfile_path: Dockerfile.node
+  volumes_from:
+    - data
 aws:
   build:
     dockerfile_path: Dockerfile.aws

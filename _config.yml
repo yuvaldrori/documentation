@@ -29,6 +29,9 @@ exclude:
   - CODE_OF_CONDUCT.md
   - Guardfile
   - Gemfile*
+  - node_modules
+  - package.json
+  - gulpfile.js
 encoding: utf-8
 #gems:
 #  - octopress-autoprefixer

@@ -4,8 +4,7 @@ MAINTAINER marko@codeship.com
 # OS dependencies
 RUN apt-get update && apt-get install -y \
 	git \
-	locales \
-	nodejs
+	locales
 
 # locale settings
 RUN locale-gen en_US.UTF-8

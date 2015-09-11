@@ -19,4 +19,5 @@ CONTRIBUTING.MD
 Dockerfile*
 external
 LICENSE.md
+node_modules
 README.md
