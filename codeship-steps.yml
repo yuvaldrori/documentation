@@ -1,6 +1,11 @@
 - type: parallel
+  name: testing
   steps:
+    - name: pull_node
+      service: node
+      command: true
     - type: serial
+      name: prepare_site
       steps:
         - name: jet_sync
           service: aws
