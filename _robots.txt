@@ -1,0 +1,10 @@
+# This robot.txt is used for the root of the S3 bucket we are deploying to, it
+# is not used when accessing the documentation via it's official URL at
+# https://codeship.com/documentation
+#
+# This is so our staging and private versions of the documentation don't show up
+# on search engines like Google or Bing.
+#
+# See http://www.robotstxt.org/ for more information.
+User-agent: *
+Disallow: /

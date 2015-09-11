@@ -1,9 +1,11 @@
-_site
-
-# SASS
+# Project
 .sass-cache
+_site
+codeship.aes
+deployment.env
+dockercfg
+node_modules
 
-# OS X specific
+# OS & editors
 .DS_Store
-
 *.codekit

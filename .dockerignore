@@ -1,0 +1,25 @@
+# SCM
+.git*
+
+# OS
+.DS_Store
+
+# Not needed during the build
+.editorconfig
+.sass-cache
+.ruby-gemset
+.ruby-version
+_site
+codeship.aes
+codeship-services.yml
+codeship-steps.yml
+deployment.env*
+dockercfg*
+*.env*
+CODE_OF_CONDUCT.md
+CONTRIBUTING.MD
+Dockerfile*
+external
+LICENSE.md
+node_modules
+README.md

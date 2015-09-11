@@ -1,0 +1,15 @@
+{
+  "author": "Codeship",
+  "homepage": "https://codeship.com/documentation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeship/documentation.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-folders": "^1.1.0",
+    "gulp-postcss": "^6.0.0",
+    "autoprefixer": "^6.0.0"
+  }
+}
