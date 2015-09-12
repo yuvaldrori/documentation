@@ -14,7 +14,7 @@
           command: bash bin/build.sh
           encrypted_dockercfg_path: dockercfg.encrypted
         - name: post-process
-          service: node
+          service: docs
           command: gulp post-process
     - name: lint
       service: docs
