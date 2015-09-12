@@ -20,8 +20,8 @@ RUN apk --update add \
   gem install bundler && \
   echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
   bundle install --jobs 20 --retry 5 --without development && \
-	npm install -g gulp && \
-	npm install && \
+  npm install -g gulp && \
+  npm install && \
   apk --purge del \
     build-base \
     git \
