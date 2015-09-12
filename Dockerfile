@@ -1,24 +1,24 @@
-FROM ruby:2.2
+FROM alpine:latest
 MAINTAINER marko@codeship.com
 
-# OS dependencies
-RUN DEBIAN_FRONTEND=noninteractive \
-	apt-get update && apt-get install -y \
+# Update and install base packages
+RUN apk --update add \
+		bash \
+		build-base \
+		ca-certificates \
 		git \
-		locales
-
-# locale settings
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+		libffi-dev \
+		ruby \
+		ruby-dev && \
+  rm -rf var/cache/apk/*
 
 # workdir configuration
 WORKDIR /docs
 
 # rubygems based dependencies
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler && \
+RUN echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
+	gem install bundler && \
 	bundle install --jobs 20 --retry 5 --without development
 
 # add the source
