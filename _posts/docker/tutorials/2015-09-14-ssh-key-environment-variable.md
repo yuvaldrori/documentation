@@ -45,6 +45,6 @@ app:
 Before running a command that needs SSH available make sure to run the following commands in that container. They will set up the SSH key so you can access external services.
 
 ```bash
-mkdir $HOME/.ssh
+mkdir -p "$HOME/.ssh"
 echo -e $PRIVATE_SSH_KEY >> $HOME/.ssh/id_rsa
 ```
