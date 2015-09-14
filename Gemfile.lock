@@ -14,7 +14,7 @@ GEM
     execjs (2.6.0)
     fast-stemmer (1.0.2)
     ffi (1.9.10)
-    hitimes (1.2.2)
+    hitimes (1.2.3)
     jekyll (2.5.3)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
@@ -76,3 +76,6 @@ DEPENDENCIES
   rouge (= 1.9.0)
   sass (~> 3.4.7)
   scss_lint
+
+BUNDLED WITH
+   1.10.6

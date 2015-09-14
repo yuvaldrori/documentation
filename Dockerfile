@@ -17,8 +17,8 @@ RUN apk --update add \
     ruby-dev \
     ruby-io-console \
     ruby-json && \
-  gem install bundler && \
   echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
+  gem install bundler && \
   bundle install --jobs 20 --retry 5 --without development && \
   npm install -g gulp && \
   npm install && \
