@@ -5,11 +5,6 @@ docs:
   cached: true
   volumes_from:
     - data
-node:
-  build:
-    dockerfile_path: Dockerfile.node
-  volumes_from:
-    - data
 aws:
   build:
     image: quay.io/codeship/documentation-aws
