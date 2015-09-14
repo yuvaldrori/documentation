@@ -20,15 +20,18 @@ RUN apk --update add \
   echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
   gem install bundler && \
   bundle install --jobs 20 --retry 5 --without development && \
-  npm install -g gulp && \
+  npm config set "production" "true" && \
+  npm config set "loglevel" "error" && \
+  npm install --global gulp && \
   npm install && \
   apk --purge del \
     build-base \
     git \
     libffi-dev \
     ruby-dev && \
-  rm -rf var/cache/apk/* && \
-  rm -rf /usr/lib/ruby/gems/*/cache/*.gem
+  rm -rf /var/cache/apk/* && \
+  rm -rf /usr/lib/ruby/gems/*/cache/*.gem && \
+  rm -rf ${HOME}/.npm/*
 
 # add the source
 COPY . ./
