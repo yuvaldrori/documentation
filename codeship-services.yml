@@ -12,6 +12,7 @@ node:
     - data
 aws:
   build:
+    image: quay.io/codeship/documentation-aws
     dockerfile_path: Dockerfile.aws
   volumes_from:
     - data
