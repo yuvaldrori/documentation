@@ -26,75 +26,24 @@ You can also define custom steps in your build pipeline to push notifications vi
 
 First of all, we can create a simple notification script, pulling all configuration and credentials from environment variables, or mounted volumes should we need to use build artifacts.
 
-Lets start with a simple, project agnostic slack script.
-
 ```bash
-#!/usr/bin/env bash
-#/ Usage: script/slack -c <channel>
-#/ Send standard input to Slack.
-set -e
+#!/bin/sh
+# Post to Slack channel on new deployment
+# https://api.slack.com/incoming-webhooks
+#
+# You can either add those here, or configure them on the environment tab of your
+# project settings.
+SLACK_WEBHOOK_TOKEN=${SLACK_WEBHOOK_TOKEN:?'You need to configure the SLACK_WEBHOOK_TOKEN environment variable!'}
+SLACK_BOT_NAME=${SLACK_BOT_NAME:="Codeship Bot"}
+SLACK_ICON_URL=${SLACK_ICON_URL:="https://d1089v03p3mzyq.cloudfront.net/assets/website/logo-dark-90f893a2645c98929b358b2f93fa614b.png"}
+SLACK_MESSAGE=${SLACK_MESSAGE:?"${CI_COMMITTER_USERNAME} just deployed version ${CI_COMMIT_ID}"}
 
-: ${SLACK_WEBHOOK_PATH:="unknown"}
-: ${SLACK_WEBHOOK_URL:="https://hooks.slack.com/services/$SLACK_WEBHOOK_PATH"}
-: ${SLACK_USERNAME:="deploybot"}
-
-
-# parse the arguments
-channel=
-while [ $# -gt 0 ]; do
-    case "$1" in
-        -c)
-            channel="$2"
-            shift
-            shift ;;
-    esac
-done
-
-text=
-if test "${BASH_VERSION%%[^0-9]*}" -ge 4;
-then
-    read -t 0 || {
-        echo "standard input empty" >&2
-        usage
-    }
-fi
-text="$(cat)"
-
-# build the message payload
-payload="payload={
-\"channel\": \"#$channel\",
-\"username\": \"${SLACK_USERNAME}\",
-\"text\": \"$text\"
-}
-"
-
-# send API request to slack
-curl -s -X POST --data-urlencode "$payload" "$SLACK_WEBHOOK_URL"
-```
-
-Next we can create a simple script for our project with some more specifics for our use case.
-
-```bash
-#!/bin/bash
-#/ Usage: script/slack-deploy
-#/ Send a deploy notification to #dev on Slack.
-set -e
-
-CI_BRANCH=${CI_BRANCH:-no-branch}
-CI_COMMITTER_USERNAME=${CI_COMMITTER_USERNAME:-no-username}
-CI_COMMIT_ID=${CI_COMMIT_ID:-no-commit-id}
-
-commit_url="https://github.com/myuser/myproject/commit/$CI_COMMIT_ID"
-short_sha="$(echo "$CI_COMMIT_ID" | cut -c1-7)"
-
-message="myproject/%s deployed to production at <%s|%s> by @%s. "
-
-printf "$message\n" \
-    "$CI_BRANCH" \
-    "$commit_url" \
-    "$short_sha" \
-    "$CI_COMMITTER_USERNAME" |
-./slack -c development
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"username": "'"${SLACK_BOT_NAME}"'",
+  "text": "'"${SLACK_MESSAGE}"'",
+  "icon_url": "'"${SLACK_ICON_URL}"'"}' \
+  https://hooks.slack.com/services/$SLACK_WEBHOOK_TOKEN
 ```
 
 ### Integrating the notification script
@@ -107,10 +56,10 @@ FROM ubuntu
 
 RUN apt-get install -y curl
 
-ADD ./script/ ./
+ADD ./slack ./
 ```
 
-We'll need to provide this container with the necessary environment variables. The standard `CI_` variables will be provided automatically, however we'll need to provide the `SLACK_WEBHOOK_PATH`. This can be safely injected via the `encrypted_env_file` service declaration, and the [encryption commands]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-cli %}#encryption-commands). By encrypting this environment variable, and adding it to our repository, it can be later decoded and provided to our notifications container.
+We'll need to provide this container with the necessary environment variables. The standard `CI_*` variables will be provided automatically, however we'll need to provide the `SLACK_WEBHOOK_TOKEN`. This can be safely injected via the `encrypted_env_file` service declaration, and the [encryption commands]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-cli %}#encryption-commands). By encrypting this environment variable, and adding it to our repository, it can be later decoded and provided to our notifications container.
 
 ```yaml
 deploynotify
@@ -124,8 +73,12 @@ By adding a relevant step to the steps file, we can control under what condition
 
 ```yaml
 - service: deploynotify
-  command: ./slack-deploy
+  command: ./slack
   tag: master
 ```
 
-Since you can integrate any container you wish into your pipeline, there are no limitations on what notifications you can use. As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
+## Other integrations
+
+Since you can integrate any container you wish into your pipeline, there are no limitations on what notifications you can use. You can see some other examples of custom notifications [here](https://github.com/codeship/scripts/tree/master/notifications).
+
+ As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
