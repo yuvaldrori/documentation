@@ -5,7 +5,7 @@ MAINTAINER marko@codeship.com
 WORKDIR /docs
 
 # Install required dependencies and clean up after the build.
-COPY Gemfile Gemfile.lock package.json ./
+COPY Gemfile Gemfile.lock package.json npm-shrinkwrap.json ./
 RUN apk --update add \
     bash \
     build-base \
