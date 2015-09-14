@@ -10,6 +10,7 @@
         - name: jet_release_notes
           service: aws
           command: sh bin/jet.sh
+          encrypted_dockercfg_path: dockercfg.encrypted
         - name: build
           service: docs
           command: bash bin/build.sh
@@ -27,15 +28,19 @@
     - name: s3_sync
       service: aws
       command: sh bin/s3.sh sync
+      encrypted_dockercfg_path: dockercfg.encrypted
     - name: s3_website
       service: aws
       command: sh bin/s3.sh configure_website _website.json
+      encrypted_dockercfg_path: dockercfg.encrypted
     - name: s3_lifecycle
       service: aws
       command: sh bin/s3.sh configure_lifecycle _lifecycle.json
+      encrypted_dockercfg_path: dockercfg.encrypted
     - name: s3_robots
       service: aws
       command: sh bin/s3.sh robots
+      encrypted_dockercfg_path: dockercfg.encrypted
     - name: swiftype
       service: curl
       command: sh bin/swiftype.sh
