@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Access to other Git repositories in your build"
+title: "Tutorial: Configure SSH Key Authentication"
 layout: page
 tags:
   - docker
@@ -10,7 +10,7 @@ categories:
   - docker
 ---
 
-During your build you might want to access other repositories to pull in dependencies or push your code.
+During your build you might want to access other repositories to pull in dependencies or push your code to other servers.
 
 To do this you need to set up an encrypted SSH Key that is available as an environment variable and can be written to the `.ssh` folder.
 
