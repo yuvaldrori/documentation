@@ -20,6 +20,10 @@
       service: docs
       command: bundle exec scss-lint
       encrypted_dockercfg_path: dockercfg.encrypted
+- name: fail_master_on_forks
+  service: docs
+  tag: master
+  command: sh bin/check_fork.sh
 - type: serial
   tag: "^(master|staging/.*|private/.*)"
   steps:
