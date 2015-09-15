@@ -20,7 +20,7 @@ Please see the [example in the codeship-tool examples repository](https://github
 
 ## Pushing to the Docker Hub
 
-* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.key` (adding it to the `.gitignore` file is a good idea).
+* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.aes` (adding it to the `.gitignore` file is a good idea).
 
 * Login to the Docker Hub locally and save the encrypted credentials file to your repository.
 
@@ -28,7 +28,7 @@ Please see the [example in the codeship-tool examples repository](https://github
 docker login
 # follow the onscreen instructions
 # ...
-jet encrypt --key-path=codeship.key ${HOME}/.docker/config.json dockercfg.encrypted
+jet encrypt ${HOME}/.docker/config.json dockercfg.encrypted
 git add dockercfg.encrypted
 git commit -m "Adding encrpyted credentials for docker push"
 ```
@@ -64,12 +64,12 @@ app:
 
     Save the file as `dockercfg` in your repository (you'll probably want to add it to the `.gitignore` file as well).
 
-* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.key` (again, adding it to the `.gitignore` file is a good idea).
+* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.aes` (again, adding it to the `.gitignore` file is a good idea).
 
 * Encrypt the credentials for accessing Quay.io by running the following command and commit the encrypted file to your repository.
 
 ```bash
-jet encrypt --key-path=codeship.key dockercfg dockercfg.encrypted
+jet encrypt dockercfg dockercfg.encrypted
 git add dockercfg.encrypted
 git commit -m "Adding encrpyted credentials for docker push"
 ```
