@@ -5,7 +5,6 @@
       name: prepare_site
       steps:
         - name: jet_release_notes
-          tag: "^(master|private/docker.*)"
           service: aws
           command: sh bin/jet.sh
           encrypted_dockercfg_path: dockercfg.encrypted
