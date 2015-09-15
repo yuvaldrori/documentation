@@ -17,7 +17,7 @@ categories:
 
 ## Configuring a build with a private base image
 
-* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.key` (adding it to the `.gitignore` file is a good idea).
+* Get the AES encryption key from the _General_ settings page of your Codeship project and save it to your repository as `codeship.aes` (adding it to the `.gitignore` file is a good idea).
 
 * For Docker Hub, login locally and mv the credentials file to your repository.
 
@@ -25,9 +25,9 @@ categories:
 docker login
 # follow the onscreen instructions
 # ...
-jet encrypt --key-path=codeship.key ${HOME}/.docker/config.json dockercfg.encrypted
+jet encrypt ${HOME}/.docker/config.json dockercfg.encrypted
 # or (depending if you are on an older version of Docker)
-jet encrypt --key-path=codeship.key ${HOME}/.dockercfg dockercfg.encrypted
+jet encrypt ${HOME}/.dockercfg dockercfg.encrypted
 ```
 
 * For Quay.io
@@ -38,7 +38,7 @@ jet encrypt --key-path=codeship.key ${HOME}/.dockercfg dockercfg.encrypted
 
 ```bash
 echo "dockercfg" >> .gitignore
-jet encrypt --key-path=codeship.key dockercfg dockercfg.encrypted
+jet encrypt dockercfg dockercfg.encrypted
 ```
 
 * Commit `dockercfg.encrypted` as well as the `.gitignore` file
