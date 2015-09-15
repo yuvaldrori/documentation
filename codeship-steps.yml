@@ -5,7 +5,7 @@
       name: prepare_site
       steps:
         - name: jet_release_notes
-          tag: "(master|private/docker.*)"
+          tag: "^(master|private/docker.*)"
           service: aws
           command: sh bin/jet.sh
           encrypted_dockercfg_path: dockercfg.encrypted
@@ -21,7 +21,7 @@
       command: bundle exec scss-lint
       encrypted_dockercfg_path: dockercfg.encrypted
 - type: serial
-  tag: "(master|staging/.*|private/.*)"
+  tag: "^(master|staging/.*|private/.*)"
   steps:
     - name: s3_sync
       service: aws
