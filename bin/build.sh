@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 log() { echo -e "\e[36m$@\e[39m"; }
+fail() { echo -e "\e[31m$@\e[39m"; exit 1; }
+
+# Break if we're on Codeship.com, the master branch, but not the
+# https://github.com/codeship/documentation repository
+if [ "${CI}" = "true" -a "${CI_BRANCH}" = "master" -a  "${CI_REPO_NAME}" != "codeship/documentation" ]; then
+	 fail "Builds for the master branch are only run for the codeship/documentation repository!"
+fi
 
 # Special treatment for the "master" branch to deploy to /documentation instead
 # of /master
