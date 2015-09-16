@@ -79,8 +79,6 @@ do
   fi
   sleep 0.1
 done
-
-${*}
 ```
 
 # Selection of supported containers
