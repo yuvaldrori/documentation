@@ -1,9 +1,0 @@
-FROM node:4.0
-MAINTAINER marko@codeship.com
-
-# Node.js based dependencies
-COPY package.json ./
-RUN npm install -g gulp && \
-	npm install
-
-COPY gulpfile.js ./
