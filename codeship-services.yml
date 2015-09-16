@@ -1,18 +1,15 @@
 docs:
   build:
-    image: quay.io/mlocher/documentation
+    image: quay.io/codeship/documentation
     dockerfile_path: Dockerfile
   cached: true
   volumes_from:
     - data
-node:
-  build:
-    dockerfile_path: Dockerfile.node
-  volumes_from:
-    - data
 aws:
   build:
+    image: quay.io/codeship/documentation-aws
     dockerfile_path: Dockerfile.aws
+  cached: true
   volumes_from:
     - data
   encrypted_env_file: deployment.env.encrypted

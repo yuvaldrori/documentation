@@ -24,14 +24,14 @@ If this URL requires **basic auth** please enter: `http://YOUR_USERNAME:YOUR_PAS
 With the latest versions of the Heroku toolkit it is now possible to run arbitrary command without the need for our `heroku_run` wrapper. Simply specify the command in the following form in a *custom script* deployment. This will trigger using the newest codepath and will exit with the correct exit code.
 
 ```shell
-heroku run --app ${HEROKU_APPLICATION_NAME} -- ${COMMAND_TO_RUN}
+heroku run --exit-code --app ${HEROKU_APPLICATION_NAME} -- ${COMMAND_TO_RUN}
 ```
 
 ## Run migration after the app is deployed
 You can specify to run the migration during the Heroku deployment within the ***more options*** section. If you want to run your migration after the deployment, you can add a [Script Deployment]({{ site.baseurl }}{% post_url continuous-deployment/2014-09-03-deployment-with-custom-scripts %}) under the Heroku deployment and run the migration there.
 
 ```shell
-heroku run --app ${HEROKU_APPLICATION_NAME} -- bundle exec rake db:migrate
+heroku run --exit-code --app ${HEROKU_APPLICATION_NAME} -- bundle exec rake db:migrate
 ```
 
 ![Migration after Heroku Deployment]({{ site.baseurl }}/images/continuous-deployment/script_deployment.png)

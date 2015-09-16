@@ -60,11 +60,11 @@ Before starting your tests you want to make sure that your service is up and run
 #!/usr/bin/env bash
 
 function test_postgresql {
-  pg_isready -h $POSTGRESQL_HOST -U $POSTGRESQL_USER
+  pg_isready -h "${POSTGRESQL_HOST}" -U "${POSTGRESQL_USER}"
 }
 
 function test_redis {
-  redis-cli -h $REDIS_HOST PING
+  redis-cli -h "${REDIS_HOST}" PING
 }
 
 count=0
@@ -72,15 +72,13 @@ count=0
 until ( test_postgresql && test_redis )
 do
   ((count++))
-  if [ $count -gt 50 ]
+  if [ ${count} -gt 50 ]
   then
     echo "Services didn't become ready in time"
     exit 1
   fi
   sleep 0.1
 done
-
-$*
 ```
 
 # Selection of supported containers
@@ -96,13 +94,15 @@ For Postgis the [Postgis community contributed container](https://hub.docker.com
 ### Availability
 
 Addition to your Dockerfile:
+
 ```
 RUN apt-get update && apt-get install -y postgresql-common postgresql-client
 ```
 
 Command to run:
+
 ```bash
-pg_isready -h $POSTGRESQL_HOST -U $POSTGRESQL_USER
+pg_isready -h "${POSTGRESQL_HOST}" -U "${POSTGRESQL_USER}"
 ```
 
 ## MySQL and MariaDB
@@ -113,13 +113,15 @@ Use the [official MariaDB container](https://hub.docker.com/_/mariadb/).
 ### Availability
 
 Addition to your Dockerfile:
+
 ```
 RUN apt-get update && apt-get install -y mysql-client
 ```
 
 Command to run:
+
 ```bash
-mysqladmin -h $MYSQL_HOST ping
+mysqladmin -h "${MYSQL_HOST}" ping
 ```
 
 ## Redis
@@ -128,13 +130,15 @@ Use the [official Redis container](https://hub.docker.com/_/redis/).
 ### Availability
 
 Addition to your Dockerfile:
+
 ```
 RUN apt-get update && apt-get install -y redis-tools
 ```
 
 Command to run:
+
 ```bash
-redis-cli -h $REDIS_HOST PING
+redis-cli -h "${REDIS_HOST}" PING
 ```
 
 ## MongoDB
@@ -143,13 +147,15 @@ Use the [official MongoDB container](https://hub.docker.com/_/mongo/).
 ### Availability
 
 Addition to your Dockerfile:
+
 ```
 RUN apt-get update && apt-get install -y curl
 ```
 
 Command to run:
+
 ```bash
-curl http://$MONGO_HOST:$MONGO_PORT
+curl "http://${MONGO_HOST}:${MONGO_PORT}"
 ```
 
 ## Memcached
@@ -158,11 +164,13 @@ Use the [official Memcached container](https://hub.docker.com/_/memcached/).
 ### Availability
 
 Addition to your Dockerfile:
+
 ```
 RUN apt-get update && apt-get install -y netcat
 ```
 
 Command to run:
+
 ```bash
-echo "flush_all" | nc -w1 $MEMCACHE_HOST $MEMCACHE_PORT
+echo "flush_all" | nc -w1 "${MEMCACHE_HOST}" "${MEMCACHE_PORT}"
 ```
