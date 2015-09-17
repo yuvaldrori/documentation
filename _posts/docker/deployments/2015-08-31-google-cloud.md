@@ -16,11 +16,11 @@ We've set up a full example of using the cloud-sdk container in the [codeship-li
 
 For authenticating with the Google Cloud Platform we're going to create a *Service account*.
 
-Go to the [GCP console](https://console.developers.google.com), select your project and go to ***APIs & auth -> Credentials***
+Go to the [GCP console](https://console.developers.google.com), select your project and go to *APIs & auth* &rarr; *Credentials*
 
 ![Google Cloud Platform Credentials View](/assets/img/content/google-cloud-deployment/credentials-link.png)
 
-Now click ***Add credentials*** and add a Service account. Select the JSON download option when asked on the next page. You will download a json file that contains credentials for authentication later. This configuration file and other parameters need to be put into an encrypted environment file that can be used as part of the build.
+Now click *Add credentials* and add a Service account. Select the JSON download option when asked on the next page. You will download a json file that contains credentials for authentication later. This configuration file and other parameters need to be put into an encrypted environment file that can be used as part of the build.
 
 ## Setting up the environment
 
@@ -31,7 +31,11 @@ GOOGLE_AUTH_JSON=...
 GOOGLE_AUTH_EMAIL=...
 ```
 
-Store the json file you received from the GCP console into a file named *gcp_deployment.env* in your repository. Make sure to remove all newlines from the file. You can use `tr '\n' ' ' < gcp_deployment.env` to get the line and copy it back into the file. Then prepend the single line with `GOOGLE_AUTH_JSON=`. You can find the `GOOGLE_AUTH_EMAIL` on the credentials page in the *Service accounts* section. It has to be from the *Service account* we just created. Make sure to put the file into .gitignore so its never committed with `echo 'gcp_deployment.env' >> .gitignore`.
+Store the json file you received from the GCP console into a file named *gcp_deployment.env* in your repository. Make sure to remove all newlines from the file. On Linux and OSX you can use `tr '\n' ' ' < gcp_deployment.env` to get the line and copy it back into the file. Then prepend the single line with `GOOGLE_AUTH_JSON=`. You can find the `GOOGLE_AUTH_EMAIL` on the credentials page in the *Service accounts* section. It has to be from the *Service account* we just created. Make sure to put the file into .gitignore so its never committed with
+
+```bash
+echo 'gcp_deployment.env' >> .gitignore
+```
 
 Now you can encrypt the env file into a file called `gcp_deployment.env.encrypted`. Take a look at the [encrypted environment files tutorial]({{ site.baseurl }}{% post_url docker/tutorials/2015-09-15-encryption %}) to encrypt the file properly.
 
@@ -48,7 +52,7 @@ Make sure to put it into your repository so we can later on use it inside the Do
 ```bash
 #!/bin/bash
 
-# Exiting on any failed command
+# exit if any statement returns a non-zero return value
 set -e
 
 # Writing environment variables to gcp_config.json and authenticate with gcloud
