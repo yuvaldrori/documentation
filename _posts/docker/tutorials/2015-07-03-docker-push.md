@@ -42,7 +42,7 @@ app:
     dockerfile_path: Dockerfile
 ```
 
-* Configure your `codeship-steps.yml` file. Make sure your `image_name` is identical to the one one on your `codeship-services.yml` and includes the registry as well.
+* Configure your `codeship-steps.yml` file. Your service `image_name` can differ from the repository defined in your steps file. Your image will be tagged and pushed based on the `push` step.
 
     If you don't want to push the image for each build, add a `tag` entry to the below step and it will only be run on that specific branch or git tag.
 
@@ -85,7 +85,7 @@ app:
     dockerfile_path: Dockerfile
 ```
 
-* Configure your `codeship-steps.yml` file. Make sure your `image_name` is identical to the one one on your `codeship-services.yml` and includes the registry as well.
+* Configure your `codeship-steps.yml` file. Your service `image_name` can differ from the repository defined in your steps file. Your image will be tagged and pushed based on the `push` step.
 
     If you don't want to push the image for each build, add a `tag` entry to the below step and it will only be run on that specific branch or git tag.
 
