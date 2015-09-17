@@ -18,7 +18,7 @@ For authenticating with the Google Cloud Platform we're going to create a *Servi
 
 Go to the [GCP console](https://console.developers.google.com), select your project and go to *APIs & auth* &rarr; *Credentials*
 
-![Google Cloud Platform Credentials View](/assets/img/content/google-cloud-deployment/credentials-link.png)
+![Google Cloud Platform Credentials View](/assets/img/docker/credentials-link.png)
 
 Now click *Add credentials* and add a Service account. Select the JSON download option when asked on the next page. You will download a json file that contains credentials for authentication later. This configuration file and other parameters need to be put into an encrypted environment file that can be used as part of the build.
 
