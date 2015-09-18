@@ -119,7 +119,7 @@ This `image_tag` field can contain a simple string, or be part of a [Go template
 * `BuildID` (the Codeship defined build ID)
 * `RepoName` (the name of the repository according to the SCM)
 * `Branch` (the name of the current branch)
-* `Commit` (the commit hash or ID)
+* `CommitID` (the commit hash or ID)
 * `CommitMessage` (the commit message)
 * `CommitDescription` (the commit description, see footnote)
 * `CommitterName` (the name of the person who committed the change)
@@ -134,6 +134,6 @@ This `image_tag` field can contain a simple string, or be part of a [Go template
 * `Ci` (defaults to `true`)
 * `CiName` (defaults to `codeship`)
 
-To tag your image based on the Commit ID, use the string "{{ .Commit }}". You can template together multiple keys into a tag by simply concatenating the strings: "{{ .CiName }}-{{ .Branch }}". Be careful about using raw values, however, since the resulting string will be stripped of any invalid tag characters.
+To tag your image based on the Commit ID, use the string "{{ .CommitID }}". You can template together multiple keys into a tag by simply concatenating the strings: "{{ .CiName }}-{{ .Branch }}". Be careful about using raw values, however, since the resulting string will be stripped of any invalid tag characters.
 
 As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
