@@ -100,4 +100,40 @@ app:
 
 * Commit and push the changes to your remote repository, head over to [Codeship](https://codeship.com/), watch your build and then check out your new image!
 
+## Pushing to tags
+
+Along with being able to push to private registries, you can also push to tags other than `latest`. To do so, simply add the tag as part of your push step using the `image_tag` declaration.
+
+```yaml
+- service: app
+  type: push
+  image_name: quay.io/username/repository_name
+  image_tag: dev
+  registry: quay.io
+  encrypted_dockercfg_path: dockercfg.encrypted
+```
+
+This `image_tag` field can contain a simple string, or be part of a [Go template](http://golang.org/pkg/text/template/). You can compose your image tag from a variety of provided values.
+
+* `ProjectID` (the Codeship defined project ID)
+* `BuildID` (the Codeship defined build ID)
+* `RepoName` (the name of the repository according to the SCM)
+* `Branch` (the name of the current branch)
+* `CommitID` (the commit hash or ID)
+* `CommitMessage` (the commit message)
+* `CommitDescription` (the commit description, see footnote)
+* `CommitterName` (the name of the person who committed the change)
+* `CommitterEmail` (the email of the person who committed the change)
+* `CommitterUsername` (the username of the person who committed the change)
+* `Time` (a golang [`Time` object](http://golang.org/pkg/time/#Time) of the build time)
+* `Timestamp` (a unix timestamp of the build time)
+* `StringTime` (a readable version of the build time)
+* `StepName` (the user defined name for the `push` step)
+* `ServiceName` (the user defined name for the service)
+* `ImageName` (the user defined name for the image)
+* `Ci` (defaults to `true`)
+* `CiName` (defaults to `codeship`)
+
+To tag your image based on the Commit ID, use the string "{{ .CommitID }}". You can template together multiple keys into a tag by simply concatenating the strings: "{{ .CiName }}-{{ .Branch }}". Be careful about using raw values, however, since the resulting string will be stripped of any invalid tag characters.
+
 As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
