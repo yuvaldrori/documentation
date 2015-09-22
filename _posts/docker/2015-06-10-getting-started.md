@@ -12,7 +12,7 @@ categories:
   - docker
 ---
 
-Welcome to a simple introductory tutorial for our Codeship _Docker Infrastructure (Beta)_. This document will help you getting started with the Beta and configuring a project for both building locally via _Jet_ as well as on Codeship.
+Welcome to a simple introductory tutorial for our Codeship _Docker Infrastructure_. This document will help you getting started and configuring a project for both building locally via _Jet_ as well as on Codeship.
 
 The source for the tutorial is available on Github as [codeship/jet-tutorial](https://github.com/codeship/jet-tutorial) and you can clone it via
 
@@ -22,7 +22,7 @@ git clone git@github.com:codeship/jet-tutorial.git
 
 ## 1. Installation
 
-Once you followed the [Installation Documentation]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-installation %}) and have Docker and _Jet_ installed on your machine you can follow these steps to configure the project for use with the _Docker Infrastructure (Beta)_ on Codeship.
+Once you followed the [Installation Documentation]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-installation %}) and have Docker and _Jet_ installed on your machine you can follow these steps to configure the project for use with the _Docker Infrastructure_ on Codeship.
 
 ## 2. Dockerfile
 

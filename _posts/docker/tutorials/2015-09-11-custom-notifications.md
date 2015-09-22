@@ -16,7 +16,7 @@ categories:
 
 ## Notifications
 
-Codeship allows you to configure a number of standard notifications for your build via your project settings. For details on what notification methods are supported, as well as how to configure notifications for your builds, check out the [documentation]({{ site.baseurl }}{% post_url administration/2014-09-02-notifications %}#encryption-commands). 
+Codeship allows you to configure a number of standard notifications for your build via your project settings. For details on what notification methods are supported, as well as how to configure notifications for your builds, check out the [documentation]({{ site.baseurl }}{% post_url administration/2014-09-02-notifications %}#encryption-commands).
 
 ## Custom Notifications
 
@@ -81,4 +81,4 @@ By adding a relevant step to the steps file, we can control under what condition
 
 Since you can integrate any container you wish into your pipeline, there are no limitations on what notifications you can use. You can see some other examples of custom notifications [here](https://github.com/codeship/scripts/tree/master/notifications).
 
- As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
+ As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.

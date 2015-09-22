@@ -23,8 +23,6 @@ These commands are only applicable if you want to run the `jet` binary locally. 
 
 In order to run the _Jet_ binary on your computer you need to have Docker installed and configured. We recommend you follow the guides regarding [Docker Machine](https://docs.docker.com/machine/) to get both the docker binary installed as well as a Docker host configured.
 
-Please note, that, similar to Jet, Docker Machine itself is still in Beta state and things are likely to change.
-
 ## Jet
 
 Please follow the steps below for the operating system you are using. See the [Jet Release Notes]({{ site.baseurl }}{% post_url docker/jet/2015-07-16-release-notes %}) for the ChangeLog.

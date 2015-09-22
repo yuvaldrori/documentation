@@ -51,4 +51,4 @@ data:
 
 With this static volume mounting, every container mounting a volume, regardless of the step, will share the same base folder on the host. This allows build artifacts to be shared between steps of your build. For an example of this, check out the [deployment example](https://github.com/codeship/codeship-tool-examples/tree/master/8.deployment-container) showing how to build and share build artifacts between steps.
 
-As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
+As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.

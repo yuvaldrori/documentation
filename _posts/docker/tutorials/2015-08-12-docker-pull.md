@@ -78,4 +78,4 @@ db:
 
 * Commit and push the changes to your remote repository, head over to [Codeship](https://codeship.com/) and watch your build pull the private image from the registry!
 
-As always, feel free to contact [beta@codeship.com](mailto:beta@codeship.com) if you have any questions.
+As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.

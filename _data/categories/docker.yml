@@ -1,14 +1,7 @@
-title: Docker Infrastructure (Beta)
+title: Docker Infrastructure
 weight: 98
 introduction: >
   <div class="info-block">
-
-  Please note, that our _Docker Infrastructure_ is still in Beta testing and not
-  all functionality is available. Furthermore functionality might change before
-  the official release.
-
-
   To get started, head over to
   [our Docker on Codeship introduction](./introduction/).
-
   </div>
