@@ -9,15 +9,15 @@ categories:
   - docker
 ---
 
-Welcome to our Docker Infrastructure Beta, the new way to run your tests on Codeship. This tool is designed with the goal to allow your various environments (e.g. _production_ and _staging_ deployment as well as local development) to have perfect parity with the environment on Codeship you run your tests in. This is achieved by using Docker containers for defining and managing environments.
+Welcome to our Docker Infrastructure, the new way to run your tests on Codeship. This tool is designed with the goal to allow your various environments (e.g. _production_ and _staging_ deployment as well as local development) to have perfect parity with the environment on Codeship you run your tests in. This is achieved by using Docker containers for defining and managing environments.
 
 <div class="info-block">
-**Notes during the Beta**
+**Note**
 
 - We only support git based repositories on GitHub and BitBucket. **We do not support Mercurial based repositories on BitBucket right now.**
 </div>
 
-_Docker Infrastructure (Beta)_ implements two main functions:
+_Docker Infrastructure_ implements two main functions:
 
 - It replicates and replaces some of the functionality of [Docker Compose](https://docs.docker.com/compose/).
 - It allows you to define your CI and CD steps and run those the same way locally as within the Codeship environment.
