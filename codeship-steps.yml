@@ -6,7 +6,7 @@
       steps:
         - name: jet_release_notes
           service: aws
-          command: sh bin/jet.sh
+          command: sh jet.sh
           encrypted_dockercfg_path: dockercfg.encrypted
         - name: build
           service: docs
