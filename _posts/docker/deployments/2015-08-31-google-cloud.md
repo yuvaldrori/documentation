@@ -26,7 +26,7 @@ Now click *Add credentials* and add a Service account. Select the JSON download 
 
 We're going to create an environment configuration file that sets the following keys:
 
-```
+```bash
 GOOGLE_AUTH_JSON=...
 GOOGLE_AUTH_EMAIL=...
 GOOGLE_PROJECT_ID=...
@@ -46,9 +46,9 @@ Now we're all set with the environment file and can set up our deployment script
 
 Before calling any commands against the GCP API we need to authenticate with the gcloud tool. The authentication does not get persisted across steps, so we need to run the provided authentication command at the beginning of each step that wants to use the gcloud or kubectl tool.
 
-The `codeship/google-cloud-deployment` container provides a deployment command called `codeship_google authenticate`. If you set up the environment variables as described above it will automatically read them and set the configuration up for you. Please add a deployment script to your repository that first calls this authentication command and then interacts with the GCP tools.
+The `codeship/google-cloud-deployment` container provides a deployment command called `codeship_google authenticate`. If you set up the environment variables as described above it will automatically read them and set the configuration up for you. The following example script runs the `codeship_google authenticate` command first and then interacts with the `gcloud` tool to deploy your application. You can use this script as a starting pint to write your own deployment script and use it in the later stages.
 
-```
+```bash
 #!/bin/bash
 
 # Authenticate with the Google Services
@@ -67,10 +67,6 @@ gcloud compute instances delete testmachine -q
 We're first authenticating, then setting the default zone to use and then starting an instance in the Google Compute Engine. Add any commands you need for your specific deployment integration with the Google Cloud Platform. You can also take a look at a [longer example we use for integration testing our container](https://github.com/codeship-library/google-cloud-deployment/blob/master/test/deploy_to_google.sh).
 
 Make sure to put it into your repository so we can later on use it inside the Docker container for deployment.
-
-## Dockerfile
-
-We do not need a separate Dockerfile for enabling the deployment as the deployment scripts will be made available through a host volume.
 
 ## Services
 
@@ -101,7 +97,7 @@ Now you have a working integration with the Google Cloud that will automatically
 
 Our container also works with the Google Container Engine and Container Registry. The following script will first authenticate with Google, then push a container according to the [Google Container Registry documentation](https://cloud.google.com/container-registry/) and then interact with kubectl to start the service.
 
-```
+```bash
 #!/bin/bash
 
 set -e
