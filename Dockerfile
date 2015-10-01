@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ruby:2.2.3-slim
 MAINTAINER marko@codeship.com
 
 # workdir configuration
@@ -6,32 +6,29 @@ WORKDIR /docs
 
 # Install required dependencies and clean up after the build.
 COPY Gemfile Gemfile.lock package.json npm-shrinkwrap.json ./
-RUN apk --update add \
-    bash \
-    build-base \
-    ca-certificates \
-    git \
-    libffi-dev \
-    nodejs \
-    ruby \
-    ruby-dev \
-    ruby-io-console \
-    ruby-json && \
-  echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
-  gem install bundler && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+	apt-get update && apt-get install -y --no-install-recommends \
+		build-essential \
+		libssl1.0.0 \
+		libyaml-0-2 \
+		nodejs \
+		npm && \
+	ln -s $(which nodejs) /usr/local/bin/node && \
+	echo "gem: --no-rdoc --no-ri" >> ${HOME}/.gemrc && \
   bundle install --jobs 20 --retry 5 --without development && \
   npm config set "production" "true" && \
   npm config set "loglevel" "error" && \
   npm install --global gulp && \
   npm install && \
-  apk --purge del \
-    build-base \
-    git \
-    libffi-dev \
-    ruby-dev && \
-  rm -rf /var/cache/apk/* && \
-  rm -rf /usr/lib/ruby/gems/*/cache/*.gem && \
-  rm -rf ${HOME}/.npm/*
+	apt-get clean -y && \
+	apt-get purge -y --auto-remove build-essential && \
+	apt-get purge -y --auto-remove $(apt-mark showauto) && \
+	# not sure why it gets removed by the line above and I need to reinstall it,
+	# at least it doesn't add all the dependencies again!
+	apt-get install -y --no-install-recommends nodejs && \
+	rm -rf /usr/local/bundle/gems/*/cache/*.gem && \
+  rm -rf ${HOME}/.npm/* && \
+	rm -rf /var/lib/apt/lists/*
 
 # add the source
 COPY . ./
