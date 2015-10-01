@@ -1,6 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
-ruby "2.2.2"
+ruby "2.2.3"
 
 gem 'jekyll', '~> 2.5.2'
 gem 'rouge', '~> 1.10.0'
