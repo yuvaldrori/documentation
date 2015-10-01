@@ -6,7 +6,7 @@ WORKDIR /docs
 
 # Node.js PPA
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
-	apt-get update && apt-get install -y --no-install-recommends
+	apt-get update && apt-get install -y --no-install-recommends \
 		apt-transport-https && \
 	apt-get clean -y && \
 	rm -rf /var/lib/apt/lists/*
