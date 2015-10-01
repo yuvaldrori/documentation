@@ -6,8 +6,7 @@ WORKDIR /docs
 
 # Install required dependencies and clean up after the build.
 COPY Gemfile Gemfile.lock package.json npm-shrinkwrap.json ./
-RUN export DEBIAN_FRONTEND=noninteractive && \
-	apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 		build-essential \
 		libssl1.0.0 \
 		libyaml-0-2 \
