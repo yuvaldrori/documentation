@@ -43,5 +43,5 @@
       command: sh bin/s3.sh robots
       encrypted_dockercfg_path: dockercfg.encrypted
     - name: swiftype
-      service: curl
+      service: docs
       command: sh bin/swiftype.sh

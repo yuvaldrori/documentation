@@ -8,5 +8,6 @@ RUN apk --update add \
   apk --purge del py-pip && \
   rm -rf var/cache/apk/*
 
-WORKDIR /app
-COPY bin/jet.sh ./
+WORKDIR /deploy
+COPY ./bin/* ./bin/
+COPY _lifecycle.json _robots.txt _website.json ./

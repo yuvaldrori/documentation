@@ -1,5 +1,0 @@
-FROM appropriate/curl:latest
-MAINTAINER marko@codeship.com
-
-COPY bin/swiftype.sh ./bin/
-CMD ["curl"]
