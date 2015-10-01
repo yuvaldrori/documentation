@@ -8,9 +8,6 @@ WORKDIR /docs
 COPY Gemfile Gemfile.lock package.json npm-shrinkwrap.json ./
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
 	apt-get update && apt-get install -y --no-install-recommends \
-		apt-transport-https && \
-	# can't use a single command, as the transport isn't available yet
-	apt-get install -y --no-install-recommends \
 		build-essential \
 		libssl1.0.0 \
 		libyaml-0-2 \
