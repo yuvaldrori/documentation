@@ -8,7 +8,7 @@ target="/site/.jet"
 
 log "Preparing Jet release notes and current version"
 rm -rf "${target}" && mkdir -p "${target}/sync"
-aws s3 sync "s3://${JET_RELEASE_BUCKET}/" "${target}/sync" --exclude=* --include=*.changelog
+aws s3 sync "s3://${JET_RELEASE_BUCKET}/" "${target}/sync" --exclude=* --include=*.changelog --quiet
 
 # write the release notes
 find "${target}/sync/" -type f -not -size 0 | natsort -r | \
@@ -27,12 +27,12 @@ while read line; do
 	EOF
 done
 
+# TODO
+# surround "{{...}}" tags with {% raw %}...{% endrawr %} as those are used for
+# both go templates as well as the Jekyll templating system
+
 # cleanup
 rm -rf "${target}/sync"
 
 # print the latest version
-log "Release notes"
-cat "${target}/release-notes"
-
-sleep 2
 log "Latest version is $(cat "${target}/version")"

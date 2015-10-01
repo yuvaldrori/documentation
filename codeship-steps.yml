@@ -6,7 +6,7 @@
       steps:
         - name: jet_release_notes
           service: aws
-          command: sh jet.sh
+          command: sh bin/jet.sh
           encrypted_dockercfg_path: dockercfg.encrypted
         - name: build
           service: docs
@@ -43,5 +43,5 @@
       command: sh bin/s3.sh robots
       encrypted_dockercfg_path: dockercfg.encrypted
     - name: swiftype
-      service: curl
+      service: docs
       command: sh bin/swiftype.sh
