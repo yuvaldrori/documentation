@@ -7,3 +7,7 @@ RUN apk --update add \
   pip install natsort && \
   apk --purge del py-pip && \
   rm -rf var/cache/apk/*
+
+WORKDIR /deploy
+COPY ./bin/* ./bin/
+COPY _lifecycle.json _robots.txt _website.json ./

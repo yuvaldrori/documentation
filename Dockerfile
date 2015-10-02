@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ruby:2.2.3-slim
 MAINTAINER marko@codeship.com
 
 # workdir configuration
@@ -6,32 +6,24 @@ WORKDIR /docs
 
 # Install required dependencies and clean up after the build.
 COPY Gemfile Gemfile.lock package.json npm-shrinkwrap.json ./
-RUN apk --update add \
-    bash \
-    build-base \
-    ca-certificates \
-    git \
-    libffi-dev \
-    nodejs \
-    ruby \
-    ruby-dev \
-    ruby-io-console \
-    ruby-json && \
-  echo "gem: --no-rdoc --no-ri" > ${HOME}/.gemrc && \
-  gem install bundler && \
-  bundle install --jobs 20 --retry 5 --without development && \
-  npm config set "production" "true" && \
-  npm config set "loglevel" "error" && \
-  npm install --global gulp && \
-  npm install && \
-  apk --purge del \
-    build-base \
-    git \
-    libffi-dev \
-    ruby-dev && \
-  rm -rf /var/cache/apk/* && \
-  rm -rf /usr/lib/ruby/gems/*/cache/*.gem && \
-  rm -rf ${HOME}/.npm/*
+RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+	apt-get update && apt-get install -y --no-install-recommends \
+		build-essential \
+		libssl1.0.0 \
+		libyaml-0-2 \
+		nodejs && \
+	ln -s $(which nodejs) /usr/local/bin/node && \
+	npm config set "production" "true" && \
+	npm config set "loglevel" "error" && \
+	npm install --global gulp && \
+	npm install && \
+	echo "gem: --no-rdoc --no-ri" >> ${HOME}/.gemrc && \
+	bundle install --jobs 20 --retry 5 --without development && \
+	apt-get clean -y && \
+	apt-get purge -y --auto-remove build-essential && \
+	rm -rf ${HOME}/.npm/* && \
+	rm -rf /usr/local/bundle/gems/*/cache/*.gem && \
+	rm -rf /var/lib/apt/lists/*
 
-# add the source
+# Add the source for the site
 COPY . ./
