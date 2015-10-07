@@ -1,5 +1,5 @@
 ---
-title: Jet Installation
+title: Running Codeship Locally for Development
 layout: page
 weight: 75
 tags:
@@ -13,7 +13,9 @@ categories:
 ---
 
 <div class="info-block">
-These commands are only applicable if you want to run the `jet` binary locally. If you only want to run your builds via the Codeship website you can skip these steps.
+
+
+These installation instructions are applicable if you want to run the Codeship local development CLI, `jet` binary, locally. If you only want to run your builds via the hosted Codeship environment, you can skip these steps.
 </div>
 
 * include a table of contents
@@ -21,7 +23,7 @@ These commands are only applicable if you want to run the `jet` binary locally. 
 
 ## Prerequisites
 
-In order to run the _Jet_ binary on your computer you need to have Docker installed and configured. We recommend you follow the guides regarding [Docker Machine](https://docs.docker.com/machine/) to get both the docker binary installed as well as a Docker host configured.
+In order to run the _Jet_ binary on your computer, you need to have Docker installed and configured. We recommend you follow the guides regarding [Docker Toolbox](https://www.docker.com/toolbox) to get both Docker Engine and Docker Machine installed, as well as a Docker host configured.
 
 ## Jet
 
@@ -55,7 +57,7 @@ The above version is statically linked and will work the same way on all platfor
 * [Linux]({{ site.data.jet.base_url }}/{{ site.data.jet.version }}/jet-linux_amd64_{{ site.data.jet.version }}-dynamic.tar.gz)
 * [Windows]({{ site.data.jet.base_url }}/{{ site.data.jet.version }}/jet-windows_amd64_{{ site.data.jet.version }}-dynamic.tar.gz)
 
-## Making sure Jet works
+## Validating Installation
 
 Once this is done you can check that _Jet_ is working by running `jet help`. This will print output similar to the following.
 

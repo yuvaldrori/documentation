@@ -1,7 +1,5 @@
 title: Docker Infrastructure
-weight: 98
-introduction: >
-  <div class="info-block">
+weight: 84
+introduction:
   To get started, head over to
   [our Docker on Codeship introduction](./introduction/).
-  </div>
