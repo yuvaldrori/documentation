@@ -9,7 +9,11 @@ categories:
   - docker
 ---
 
-Welcome to Codeship's Docker Infrastructure, the new way to run your tests on Codeship. Enjoy full customizability. Easily mirror your Development, Test and Production Environments with full parity. The underlying build infrastructure, based on Docker, allows for customized definition of the running environment.  
+Welcome to Codeship's Docker Infrastructure, the new way to run your tests on Codeship. Enjoy full customizability. Easily mirror your Development, Test and Production Environments with full parity. The underlying build infrastructure, based on Docker, allows for customized definition of the running environment.
+
+<div class="info-block">
+Codeship's Docker based infrastructure is generally available to customers with specific plans. For more information see [codeship.com](https://codeship.com/enterprise)
+</div>
 
 _Docker Infrastructure_ implements two main functions:
 
