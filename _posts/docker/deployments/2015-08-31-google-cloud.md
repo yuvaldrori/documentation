@@ -5,7 +5,7 @@ tags:
   - heroku
   - docker
 categories:
-  - dockerintegration
+  - docker-integration
 ---
 
 In this article we'll walk you through using our [Google deployment docker container](https://github.com/codeship-library/google-cloud-deployment), set up authentication and interact with resources in the Google Cloud. The Google Cloud SDK is installed supporting all Google Cloud services, including App Engine (in preview), Google Compute Engine and Google Container Engine.
