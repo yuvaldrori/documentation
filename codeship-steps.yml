@@ -15,10 +15,15 @@
         - name: post-process
           service: docs
           command: gulp post-process
-    - name: lint
+    - type: serial
+      name: linters
       service: docs
-      command: bundle exec scss-lint
       encrypted_dockercfg_path: dockercfg.encrypted
+      steps:
+        - name: SCSS
+          command: bundle exec scss-lint
+        - name: JSON
+          command: gulp lint
 - name: fail_master_on_forks
   service: docs
   tag: master
