@@ -5,7 +5,7 @@ layout: page
 {% assign category_pages = site.categories[page.category] | sort: 'title' %}
 {% assign ul_options = 'ul--columnized' %}
 
-{% if category.title == 'Docker Infrastructure' %}
+{% if category.title == 'Docker Infrastructure' or category.title == 'Docker Integration' %}
 {% assign category_pages = site.categories[page.category] | sort: 'weight' | reverse %}
 {% assign ul_options = '' %}
 {% endif %}
