@@ -33,7 +33,7 @@ echo "codeship.aes" >> .gitignore
 
 _P.S.: This key is of course not a real key in use by one of our projects :)_
 
-### Locally
+### For local use only
 
 If you don't have a project running on Codeship.com already, or just want to test the tool locally you can generate a key yourself. Please note, that you'll need to re-encrypt all files with the key from Codeship once you want to build your project on our hosted plattform.
 
