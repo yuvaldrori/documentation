@@ -38,3 +38,14 @@ be taken from there.
 By default we search for an `app.yaml` file in the path you've set. If we
 find it we will use the `appcfg.py` script to upload your application. Otherwise we
 expect it to be a Java application and use `appcfg.sh`.
+
+# Refresh Token Issues
+
+Google only includes the refresh_token the first time a user connects to Google,
+after that disconnecting and reconnecting GAE authentication on
+https://codeship.com/authentications will not include the token.
+If you encounter problems with your GAE deployment please head over to
+https://security.google.com/settings/security/permissions and remove the
+Codeship application from the account.
+Reconnecting after you removed the Codeship application will tell Google to
+send the refresh token to Codeship.
