@@ -52,4 +52,4 @@ Once you've done the above step, disconnecting and reconnecting to App Engine
 on [Connected Services](https://codeship.com/authentications) will update your authentication settings
 and allow deployments to App Engine.
 
-Please save the deployment settings after updating the reconnting to GAE to ensure that we use the newly created token.
+Please save the deployment settings after reconnecting to GAE to ensure that we use the newly created token.
