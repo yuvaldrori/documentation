@@ -38,3 +38,18 @@ be taken from there.
 By default we search for an `app.yaml` file in the path you've set. If we
 find it we will use the `appcfg.py` script to upload your application. Otherwise we
 expect it to be a Java application and use `appcfg.sh`.
+
+# App Engine Authentication Issues
+
+The specific implementation Google App Engines uses to authenticate with other
+services like Codeship omits certain information if you re-authenticate.
+(Specifically the OAuth [refresh token](https://auth0.com/docs/refresh-token).)
+
+If you encounter authentication problems with your GAE deployments,
+please head over to the [Google OAuth Application Settings](https://security.google.com/settings/security/permissions)
+page and remove the Codeship application from your account.
+Once you've done the above step, disconnecting and reconnecting to App Engine
+on [Connected Services](https://codeship.com/authentications) will update your authentication settings
+and allow deployments to App Engine.
+
+Please save the deployment settings after reconnecting to GAE to ensure that we use the newly created token.
