@@ -4,18 +4,14 @@
 
 In the spirit of [free software][free-sw], **everyone** is encouraged to help improve this project. Here are some ways *you* can contribute:
 
-* by using alpha, beta, and prerelease versions
-* by reporting bugs
-* by suggesting new features
-* by writing or editing documentation
-* by writing specifications
-* by writing code (**no patch is too small** : fix typos, add comments, clean up inconsistent whitespace)
-* by refactoring code
+* by reporting errors on our documentation pages
+* by suggesting new articles or enhancements to existing ones
+* by writing documentation (**no patch is too small** : fix typos, add comments, clean up inconsistent whitespace)
 * by closing [issues][]
-* by reviewing patches
+* by reviewing patches and pull requests
 
 ## Submitting an Issue
-We use the [GitHub issue tracker][issues] to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist][] that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
+We use the [GitHub issue tracker][issues] to track bugs and features for the documentation pages available at https://codeship.com/documentation/. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include any details that may be necessary to reproduce the bug. 
 
 ## Submitting a Pull Request
 1. [Fork the repository.][fork]
@@ -24,7 +20,13 @@ We use the [GitHub issue tracker][issues] to track bugs and features. Before sub
 4. Add, commit, and push your changes.
 5. [Submit a pull request.][pr]
 
-This file was taken from https://github.com/middleman/middleman-heroku/blob/master/CONTRIBUTING.md
+## When not to submit an issue
+
+Please don't create new issues on this repository when you experience issues with your builds on https://codeship.com, want to request new features for the CI system or have general questions on how to use https://codeship.com for your projects.
+
+In all of the above cases, reach out to our support team at support@codeship.com or on Twitter at (@CodeshipSupport)[https://twitter.com/CodeshipSupport].
+
+*This file was taken from https://github.com/middleman/middleman-heroku/blob/master/CONTRIBUTING.md and extended for use with the Codeship documentation.*
 
 [free-sw]: http://www.fsf.org/licensing/essays/free-sw.html
 [issues]: https://github.com/codeship/documentation/issues
