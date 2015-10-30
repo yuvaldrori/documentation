@@ -36,7 +36,9 @@ To deploy into Lambda we need to make sure you’ve given us the correct permiss
                 "lambda:UpdateFunctionCode",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:InvokeFunction",
-                "lambda:GetFunction"
+                "lambda:GetFunction",
+                "lambda:PublishVersion",
+                "lambda:UpdateAlias"
             ],
             "Resource": [
                 "arn:aws:lambda:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:function:YOUR_FUNCTION_NAME"
@@ -58,16 +60,29 @@ You need to add the following environment variables to your project:
 
 When you go to the Deploy settings of your repository in your Codeship account you now have to add a Script deployment. In the Script deployment, first put the new code you want to deploy into a zip file and then push it to AWS Lambda.
 
-To test this actually works we’ll get the latest function info and invoke the function after the deployment as well. The same command can also be run from your local machine with the invoke script in the repo you’ve forked. Make sure you have permissions set locally that allow you to invoke a function on AWS Lambda.
+After pushing to Lambda we're publishing a new version of the function and updating a previously created Lambda alias `PROD`. Through versioning and aliasing of functions you could introduce more complex deployment scenarios. One would be to first setting a `STAGING` alias, invoking it with example data to make sure the function executes properly and only then setting the `PROD` alias to the newly deployed version. For more information on Aliases and Versioning check out the [Lambda documentation](http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html).
+
+To test that the function works we’ll invoke it after the deployment. We're using `PROD` as a qualifier to execute the alias we just set. The same command can also be run from your local machine with the invoke script in the repo you’ve forked. Make sure you have permissions set locally that allow you to invoke a function on AWS Lambda.
 
 Following you can see the list of commands to use and how they’ve been added to a script deployment on Codeship.
 
 ```bash
 pip install awscli
+# Preparing and deploying Function to Lambda
 zip -r LambdaTest.zip LambdaTest.js
 aws lambda update-function-code --function-name LambdaTest --zip-file fileb://LambdaTest.zip
+
+# Publishing a new Version of the Lambda function
+version=`aws lambda publish-version --function-name LambdaTest | jq -r .Version`
+
+# Updating the PROD Lambda Alias so it points to the new function
+aws lambda update-alias --function-name LambdaTest --function-version $version --name PROD
+
 aws lambda get-function --function-name “LambdaTest”
-aws lambda invoke --function-name LambdaTest --payload "$(cat data.json)" lambda_output.txt
+
+# Invoking Lambda function from update PROD alias
+aws lambda invoke --function-name LambdaTest --payload "$(cat data.json)" --qualifier PROD lambda_output.txt
+
 cat lambda_output.txt
 ```
 
