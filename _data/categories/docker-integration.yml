@@ -1,4 +1,6 @@
 title: Docker Integration
 weight: 83
-introduction:
-  
+introduction: >
+  <div class="info-block">
+    Codeship's Docker based infrastructure is available to customers on a invite only basis at the moment. Please see the [Docker feature page](http://pages.codeship.com/docker) for information and to request access.
+  </div>

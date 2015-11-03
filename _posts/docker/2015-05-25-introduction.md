@@ -12,7 +12,10 @@ categories:
 Welcome to Codeship's Docker Infrastructure, the new way to run your tests on Codeship. Enjoy full customizability. Easily mirror your Development, Test and Production Environments with full parity. The underlying build infrastructure, based on Docker, allows for customized definition of the running environment.
 
 <div class="info-block">
-Codeship's Docker based infrastructure is generally available to customers with specific plans. For more information see [codeship.com](https://codeship.com/enterprise)
+Codeship's Docker based infrastructure is available to customers on a invite only basis at the moment. Please see the [Docker feature page](http://pages.codeship.com/docker) for information and to request access.
+
+**Note**
+- Codeship's Docker Infrastructure supports git based repositories on GitHub and BitBucket. **Mercurial based repositories on BitBucket are not currently supported.**
 </div>
 
 _Docker Infrastructure_ implements two main functions:
@@ -26,8 +29,3 @@ For this reason we introduce two new concepts.
 - [Steps]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}) specify what to run on those services.
 
 To get started, please [install Jet]({{ site.baseurl }}{% post_url docker/jet/2015-05-25-installation %}) locally on your development machine and follow the [tutorial]({{ site.baseurl }}{% post_url docker/2015-06-10-getting-started %}) to get your first project working on the Codeship Docker Infrastructure.
-
-<div class="info-block">
-**Note**
-- Codeship's Docker Infrastructure supports git based repositories on GitHub and BitBucket. **Mercurial based repositories on BitBucket are not currently supported.**
-</div>
