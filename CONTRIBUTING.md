@@ -7,11 +7,11 @@ In the spirit of [free software][free-sw], **everyone** is encouraged to help im
 * by reporting errors on our documentation pages
 * by suggesting new articles or enhancements to existing ones
 * by writing documentation (**no patch is too small** : fix typos, add comments, clean up inconsistent whitespace)
-* by closing [issues][]
+* by closing [issues][issues]
 * by reviewing patches and pull requests
 
 ## Submitting an Issue
-We use the [GitHub issue tracker][issues] to track bugs and features for the documentation pages available at https://codeship.com/documentation/. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include any details that may be necessary to reproduce the bug. 
+We use the [GitHub issue tracker][issues] to track bugs and features for the documentation pages available at https://codeship.com/documentation/. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include any details that may be necessary to reproduce the bug.
 
 ## Submitting a Pull Request
 1. [Fork the repository.][fork]
@@ -24,7 +24,7 @@ We use the [GitHub issue tracker][issues] to track bugs and features for the doc
 
 Please don't create new issues on this repository when you experience issues with your builds on https://codeship.com, want to request new features for the CI system or have general questions on how to use https://codeship.com for your projects.
 
-In all of the above cases, reach out to our support team at support@codeship.com or on Twitter at (@CodeshipSupport)[https://twitter.com/CodeshipSupport].
+In all of the above cases, reach out to our support team at support@codeship.com or on Twitter at [@CodeshipSupport](https://twitter.com/CodeshipSupport).
 
 *This file was taken from https://github.com/middleman/middleman-heroku/blob/master/CONTRIBUTING.md and extended for use with the Codeship documentation.*
 

@@ -9,5 +9,5 @@ RUN apk --update add \
   rm -rf var/cache/apk/*
 
 WORKDIR /deploy
-COPY ./bin/* ./bin/
+COPY bin/jet.sh bin/s3.sh ./bin/
 COPY _lifecycle.json _robots.txt _website.json ./

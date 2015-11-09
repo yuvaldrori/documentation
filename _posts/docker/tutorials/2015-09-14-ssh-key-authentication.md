@@ -17,7 +17,7 @@ To do this you need to set up an encrypted SSH Key that is available as an envir
 
 We will walk you through an example that will set up a key, encrypt it and make it available during the build. For cloning from Github another option is to use their [OAuth Key instead of an SSH key](https://github.com/blog/1270-easier-builds-and-deployments-using-git-over-https-and-oauth).
 
-# Create an SSH Key
+## Create an SSH Key
 
 The following command will create two files in your local repository. `keyfile.rsa` contains your private key that we will encrypt and put into your repository. This encrypted file will be decrypted on Codeship as part of your build. The second file `keyfile.rsa.pub` can be added to services that you want to access.
 
