@@ -33,13 +33,13 @@ we compile the application with `gradle` and the result will be written to
 build/exploded-war. We set `build/exploded-war` as the path, so the code will
 be taken from there.
 
-# appcfg.py or appcfg.sh
+## appcfg.py or appcfg.sh
 
 By default we search for an `app.yaml` file in the path you've set. If we
 find it we will use the `appcfg.py` script to upload your application. Otherwise we
 expect it to be a Java application and use `appcfg.sh`.
 
-# App Engine Authentication Issues
+## App Engine Authentication Issues
 
 The specific implementation Google App Engines uses to authenticate with other
 services like Codeship omits certain information if you re-authenticate.

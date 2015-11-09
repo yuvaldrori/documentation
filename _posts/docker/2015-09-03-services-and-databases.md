@@ -16,7 +16,7 @@ Through Docker we support many different databases and services you can use for 
 
 Before reading through the documentation please take a look at the [Services]({{ site.baseurl }}{% post_url docker/2015-05-25-services %}) and [Steps]({{ site.baseurl }}{% post_url docker/2015-05-25-steps %}) documentation page so you have a good understanding how services and steps on Codeship work. At first we want to show you how to customize a service or database container so it has the exact configuration you need for your build.
 
-# Customizing a service container
+## Customizing a service container
 
 The following example will start a Ruby and Elasticsearch container and make Elasticsearch available to the Ruby container. The Elasticsearch container will get a customized configuration file that is added by building it with a `Dockerfile.elasticsearch` Dockerfile.
 
@@ -52,7 +52,7 @@ elasticsearch:
 
 Now we have a fully customized instance of Elasticsearch running. This same process applies to any other service or database you might be using. To see how to customize them take a look at the specific Dockerfiles that are used to create the service you want to use.
 
-# Waiting for a Service to start
+## Waiting for a service to start
 
 Before starting your tests you want to make sure that your service is up and running. The following script will check for Postgres and Redis to be ready and accept connections. You can use this script to add any further checks for other services. You can connect checks with `&&`. The list of supported containers below has tools that help you to test your service for availability. Make sure to set all necessary environment variables used in the commands.
 
@@ -81,17 +81,17 @@ do
 done
 ```
 
-# Selection of supported containers
+## Selection of supported containers
 
 Here is a list of containers customers typically use to set up their environment. For further software you want to use during your build you can explore the [Docker Hub](https://hub.docker.com/) or send us an email to [our support team](mailto:support@codeship.com).
 
-## PostgreSQL
+### PostgreSQL
 Use the [official Postgres container](https://hub.docker.com/_/postgres/).
 
-### Postgis
+#### Postgis
 For Postgis the [Postgis community contributed container](https://hub.docker.com/r/mdillon/postgis/) can be used.
 
-### Availability
+#### Availability
 
 Addition to your Dockerfile:
 
@@ -105,12 +105,12 @@ Command to run:
 pg_isready -h "${POSTGRESQL_HOST}" -U "${POSTGRESQL_USER}"
 ```
 
-## MySQL and MariaDB
+### MySQL and MariaDB
 Use the [official MySQL container](https://hub.docker.com/_/mysql/).
 
 Use the [official MariaDB container](https://hub.docker.com/_/mariadb/).
 
-### Availability
+#### Availability
 
 Addition to your Dockerfile:
 
@@ -124,10 +124,10 @@ Command to run:
 mysqladmin -h "${MYSQL_HOST}" ping
 ```
 
-## Redis
+### Redis
 Use the [official Redis container](https://hub.docker.com/_/redis/).
 
-### Availability
+#### Availability
 
 Addition to your Dockerfile:
 
@@ -141,10 +141,10 @@ Command to run:
 redis-cli -h "${REDIS_HOST}" PING
 ```
 
-## MongoDB
+### MongoDB
 Use the [official MongoDB container](https://hub.docker.com/_/mongo/).
 
-### Availability
+#### Availability
 
 Addition to your Dockerfile:
 
@@ -158,10 +158,10 @@ Command to run:
 curl "http://${MONGO_HOST}:${MONGO_PORT}"
 ```
 
-## Memcached
+### Memcached
 Use the [official Memcached container](https://hub.docker.com/_/memcached/).
 
-### Availability
+#### Availability
 
 Addition to your Dockerfile:
 

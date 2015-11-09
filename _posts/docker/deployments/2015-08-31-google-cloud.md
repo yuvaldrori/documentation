@@ -43,7 +43,7 @@ Now you can encrypt the env file into a file called `google_deployment.env.encry
 
 Now we're all set with the environment file and can set up our deployment script, codeship-services.yml and codeship-steps.yml.
 
-# Deployment Script
+## Deployment Script
 
 Before calling any commands against the GCP API we need to authenticate with the gcloud tool. The authentication does not get persisted across steps, so we need to run the provided authentication command at the beginning of each step that wants to use the gcloud or kubectl tool.
 
