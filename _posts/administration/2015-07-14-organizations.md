@@ -53,3 +53,14 @@ You can either add a project via the _Select project_ dropdown at the top, or vi
 Once the project is created, you can add it to any of your teams. Members of the _Owners_ and _Managers_ team will have access to all projects by default.
 
 ![Adding a project to a team]({{ site.baseurl }}/images/administration/add_project_to_team.png)
+
+## Importing projects from personal account
+
+All organization owners and managers have the option to import projects from their personal account.
+
+1. Go to your [Account Settings](https://codeship.com/user/edit) dropdown and select your organization.
+2. Navigate to the settings menu on the left side. Under your organization, select _Projects_
+3. Select the _Import existing projects_ link on the right of the page.
+4. You can then choose to import one, some or all of your Codeship projects.
+
+![Importing a personal project to an organization]({{ site.baseurl }}/images/administration/import_projects.png)
