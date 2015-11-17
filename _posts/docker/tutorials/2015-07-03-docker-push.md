@@ -30,7 +30,7 @@ docker login
 # ...
 jet encrypt ${HOME}/.docker/config.json dockercfg.encrypted
 git add dockercfg.encrypted
-git commit -m "Adding encrpyted credentials for docker push"
+git commit -m "Adding encrypted credentials for docker push"
 ```
 
 * Configure your `codeship-services.yml` file. It will probably look similar to the following:
@@ -71,7 +71,7 @@ app:
 ```bash
 jet encrypt dockercfg dockercfg.encrypted
 git add dockercfg.encrypted
-git commit -m "Adding encrpyted credentials for docker push"
+git commit -m "Adding encrypted credentials for docker push"
 ```
 
 * Add the robot user to the Quay.io repository with the appropriate permissions (at least _Write_).

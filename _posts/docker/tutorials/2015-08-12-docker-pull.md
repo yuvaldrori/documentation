@@ -45,7 +45,7 @@ jet encrypt dockercfg dockercfg.encrypted
 
 ```bash
 git add dockercfg.encrypted .gitignore
-git commit -m "Adding encrpyted credentials for docker push"
+git commit -m "Adding encrypted credentials for docker push"
 ```
 
 * Adapt your Dockerfile
