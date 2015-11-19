@@ -7,7 +7,7 @@ tags:
 categories:
   - continuous-integration
 ---
-You can add `--skip-ci` or  `[skip ci]` to the commit message of the last commit before you push and that push will be ignored.
+If you use the classic infrastructure, you can add `--skip-ci` or  `[skip ci]` to the commit message of the last commit before you push and that push will be ignored. Support for skipping builds on the Docker infrastructure will be available soon.
 
 ## Ignore pull request merges
 
