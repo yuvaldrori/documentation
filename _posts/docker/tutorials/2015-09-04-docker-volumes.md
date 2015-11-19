@@ -16,7 +16,7 @@ categories:
 
 Volumes can be used to connect containers in your build environment, and to share build artifacts between containers and steps in your pipeline.
 
-Please see the [example in the codeship-tool examples repository](https://github.com/codeship/codeship-tool-examples/tree/master/7.volumes) of how to use volumes.
+Please see the [example in the codeship-tool examples repository](https://github.com/codeship/codeship-tool-examples/tree/master/07.volumes) of how to use volumes.
 
 To connect containers using volumes, first define a volume on one container in your codeship-service.yml:
 
@@ -49,6 +49,6 @@ data:
     - /tmp/artifacts:/artifacts
 ```
 
-With this static volume mounting, every container mounting a volume, regardless of the step, will share the same base folder on the host. This allows build artifacts to be shared between steps of your build. For an example of this, check out the [deployment example](https://github.com/codeship/codeship-tool-examples/tree/master/8.deployment-container) showing how to build and share build artifacts between steps.
+With this static volume mounting, every container mounting a volume, regardless of the step, will share the same base folder on the host. This allows build artifacts to be shared between steps of your build. For an example of this, check out the [deployment example](https://github.com/codeship/codeship-tool-examples/tree/master/08.deployment-container) showing how to build and share build artifacts between steps.
 
 As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.
