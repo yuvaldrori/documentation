@@ -59,4 +59,10 @@ $ cat /tmp/dockercfg # read generated dockercfg
 
 The container must be provided with any credentials or configuration needs to generate a dockercfg via environment variables. When the image is being used in a build, this information is provided via the service definition in the `codeship-services.yml` file. Codeship will run the container any time it needs to generate the dockercfg, however the cost of this can be mitigated by locally caching credentials using a host volume mount defined in the service definition. The container image would be responsible for managing this cached folder, and checking the presence and validitity of credentials in the cache before returning them.
 
+## Integrations
+
+Here is a list of the standard dockercfg generators we support. If you don't see your desired provider on this list, please reach out to support, or create it yourself.
+
+* [AWS ECR](https://github.com/codeship-library/aws-ecr-dockercfg-generator)
+
 As always, feel free to contact [support@codeship.com](mailto:support@codeship.com) if you have any questions.
