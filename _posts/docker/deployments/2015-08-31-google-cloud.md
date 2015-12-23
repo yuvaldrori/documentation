@@ -47,7 +47,7 @@ Now we're all set with the environment file and can set up our deployment script
 
 Before calling any commands against the GCP API we need to authenticate with the gcloud tool. The authentication does not get persisted across steps, so we need to run the provided authentication command at the beginning of each step that wants to use the gcloud or kubectl tool.
 
-The `codeship/google-cloud-deployment` container provides a deployment command called `codeship_google authenticate`. If you set up the environment variables as described above it will automatically read them and set the configuration up for you. The following example script runs the `codeship_google authenticate` command first and then interacts with the `gcloud` tool to deploy your application. You can use this script as a starting pint to write your own deployment script and use it in the later stages.
+The `codeship/google-cloud-deployment` container provides a deployment command called `codeship_google authenticate`. If you set up the environment variables as described above it will automatically read them and set the configuration up for you. The following example script runs the `codeship_google authenticate` command first and then interacts with the `gcloud` tool to deploy your application. You can use this script as a starting point to write your own deployment script and use it in the later stages.
 
 ```bash
 #!/bin/bash
